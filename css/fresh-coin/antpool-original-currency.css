@@ -1,0 +1,123 @@
+#new-icon-top{
+    position: absolute;
+}
+.row h2{
+    font-size: 28px;
+}
+#search-history{
+    color: #666666;
+    margin-left: 10px;
+    font-size: 14px;
+}
+.move-right{
+    text-align: right;
+}
+.search{
+    margin-top: 90px;
+    text-align: center;
+}
+.search-content{
+    height: 100px;
+    width: 700px;
+    margin: 0 auto;
+}
+.search-input{
+    float: left;
+    width: 600px;
+}
+.search-btn-content{
+    float: left;
+    width: 100px;
+}
+#search-text{
+	border: 1px solid #a9a9a9;
+    font-size: 16px;
+    width: 545px;
+    height: 55px;
+    text-align: center;
+}
+#search-btn{
+	display: none;
+    background-color: white;
+    height: 55px;
+    width: 90px;
+    border: 1px solid #a9a9a9;
+}
+#search-btn-picture{
+    margin-top: 7px;
+}
+.coin-id{
+    font-family: "Courier New", "Courier";
+    font-size: 18px;
+}
+.search-id{
+    display: none;
+}
+
+
+.your-Trading{
+	display: none;
+    color: #798595;
+    width: 1000px;
+    margin: 0 auto;
+}
+.your-Trading table{
+    margin-top: 30px;
+    vertical-align: middle;
+    border-color: #d9d9d9;
+   
+    margin-bottom: 120px;
+}
+.your-Trading table tr th{
+    font-size: 16px;
+    text-align: center;
+    height: 45px;
+    border: 1px solid #d9d9d9;
+}
+.your-Trading table tr td{
+    font-size: 14px;
+     border: 1px solid #d9d9d9;
+    height: 50px;
+}
+.data{
+    text-align: center;
+    width: 145px;
+}
+.amount{
+    width: 130px;
+}
+.amount-padding-right{
+    padding-right: 10px;
+}
+.fee{
+    width: 190px;
+}
+.fee-padding-right{
+    padding-right: 13px;
+}
+.ratio{
+    width: 115px;
+}
+.ratio-padding-right{
+    padding-right: 15px;
+}
+.input{
+    text-align: center;
+    width: 170px;
+}
+.view-transaction{
+    color: #798595;
+}
+.output{
+    text-align: center;
+    width: 160px;
+}
+.change-color-one{
+    background-color: #f3f3f3;
+}
+.change-color-two{
+    background-color: #ffffff;
+}
+.unit{
+    text-align: left;
+}

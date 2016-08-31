@@ -1,0 +1,476 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AntPool</title>
+<link rel="stylesheet" href="css/antpool/get-your-coins.css">
+<link rel="stylesheet" href="css/user/bootstrap.min.css">
+<link rel="stylesheet" href="css/user/font-awesome.min.css" />
+<link rel="stylesheet" href="css/user/animate.min.css" />
+<link rel="stylesheet" href="css/user/skin.css"/>
+<link rel="stylesheet" href="css/user/style.css"/>
+<link rel="stylesheet" href="css/user/panel.css" />
+<link rel="stylesheet" href="css/user/pace.css" />
+<link rel="stylesheet" href="css/user/offline.css" />
+<link rel="stylesheet" href="css/user/products.css">
+<link rel="stylesheet" href="css/antpool/style.css">
+<link rel="stylesheet" href="css/antpool/home.css">
+<script src="js/antpool/jquery-1.8.3.min.js"></script><script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="js/antpool/common.js"></script>  
+<script src="js/antpool/highcharts.js"></script>  
+<script src="js/antpool/home.js"></script>   
+<script src="js/antpool/systemtools.js"></script>
+<script src="js/user/jquery.placeholder.js"></script>
+<script src="js/user/jquery.bootstrap-growl.min.js"></script>
+<script src="js/user/bootstrap-alert.js"></script>
+<script src="js/systemtools.js"></script>
+<script src="js/user/products.js"></script>
+<script src="js/math_base.js"></script>
+<script src="js/user/coin.js"></script>
+
+
+<link rel="stylesheet" href="css/article.css">
+<script src="/js/ap_btc.js" type="text/javascript"></script>
+
+</head>
+<body>
+<div class=" app horizontal">
+   <div class="top">
+          <div class="top_main">
+               <div id="logo" ><a href="home.html"><img src="images/antpool/logo@2x.png" width="217" height="53" alt="AntPool"  /></a></div>
+                <div id="nav" >  
+                    <ul class="daohangul">
+                        <li><a href="home.html"  >首页</a> </li>
+                        <li><a href="dashboard.html">用户面板</a> </li>
+                        <li><a href="setting.html">设置</a> </li>
+                        <li><a href="poolStats.html">统计</a> </li>
+                        <div class="btn-group">                    
+                             <a data-toggle="dropdown" >区块服务  <img src="images/antpool/icon-arrow-down.png" ></a> 
+                               <ul  class="dropdown-menu ddlselect blockservice" role="menu">
+                                    <li><a href="coinbase.html" >区块签名</a></li>
+                                    <li><a href="get-your-coins.html" style=" border:0px; height:30px;  line-height:25px;">原币</a></li>
+                             </ul>
+                      </div> <div class="btn-group" style="margin-left:-5px;">
+                            <a data-toggle="dropdown" class="active">帮助  <img src="images/antpool/icon-arrow-down.png" ></a>  <ul class="dropdown-menu ddlselect helpsuppt" role="menu">                                    
+                             <li><a href="support.html">帮助与支持</a></li> <li><a href="apiGuild.html">API指南</a></li>
+                                    <li><a href="https://forum.bitmain.com/" style=" border:0px; height:30px;  line-height:25px;">社区</a></li>
+                             </ul>
+                      </div>
+                    </ul>
+                </div>
+                <div class="top_right">
+                    <div class="children btn-group" >
+                       <a  data-toggle="dropdown" >
+                         <div class="cn">当前子账户</div>                            
+                           <div class="useren">
+                           <div class="en_met">antminer</div> &nbsp;
+                           <div class="sanjiao_img"></div>
+                         </div>
+                       </a>
+                        <ul  class="dropdown-menu ddlselect child_ddl" role="menu" >
+                                <li><a href="#">wen</a></li>
+                                <li><a href="#">yongliang</a></li>  
+                                <li><a href="#" >tianzhao</a></li>
+                         </ul>
+                    </div>
+                    <div class="ver_line"></div>
+                    <div class="info">
+                         <div class="headinfo"> <img src="images/antpool/icon-user-24.png" ></div>
+                         <div class="email btn-group">
+                              <a  data-toggle="dropdown" >
+                                 <span id="user"  class="en" >648800939@qq.com </span> &nbsp;<span class="sanjiao_img" style="margin-top:15px;"></span></a>
+                                  <ul  class="dropdown-menu ddlselect userst" role="menu">
+                                     <li><a href="#">用户中心</a></li>
+                                     <li><a href="#" style=" border:0px; height:30px;  line-height:25px;">退出</a></li>
+                                  </ul>
+                            </div> 
+                         <div class="btn-group"  >
+                                <div class="language" data-toggle="dropdown">EN</div>
+                                 <ul  class="dropdown-menu ddlselect lngst " role="menu">
+                                     <li><a href="apiGuild_EN.html">English</a></li>
+                                     <li><a href="apiGuild.html" >简体中文</a></li>
+                                     <li><a href="apiGuild_py.html" style=" border:0px; height:30px;  line-height:25px;">русский</a></li>
+                                  </ul>
+                         </div>
+                    </div>
+                </div>
+          </div>
+   </div>
+
+  <!--=======================================================================================================================================================================--> 
+ <section class="layout">
+   <div class="horizontal-content">
+     <div class="middle">
+     <div class="md_content" >
+        <div class="row" style="margin-left:0px;">
+             <div class="blocksig">API Guide</div>
+        </div>
+                    <div class="antpool-paper">
+                        <p>AntPool's application programming interface (API) allows users to access and control their accounts using custom written software.</p>
+                        <p style="font-size:15px;font-weight:bold;">Request limits</p>
+                        <p>Do not make more than 600 request per 10 minutes or we will ban your IP address.</p>
+                        <hr/>
+                        <p style="font-size:18px;font-weight:bold;">API authentication</p>
+                        <p>All private API calls require authentication. You need to provide 3 parameters to authenticate a request:</p>
+                        <ul style="margin-top:10px;">
+                            <li>API key</li>
+                            <li>Nonce</li>
+                            <li>Signature</li>
+                        </ul>
+                        <p style="font-size:15px;font-weight:bold;">API key</p>
+                        <p>To get an API key, go to "API". Set parmissions and click "Generate key".</p>
+                        <p style="font-size:15px;font-weight:bold;">Nonce</p>
+                        <p>
+                            Nonce is a regular integer number. 
+                            It must be increasing with every request you make. 
+                            Read more about it here. Example: if you set nonce to 1 in your first request, you must set it to at least 2 in your second request. 
+                            You are not required to start with 1. 
+                            A common practice is to use unix time for that parameter.
+                        </p>
+                        <p style="font-size:15px;font-weight:bold;">Signature</p>
+                        <p>
+                            Signature is a HMAC-SHA256 encoded message containing: nonce, client ID and API key. 
+                            The HMAC-SHA256 code must be generated using a secret key that was generated with your API key. 
+                            This code must be converted to it's hexadecimal representation (64 uppercase characters).
+                        </p>
+                        <p>Example (Python):</p>
+                        <p style="border:1px #bbb solid;padding:5px;background:#eee">
+                            message = userid + api_key + nonce<br/>
+                            signature = hmac.new(API_SECRET, msg=message, digestmod=hashlib.sha256).hexdigest().upper()
+                        </p>
+                        <p>Example (Java):</p>
+                        <p style="border:1px #bbb solid;padding:5px;background:#eee">
+                            public static String apiSignature(String userId, String key, String nonce, String secret) throws Exception {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;String data = userId+key+nonce;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;Mac hmacSha256 = Mac.getInstance("HmacSHA256");<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;SecretKeySpec secretKey = new SecretKeySpec(secret.getBytes(), "HmacSHA256");<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;hmacSha256.init(secretKey);<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;return Hex.encodeHexString(hmacSha256.doFinal(data.getBytes())).toUpperCase();<br/>
+                            }<br/>
+                            <br/>
+                            public static boolean checkApiSignature(String userId, String key, String nonce, String secret, String signature) throws Exception {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;String data = userId+key+nonce;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;Mac hmacSha256 = Mac.getInstance("HmacSHA256");<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;SecretKeySpec secretKey = new SecretKeySpec(secret.getBytes(), "HmacSHA256");<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;hmacSha256.init(secretKey);<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;String signatrueTmp = Hex.encodeHexString(hmacSha256.doFinal(data.getBytes())).toUpperCase();<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;if(signature.equals(signatrueTmp)) {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return true;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;return false;<br/>
+                            }
+                        </p>
+                        <hr/>
+                        <p style="font-size:18px;font-weight:bold;">Private Functions</p>
+                        <p style="font-size:15px;font-weight:bold;margin-top:15px;">Pool Stats</p>
+                        <p style="border:1px #bbb solid;padding:5px;background:#eee">
+                            POST https://antpool.com/api/poolStats.htm
+                        </p>
+                        <p>Params:</p>
+                        <ul style="margin-top:10px;">
+                            <li>key - API key</li>
+                            <li>nonce - nonce</li>
+                            <li>signature - signature</li>
+                        </ul>
+                        <p>Return pool statistics information, as shown below:</p>
+                        <p style="border:1px #bbb solid;padding:5px;background:#eee">
+                            {<br/>
+                            "version":"1.0",<br/>
+                            "code":0,<br/>
+                            "message":"ok",<br/>
+                            "data":<br/>
+                            &nbsp;&nbsp;{<br/>
+                            &nbsp;&nbsp;"poolHashrate":"0", //Pool hash rate in MH/s<br/>
+                            &nbsp;&nbsp;"activeWorkerNumber":"0", //Active worker number<br/>
+                            &nbsp;&nbsp;"poolStatus":"Alive", //Pool run status<br/>
+                            &nbsp;&nbsp;"networkDiff":"0", //Current network difficulty<br/>
+                            &nbsp;&nbsp;"estimateTime":"0", //Block estimate time in second<br/>
+                            &nbsp;&nbsp;"currentRound":"0", //Current run time in second<br/>
+                            &nbsp;&nbsp;"totalShareNumber":"0", //Total share number<br/>
+                            &nbsp;&nbsp;"totalBlockNumber":"0" //Total block number<br/>
+                            &nbsp;&nbsp;}<br/>
+                            }
+                        </p>
+                        <p style="font-size:15px;font-weight:bold;margin-top:15px;">Account balance</p>
+                        <p style="border:1px #bbb solid;padding:5px;background:#eee">
+                            POST https://antpool.com/api/account.htm
+                        </p>
+                        <p>Params:</p>
+                        <ul style="margin-top:10px;">
+                            <li>key - API key</li>
+                            <li>nonce - nonce</li>
+                            <li>signature - signature</li>
+                        </ul>
+                        <p>Returns user account balance in BTC. Check the example below:</p>
+                        <p style="border:1px #bbb solid;padding:5px;background:#eee">
+                            {<br/>
+                            "version":"1.0",<br/>
+                            "code":0,<br/>
+                            "message":"ok",<br/>
+                            "data":<br/>
+                            &nbsp;&nbsp;{<br/>
+                            &nbsp;&nbsp;"earn24Hours":"0.00000000",<br/>
+                            &nbsp;&nbsp;"earnTotal":"0.00000000",<br/>
+                            &nbsp;&nbsp;"paidOut":"0.00000000",<br/>
+                            &nbsp;&nbsp;"balance":"0.00000000"<br/>
+                            &nbsp;&nbsp;}<br/>
+                            }
+                        </p>
+                        <p style="font-size:15px;font-weight:bold;margin-top:15px;">Hash Rate</p>
+                        <p style="border:1px #bbb solid;padding:5px;background:#eee">
+                            POST https://antpool.com/api/hashrate.htm
+                        </p>
+                        <p>Params:</p>
+                        <ul style="margin-top:10px;">
+                            <li>key - API key</li>
+                            <li>nonce - nonce</li>
+                            <li>signature - signature</li>
+                        </ul>
+                        <p>Returns overall hash rate in MH/s, total accepted and rejected diff one shares. Check the example below:</p>
+                        <p style="border:1px #bbb solid;padding:5px;background:#eee">
+                            {<br/>
+                            "version":"1.0",<br/>
+                            "code":0,<br/>
+                            "message":"ok",<br/>
+                            "data":<br/>
+                            &nbsp;&nbsp;{<br/>
+                            &nbsp;&nbsp;"last10m":"0",<br/>
+                            &nbsp;&nbsp;"last30m":"0",<br/>
+                            &nbsp;&nbsp;"last1h":"0",<br/>
+                            &nbsp;&nbsp;"last1d":"0",<br/>
+                            &nbsp;&nbsp;"prev10m":"0",<br/>
+                            &nbsp;&nbsp;"prev30m":"0",<br/>
+                            &nbsp;&nbsp;"prev1h":"0",<br/>
+                            &nbsp;&nbsp;"prev1d":"0",<br/>
+                            &nbsp;&nbsp;"accepted":"0",<br/>
+                            &nbsp;&nbsp;"stale":"0",<br/>
+                            &nbsp;&nbsp;"dupelicate":"0",<br/>
+                            &nbsp;&nbsp;"other":"0"<br/>
+                            &nbsp;&nbsp;}<br/>
+                            }
+                        </p>
+                        <p style="font-size:15px;font-weight:bold;margin-top:15px;">Workers' Hash Rate</p>
+                        <p style="border:1px #bbb solid;padding:5px;background:#eee">
+                            POST https://antpool.com/api/workers.htm
+                        </p>
+                        <p>Params:</p>
+                        <ul style="margin-top:10px;">
+                            <li>key - API key</li>
+                            <li>nonce - nonce</li>
+                            <li>signature - signature</li>
+                            <li>pageEnable - page enable and default is enable, 0:disable; 1:enable</li>
+                            <li>page - goto page number and default is 1</li>
+                            <li>pageSize - the number of records per page and default is 10</li>
+                        </ul>
+                        <p>Returns workers' hash rate in MH/s, total accepted and rejected diff one shares.</p>
+                        <p style="border:1px #bbb solid;padding:5px;background:#eee">
+                            {<br/>
+                            "version":"1.0",<br/>
+                            "code":0,<br/>
+                            "message":"ok",<br/>
+                            "data":<br/>
+                            &nbsp;&nbsp;{<br/>
+                            &nbsp;&nbsp;"rows":<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;[{<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"worker":"antminer_1",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"last10m":"0",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"last30m":"0",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"last1h":"0",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"last1d":"0",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"prev10m":"0",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"prev30m":"0",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"prev1h":"0",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"prev1d":"0",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"accepted":"0",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"stale":"0",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"dupelicate":"0",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"other":"0"<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}],<br/>
+                            &nbsp;&nbsp;"page":1,<br/>
+                            &nbsp;&nbsp;"totalPage":1,<br/>
+                            &nbsp;&nbsp;"pageSize":10,<br/>
+                            &nbsp;&nbsp;"totalRecord":1<br/>
+                            &nbsp;&nbsp;}<br/>
+                            }
+                        </p>
+                        <p style="font-size:15px;font-weight:bold;margin-top:15px;">Payment History</p>
+                        <p style="border:1px #bbb solid;padding:5px;background:#eee">
+                            POST https://antpool.com/api/paymentHistory.htm
+                        </p>
+                        <p>Params:</p>
+                        <ul style="margin-top:10px;">
+                            <li>key - API key</li>
+                            <li>nonce - nonce</li>
+                            <li>signature - signature</li>
+                            <li>type - payment history type and default is payout, payout: payout history; pps: PPS history; pplns: PPLNS history; p2p: P2P history</li>
+                            <li>pageEnable - page enable and default is enable, 0:disable; 1:enable</li>
+                            <li>page - goto page number and default is 1</li>
+                            <li>pageSize - the number of records per page and default is 10</li>
+                        </ul>
+                        <p>If type is payout, return to the user's payout history. Examples are as follows:</p>
+                        <p style="border:1px #bbb solid;padding:5px;background:#eee">
+                            {<br/>
+                            "version":"1.0",<br/>
+                            "code":0,<br/>
+                            "message":"ok",<br/>
+                            "data":<br/>
+                            &nbsp;&nbsp;{<br/>
+                            &nbsp;&nbsp;"rows":<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;[{<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"timestamp":"2015-01-01 00:00:00",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"walletAddress":"1Mp3atombUR6iLLYoLEdN9uPfPscsKBXfi",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"txId":"191138d1aa04f8c898139d69fc821a5e0b92b4ecb3225629012fcc1a7558736d",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"amount":"0.01"<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}],<br/>
+                            &nbsp;&nbsp;"page":1,<br/>
+                            &nbsp;&nbsp;"totalPage":1,<br/>
+                            &nbsp;&nbsp;"pageSize":10,<br/>
+                            &nbsp;&nbsp;"totalRecord":1<br/>
+                            &nbsp;&nbsp;}<br/>
+                            }
+                        </p>
+                        <p>If type is pps, return to the user's PPS history. Examples are as follows:</p>
+                        <p style="border:1px #bbb solid;padding:5px;background:#eee">
+                            {<br/>
+                            "version":"1.0",<br/>
+                            "code":0,<br/>
+                            "message":"ok",<br/>
+                            "data":<br/>
+                            &nbsp;&nbsp;{<br/>
+                            &nbsp;&nbsp;"rows":<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;[{<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"timestamp":"2015-01-01 00:00:00",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"networkDiff":"35985640265",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"diff1ShareCount":"1000",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"fee":"0.01",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"amount":"0.01"<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}],<br/>
+                            &nbsp;&nbsp;"page":1,<br/>
+                            &nbsp;&nbsp;"totalPage":1,<br/>
+                            &nbsp;&nbsp;"pageSize":10,<br/>
+                            &nbsp;&nbsp;"totalRecord":1<br/>
+                            &nbsp;&nbsp;}<br/>
+                            }
+                        </p>
+                        <p>If type is pplns, return to the user's PPLNS history. Examples are as follows:</p>
+                        <p style="border:1px #bbb solid;padding:5px;background:#eee">
+                            {<br/>
+                            "version":"1.0",<br/>
+                            "code":0,<br/>
+                            "message":"ok",<br/>
+                            "data":<br/>
+                            &nbsp;&nbsp;{<br/>
+                            &nbsp;&nbsp;"rows":<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;[{<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"timestamp":"2015-04-16 13:01:13",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"blockHeight":"352369",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"diff1ShareCount":"1000",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"type":"Block",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"amount":"0.01"<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}],<br/>
+                            &nbsp;&nbsp;"page":1,<br/>
+                            &nbsp;&nbsp;"totalPage":1,<br/>
+                            &nbsp;&nbsp;"pageSize":10,<br/>
+                            &nbsp;&nbsp;"totalRecord":1<br/>
+                            &nbsp;&nbsp;}<br/>
+                            }
+                        </p>
+                        <p>If type is solo, return to the user's Solo history. Examples are as follows:</p>
+                        <p style="border:1px #bbb solid;padding:5px;background:#eee">
+                            {<br/>
+                            "version":"1.0",<br/>
+                            "code":0,<br/>
+                            "message":"ok",<br/>
+                            "data":<br/>
+                            &nbsp;&nbsp;{<br/>
+                            &nbsp;&nbsp;"rows":<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;[{<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"timestamp":"2015-04-16 13:01:13",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"blockHeight":"352369",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"networkDiff":"49446390688",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"blockValue":"25.15273737",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"fee":"0.01",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"amount":"24.75"<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}],<br/>
+                            &nbsp;&nbsp;"page":1,<br/>
+                            &nbsp;&nbsp;"totalPage":1,<br/>
+                            &nbsp;&nbsp;"pageSize":10,<br/>
+                            &nbsp;&nbsp;"totalRecord":1<br/>
+                            &nbsp;&nbsp;}<br/>
+                            }
+                        </p>
+                        <p>If type is p2p, return to the user's P2P history. Examples are as follows:</p>
+                        <p style="border:1px #bbb solid;padding:5px;background:#eee">
+                            {<br/>
+                            "version":"1.0",<br/>
+                            "code":0,<br/>
+                            "message":"ok",<br/>
+                            "data":<br/>
+                            &nbsp;&nbsp;{<br/>
+                            &nbsp;&nbsp;"rows":<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;[{<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"timestamp":"2015-01-01 00:00:00",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"blockHeight":"336917",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"blockValue":"25.05980072",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"blockPoolValue":"0.37762711",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"diff1ShareCount":"1000",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"totalShareCount":"10000",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"amount":"0.01"<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}],<br/>
+                            &nbsp;&nbsp;"page":1,<br/>
+                            &nbsp;&nbsp;"totalPage":1,<br/>
+                            &nbsp;&nbsp;"pageSize":10,<br/>
+                            &nbsp;&nbsp;"totalRecord":1<br/>
+                            &nbsp;&nbsp;}<br/>
+                            }
+                        </p>
+                        <br/>
+                        <br/>
+                    </div>
+
+
+        </div>
+     </div>
+  </div>
+      
+  <!--==========================================================================================================================================================================-->
+    <div class="foot">
+         <div class="foot_main">
+                 <div id="bitmain" >
+                    <img src="images/antpool/logo-bitmain@2x.png" width="127" height="17" alt="BitMain"  />
+                    <div class="reginfo">Copyright BITMAIN 2015. All Rights Reserved.</div>
+                 </div>
+                 <div class="cominfo">
+                      <ul class="comUL">
+                          <li>PRODUCT</li>
+                          <li>ABOUT</li>
+                          <li>SERVICES</li>
+                          <li>SOCIAL</li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.bitmaintech.com/?utm_source=forum" target="_blank">AntMiner</a></li>
+                          <li><a href="https://www.bitmaintech.com/about.htm" target="_blank">About US</a></li>
+                          <li><a href="https://support.bitmain.com/?ticket=ST&utm_source=forum" target="_blank">Support Center</a></li>
+                          <li><a href="https://forum.bitmain.com/?ticket=ST&utm_source=forum" target="_blank">BITMAINTALK</a></li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.hashnest.com/?ticket=ST&utm_source=forum" target="_blank" >HashNest</a></li>
+                          <li><a href="https://account.bitmain.com/terms_service" target="_blank">Terms of Use</a></li>
+                          <li><a href="https://support.bitmain.com/wikis?ticket=ST&utm_source=forum" target="_blank">FAQ</a></li>
+                          <li><a href="https://twitter.com/BITMAINtech" target="_blank">Twitter</a></li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.antpool.com/?utm_source=forum" target="_blank">AntPool</a></li>
+                          <li><a href="https://www.bitmaintech.com/about.htm" target="_blank">Contact US</a></li>
+                          <li><a href="https://support.bitmain.com/questions/pending" target="_blank">Ticket</a></li>
+                          <li><a href="https://www.facebook.com/Bitmaintech.Antminer?ref=hl" target="_blank">Facebook</a></li>
+                      </ul>
+                 </div>
+         </div>
+    </div>
+
+  </section> 
+</div>
+
+</body>
+</html>

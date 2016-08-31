@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AntPool</title>
+<link rel="stylesheet" href="css/antpool/get-your-coins.css">
+<link rel="stylesheet" href="css/user/bootstrap.min.css">
+<link rel="stylesheet" href="css/user/font-awesome.min.css" />
+<link rel="stylesheet" href="css/user/animate.min.css" />
+<link rel="stylesheet" href="css/user/skin.css"/>
+<link rel="stylesheet" href="css/user/style.css"/>
+<link rel="stylesheet" href="css/user/panel.css" />
+<link rel="stylesheet" href="css/user/pace.css" />
+<link rel="stylesheet" href="css/user/offline.css" />
+<link rel="stylesheet" href="css/user/products.css">
+<link rel="stylesheet" href="css/antpool/style.css">
+<link rel="stylesheet" href="css/antpool/home.css">
+<script src="js/antpool/jquery-1.8.3.min.js"></script><script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="js/antpool/common.js"></script>  
+<script src="js/antpool/highcharts.js"></script>  
+<script src="js/antpool/home.js"></script>   
+<script src="js/antpool/systemtools.js"></script> </head>
+<body>
+<div class=" app horizontal">
+   <div class="top">
+
+          <div class="top_main">
+                <div id="logo" ><a href="home.html"><img src="images/antpool/logo@2x.png" width="217" height="53" alt="AntPool"  /></a></div>
+                <div id="nav" >  
+                    <ul class="daohangul">
+                        <li><a href="home.html" >首页</a> </li>
+                        <li><a href="dashboard.html">用户面板</a> </li>
+                        <li><a href="setting.html" class="active">设置</a> </li>
+                        <li><a href="poolStats.html">统计</a> </li>
+                        <div class="btn-group"><a data-toggle="dropdown" >区块服务  <img src="images/antpool/icon-arrow-down.png" ></a> 
+                               <ul  class="dropdown-menu ddlselect blockservice" role="menu">
+                                    <li><a href="coinbase.html">区块签名</a></li><li><a href="get-your-coins.html" style=" border:0px; height:30px;  line-height:25px;">原币</a></li>
+                             </ul>
+                      </div> <div class="btn-group" style="margin-left:-5px;">  <a data-toggle="dropdown" >帮助  <img src="images/antpool/icon-arrow-down.png" ></a>  <ul class="dropdown-menu ddlselect helpsuppt" role="menu">                                    
+                             <li><a href="support.html">帮助与支持</a></li> <li><a href="apiGuild.html">API指南</a></li>
+                                    <li><a href="https://forum.bitmain.com/" style=" border:0px; height:30px;  line-height:25px;">社区</a></li>
+                             </ul>
+                      </div>
+                    </ul>
+                </div>
+                <div class="top_right">
+                    <div class="children btn-group" ><a  data-toggle="dropdown" >
+                         <div class="cn">当前子账户</div>                            
+                           <div class="useren">
+                           <div class="en_met">antminer</div> &nbsp;
+                           <div class="sanjiao_img"></div>
+                         </div>
+                       </a>
+                        <ul  class="dropdown-menu ddlselect child_ddl" role="menu" >
+                                <li><a href="#">wen</a></li>
+                                <li><a href="#">yongliang</a></li>  <li><a href="#" >tianzhao</a></li>
+                         </ul>
+                    </div>
+                    <div class="ver_line"></div>
+                    <div class="info">
+                         <div class="headinfo"> <img src="images/antpool/icon-user-24.png" ></div>
+                         <div class="email btn-group">
+                              <a  data-toggle="dropdown" >
+                                 <span id="user"  class="en" >648800939@qq.com </span> &nbsp;<span class="sanjiao_img" style="margin-top:15px;"></span></a>
+                                  <ul  class="dropdown-menu ddlselect userst" role="menu">
+                                     <li><a href="#">用户中心</a></li>
+                                     <li><a href="#" style=" border:0px; height:30px;  line-height:25px;">退出</a></li>
+                                  </ul>
+                            </div> 
+                         <div class="btn-group"  >
+                                <div class="language" data-toggle="dropdown">EN</div>
+                                 <ul  class="dropdown-menu ddlselect lngst " role="menu">
+                                     <li><a href="#">English</a></li>
+                                     <li><a href="#" style=" border:0px; height:30px;  line-height:25px;">简体中文</a></li>
+                                  </ul>
+                         </div>
+                    </div>
+                </div>
+          </div>
+   </div>
+
+  <!--=======================================================================================================================================================================--> 
+  <section class="layout">
+   <div class="middle">
+    <div class="md_content">
+           <div class="md_content">
+             <div class="apicontent">
+                  <div class="APItitle">VIP申请 <span>蚂蚁矿池向大算力用户提供独立的接入IP，在矿池遭受攻击时可以避免损失</span></div>
+                  <div class="api_md">
+                    <table >
+                         <tr>                                                 
+                           <td width="25%" style="line-height:35px;">联系电话 &nbsp;<input  type="text" /></td>
+                           <td width="20%" style="line-height:35px;">QQ &nbsp; <input  type="text" /></td>
+                           <td width="43%" style="line-height:35px;">备注 &nbsp; <input  type="text"  style="width:70%"/></td>
+                           <td valign="top"  width="12%" >
+                               <button class="bigbutton"   style="float:right; text-align:right;">申请</button>
+                            </td>
+                         </tr>
+                    </table>
+                  </div>
+                  <div style=" margin-top:30px;">
+                     <div style=" float:left; font-size:16px;"> 申请结果</div>
+                   <!--   <div style=" float:right; margin-right:4px;"> 
+                         <input type="button" class="btn24" data-toggle="modal"  data-target="#newUserID"  value="新增用户ID"/>
+                     </div> -->
+                  </div>
+                   <div style=" clear:both;">
+                      <div class="rq_result">
+                              <table class="table table-bordered table-striped responsive">
+                                  <thead>
+                                    <tr>
+                                      <th colspan="4">申请列表</th>
+                                    </tr>
+                                  </thead>
+                                  <thead>
+                                    <tr>
+                                      <th width="25%">申请ID</th>
+                                      <th width="15%">备注</th>
+                                      <th  width="10%">状态</th>
+                                      <th  width="50%">审核结果</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                        <tr>
+                                          <td class="font_eqwidth">01020150814072102351W1hWT9Pn067D</td>
+                                          <td class="tb_text_left">我测试的</td>
+                                          <td>   等待处理</td>
+                                          <td class="tb_text_left"> </td>
+                                        </tr>
+                                      
+                                        <tr>
+                                          <td class="font_eqwidth">01020150703084224687f35y9c93064B</td>
+                                          <td class="tb_text_left">测试申请，请无视哈</td>
+                                          <td> 已拒绝  </td>
+                                          <td class="tb_text_left">  为了提供更加稳定的挖矿服务，首批VIP数量有限，您的算力排行在后位，暂时不能给与您VIP账户通道，我们正在建设更多的节点，将会在建好后在进行发放，感谢您对蚂蚁矿池的支持。
+                    In order to provide more stable mining service, the quantity is limited for the first batch of VIP. 
+                    Sorry to inform you that we cannot provide the VIP for you right now since your hash rate is smaller than others. 
+                    But we're deploying more service nodes at the moment and we'll provide it to you once it's finished. Thanks for your great support in Antpool </td>
+                                        </tr>
+                                      
+                                        <tr>
+                                          <td class="font_eqwidth">01020150615111026022M9ASFCbR063B</td>
+                                          <td  class="tb_text_left"></td>
+                                          <td>已拒绝 </td> 
+                                          <td class="tb_text_left">    为了提供更加稳定的挖矿服务，首批VIP数量有限，您的算力排行在后位，暂时不能给与您VIP账户通道，我们正在建设更多的节点，将会在建好后在进行发放，感谢您对蚂蚁矿池的支持。
+                    In order to provide more stable mining service, the quantity is limited for the first batch of VIP. 
+                    Sorry to inform you that we cannot provide the VIP for you right now since your hash rate is smaller than others. 
+                    But we're deploying more service nodes at the moment and we'll provide it to you once it's finished. Thanks for your great support in Antpool.</td>
+                                        </tr> 
+                                  </tbody>
+                                </table>
+                      </div>
+                  </div>
+             </div>
+       </div>
+     </div>
+ </div>
+ 
+  <!--==========================================================================================================================================================================-->
+   
+    <div class="foot">
+         <div class="foot_main">
+                 <div id="bitmain" >
+                    <img src="images/antpool/logo-bitmain@2x.png" width="127" height="17" alt="BitMain"  />
+                    <div class="reginfo">Copyright BITMAIN 2015. All Rights Reserved.</div>
+                 </div>
+                 <div class="cominfo">
+                      <ul class="comUL">
+                          <li>PRODUCT</li>
+                          <li>ABOUT</li>
+                          <li>SERVICES</li>
+                          <li>SOCIAL</li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.bitmaintech.com/?utm_source=forum" target="_blank">AntMiner</a></li>
+                          <li><a href="https://www.bitmaintech.com/about.htm" target="_blank">About US</a></li>
+                          <li><a href="https://support.bitmain.com/?ticket=ST&utm_source=forum" target="_blank">Support Center</a></li>
+                          <li><a href="https://forum.bitmain.com/?ticket=ST&utm_source=forum" target="_blank">BITMAINTALK</a></li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.hashnest.com/?ticket=ST&utm_source=forum" target="_blank" >HashNest</a></li>
+                          <li><a href="https://account.bitmain.com/terms_service" target="_blank">Terms of Use</a></li>
+                          <li><a href="https://support.bitmain.com/wikis?ticket=ST&utm_source=forum" target="_blank">FAQ</a></li>
+                          <li><a href="https://twitter.com/BITMAINtech" target="_blank">Twitter</a></li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.antpool.com/?utm_source=forum" target="_blank">AntPool</a></li>
+                          <li><a href="https://www.bitmaintech.com/about.htm" target="_blank">Contact US</a></li>
+                          <li><a href="https://support.bitmain.com/questions/pending" target="_blank">Ticket</a></li>
+                          <li><a href="https://www.facebook.com/Bitmaintech.Antminer?ref=hl" target="_blank">Facebook</a></li>
+                      </ul>
+                 </div>
+         </div>
+   </div>
+
+<!--模态窗口 添加用户ID-->
+<div class="modal fade" id="newUserID">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close"  
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+               添加用户ID
+            </h4>
+         </div>
+         <div class="modal-body">
+               <table style=" margin-top:10px;">
+                 <tr>
+                    <td>
+                         <input id="Groupname" type="text" placeholder="新的用户ID" />
+                         <button class="bigbutton" data-dismiss="modal" style=" margin-left:20px; ">创建</button>
+                    </td>
+                 </tr>   
+                 <tr>
+                    <td>
+                         <span style=" font-size:12px; color:#aaaaaa;">&nbsp;用户最多可创建用户ID数为50</span>
+                    </td>
+                 </tr>               
+               </table>
+         </div>
+      </div> 
+</div> 
+</div>
+
+  </section>
+</div>
+</body>
+</html>

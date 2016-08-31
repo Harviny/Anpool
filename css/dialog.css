@@ -1,0 +1,73 @@
+.dialog-overlay {
+	BACKGROUND: gray;
+	FILTER: alpha(opacity : 50);
+	opacity: 0.5
+}
+
+.dialog {
+	PADDING-RIGHT: 2px;
+	PADDING-LEFT: 2px;
+	BACKGROUND: gray;
+	FILTER: alpha(opacity : 70);
+	PADDING-BOTTOM: 2px;
+	PADDING-TOP: 2px;
+	opacity: 0.9;
+	border-radius: 3px;
+	-moz-border-radius: 1px;
+	-webkit-border-radius: 1px
+}
+
+.dialog .bar {
+	PADDING-RIGHT: 6px;
+	PADDING-LEFT: 6px;
+	MIN-HEIGHT: 30px;
+	BACKGROUND: #5d5d5d;
+	PADDING-BOTTOM: 6px;
+	CURSOR: move;
+	COLOR: #fff;
+	PADDING-TOP: 6px
+}
+
+.dialog .bar .title {
+	FLOAT: left;
+	MARGIN-RIGHT: 10px
+}
+
+.dialog .bar .close {
+	FLOAT: right;
+	CURSOR: pointer;
+	TEXT-DECORATION: underline;
+	margin-top: -5px;
+}
+
+.dialog .content {
+	PADDING-RIGHT: 10px;
+	PADDING-LEFT: 10px;
+	BACKGROUND: #fff;
+	PADDING-BOTTOM: 10px;
+	PADDING-TOP: 10px
+}
+
+.dialog IFRAME {
+	WIDTH: 100%;
+	HEIGHT: 100%
+}
+
+.content IMG {
+	MAX-WIDTH: 700px;
+	OVERFLOW: auto;
+	MAX-HEIGHT: 500px
+}
+
+.dialog_table {
+	width:100%;
+}
+
+.dialog_table tr {
+	
+}
+
+.dialog_table td {
+	height: 40px;
+	vertical-align:middle;
+}

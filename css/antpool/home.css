@@ -1,0 +1,173 @@
+@charset "UTF-8";
+body {font-weight:100;  color: #888888;font-size:14px; -webkit-font-smoothing:antialiased; font-family: "微软雅黑","montserratregular";}
+.layout{ position:  relative!important;}
+.horizontal-content{ margin: 0 auto;}
+.btndel{  float:left;}
+.btndel input{ background: url(../../images/antpool/icon-del-16.png) no-repeat  20px #cc3300;  height: 30px; padding-left: 50px; padding-right: 30px; font-size: 16px; text-align: center; line-height: 18px;border-radius: 3px; border: solid 1px #cc3300; color:white;outline: none;}
+.btndel input:hover{ background: url(../../images/antpool/icon-del-16.png) no-repeat  20px #DB5B2A; border: solid 1px #DB5B2A; }
+.btnExport{  float:right; border:solid 0px red; margin-top: 13px;}
+.btnExport input{ height: 26px; line-height: 23px;  padding-left: 15px;  padding-right: 15px; font-size: 12px; background: #3C78C2;border-radius: 3px; border: solid 1px #3C78C2; color:white;outline: none; }
+.btnExport input:hover{ background: #7799BB ; border: solid 1px #7799BB; }
+.md_content{border:solid 0px red; width:1180px; margin: 0 auto;}
+.md1{ margin-top: 20px; width: 1180px;height: 160px; }
+.md1_left{width: 580px; float: left; border: solid 0px red;height: 160px; }
+.md1_right{width: 580px; float: right;border: solid 0px red;height: 160px;  }
+.phs{width: 280px; float: left; height: 153px;line-height: 120px;text-align: center;background:#f3f4f7; color: #262626; font-size: 36px; font-weight: bold; }
+.minernum{width: 280px; float: right; height: 153px; line-height: 120px;text-align: center;background:#f3f4f7;color: #262626;font-size: 36px;  font-weight: bold; }
+.explain{ font-size: 16px;font-weight:normal; color: #888888;  height: 20px; line-height: 20px; margin-top: -35px; }
+.slidexy{  margin-bottom: 10px;}
+.slidexy li{ border-radius: 0px; border:0px;  background: #DCDCDC; width: 12px; height: 12px; margin-left: 5px;}
+.slidexy .active{width: 12px; height: 12px; border:0px;background:#052748; margin: 1px; margin-left: 5px; }
+.md2{margin-top: 20px; width: 1180px;height: 300px; }
+.md2_left{width: 580px; float: left; height: 300px; }
+.md2_right{width: 580px; float: right;height: 300px;  }
+.charttitle{height:10%; margin-left: 5px; color: #262626; font-size: 16px;}
+.chartmark{ margin-left: 60px; margin-top: -70px; border: solid 0px red; position: absolute;}
+#chart_container{width: 100%; height: 90%; padding: 0px; margin: 0px;  clear: both;  font-size: 12px;}
+.highcharts-series{ height: 400px; max-height: 450px;}
+.md2_con{ width: 100%; height: 50%;border: solid 0px red;text-decoration: none;}
+.md2_title{height:18%;  color: #262626; font-size: 16px;}
+.md2_text{ height: 105px; font-family: Arial;color: #888888; padding-top:13px;padding-left: 20px;border: solid 1px #E6E9EE;}
+.md2_text li {list-style: none;margin-top: 4px; width:70%; }
+.md2_text_font{ font-family: "微软雅黑","montserratregular"; font-size: 14px;}
+.md2_text_font table td{ padding:2px; }
+
+.md2_text a{ color: #888888; font-family: Arial; }
+.md2_text a:hover{ text-decoration: underline;}
+.friendlink{width:100%; background:#e6e9ee; height: 108px; margin-top: 35px; }
+.fl_content{width:1180px;margin:0 auto; }
+.fl_title{border:solid 0px red; padding-top: 25px;color: #262626; font-size: 16px; }
+.fl_link{ height: 60px; line-height: 58px;margin-left: -25px;}
+.fl_link li{ list-style: none; float: left; border:solid 0px red; margin-left: 25px;}
+.fl_link li a{ font-size: 14px; color: #888888}  
+.md_top{background: #e6e9ee; height: 50px;}
+.chr_link{ width:1180px; margin: 0 auto; height: 50px; border: solid 0px red;}
+.chr_link li{ list-style:none; float:left; padding-top:10px;}
+.chr_link li a{ display:block; text-decoration:none;height: 40px;   line-height: 40px;  padding-left:10px; padding-right: 10px; border-radius: 6px 6px 0px 0px; border:solid 0px red;  font-size: 16px; color: #888888;}
+.chr_link li .active{ background: #ffffff; color:#262626;}
+.chr_link li a:hover{ background: #ffffff; color:#262626;}
+.noticeli{overflow: hidden; background:  url(../../images/antpool/icon-loudspeaker-32.png) no-repeat 15px 17px; width: 200px;  border: solid 0px red; height: 50px; }
+.noticeli a{color:#7799BB!important;white-space: nowrap; border: solid 0px red; width: 155px; float: right;  line-height: 41px;   height: 41px;  margin-top: -5px!important;  }
+.noticeli a:hover{ background:  url(../../images/antpool/icon-loudspeaker-32.png) no-repeat 15px center;background: #e6e9ee!important;color: #888888!important; }
+.noticeli .movetop{ margin-top:-20px!important;}
+.db_content{ border:solid 0px red; width:1180px; margin: 0 auto; height: 655px;}
+.db_left{float: left; width:580px; height: 645px;}
+.db_right{float: right; width:580px; height: 645px;}  
+.db_lr_top{ height: 280px; border:solid 0px red;  margin-top: 20px;}
+.db_lr_foot{height:305px;border:solid 0px red; margin-top: 20px;margin-top: 10px; }
+.db_lr_top li{list-style: none;height: 83px; width: 100%; background: #f3f4f7;margin-top: 10px; }
+.db_lr_top li div{ width:50%;  border:solid 0px red; height: 83px; line-height: 83px; float: left;}
+.dlt_left{color:#888888;font-size: 16px; padding-left: 40px; }
+.dlt_right{font-size: 24px; color:#262626; float: right; padding-right: 35px;}
+.dlt_right span{ float: right; font-weight: bold;}
+.dlt_right span:first-child{ color:#aaa }
+.mycal li{list-style: none; background: #ffffff; float: left; color:#7799BB; width: 100px; height: 30px; line-height: 30px; text-align: center; border-right: solid 1px #e6e9ee; border-top: solid 1px #e6e9ee; border-bottom: solid 1px #e6e9ee;margin-top: -6px; cursor: pointer;}
+.mycal li:first-child{ border-left: solid 1px #e6e9ee;}
+.mycal .active{ background: #E6E9EE; margin-bottom: 10px;}
+.db_lr_foot span{ display: block; height:150px; float: left; }
+.dlf_1{ width: 428px; }.dlf_2{margin-left:2px; width: 150px;}
+.dlf_3{width:150px; margin-top: 2px;} .dlf_4{margin-left:2px; width: 150px;margin-top: 2px;} .dlf_5{margin-left:2px; width: 276px;margin-top: 2px;}
+.minercontent{border:solid 0px red; width:1180px; margin: 0 auto; margin-top: 20px;}
+.mt_top{ width: 100%;}
+.mt_center{width: 100%; padding-top: 20px; border: solid 0px red; clear: both;}
+.mt_bottom{width: 100%; padding-top: 40px; margin-bottom: 40px; border: solid 0px red;clear: both;}
+.mtop_left{width: 160px;  float: left; }
+.mtop_right{width: 1000px; margin-left: 20px;border: solid 0px red; float: left; color:#888888}
+.mtop_left:first-child{width: 160px;border-top: solid 1px #e6e9ee;  }
+.mtop_left li{border-radius: 0px;list-style: none; border-left: solid 1px #e6e9ee;border-right: solid 1px #e6e9ee;text-align: center; color: #888888; border-bottom: solid 1px #e6e9ee; height: 40px; line-height: 40px; cursor: pointer; background: #f3f4f7;}
+.mtop_left li a{ border-radius: 0px;display: block;color: #888888;width: 159px; height: 40px; line-height: 40px;color: #888888; background: #f3f4f7; border-right: solid 1px #e6e9ee;  border-bottom: solid 1px #e6e9ee;}
+.mtop_left li.active{ background: #ffffff;}
+.mtop_left li a.active{ background: #ffffff;}
+.opt{ cursor: pointer; border: solid 0px red;  margin-right: 10px;}
+.optselect{ border-radius: 0px; padding: 0px;min-width:110px; border:solid 0px red;  margin-left: -15px;  margin-top: 7px; color: #888888}  /* 下拉菜单 */
+.optselect li{border-radius: 0px; width:100%;height:30px;margin: 0 auto;border-left: solid 1px #e6e9ee; border-right: solid 1px #e6e9ee; border-bottom: solid 1px #e6e9ee; line-height: 30px; text-align: center;  cursor: pointer; }
+.optselect li:first-child{ border-top: solid 1px #e6e9ee;}
+.optselect li:hover{ background: #F9FAFC;}
+#optsearch{ width: 185px; border: solid 1px #e6e9ee; height: 28px; line-height: 25px; padding-left: 5px; float: left;}
+.search_img{ display: block; width: 20px; height: 28px;  position: absolute; border: solid 0px red;background: url(../../images/antpool/icon-search-32.png) no-repeat   center;float: right; margin-left: 162px; }
+.minertable{ clear: both; width: 100%; padding-top: 10px;} 
+.minertable table{ width: 100%; }
+.minertable table td{border: solid 1px #e6e9ee; height: 27px; line-height: 27px; text-align: center; font-family:"微软雅黑","montserratregular"; }
+.mt_topfoot{ height: 35px; margin-top: 20px; }
+.mt_center div{ float: left;width: 380px; height: 120px;  background: #e6e9ee; margin-left: 20px;}
+.mt_center div:first-child{margin-left:0px;}
+.apicontent{ margin-top: 20px;}
+.APItitle{color: #262626; font-size: 16px;}
+.APItitle span{color: #888888; font-size: 14px; padding-left: 30px;}
+.api_md{margin-top: 15px; border: solid 0px red; font-size: 14px; color: #888888!important; font-weight:100;}
+.api_md table { width: 100%; text-align: left;}
+.api_md table td{ padding-right: 5px;border:solid 0px red; font-family: "微软雅黑","montserratregular";  text-align: left; vertical-align:  top!important;}
+.api_md input:first-child{margin-top: 0px;}
+.api_md a{  border: solid 0px red;  display:block; width: 34px; height: 34px;line-height: 32px; font-size: 24px;  border: solid 1px #7799bb; color: #7799bb; text-align: center;}
+#apitext  td{border: solid 0px red;  padding-bottom: 10px;}
+.power{ text-align: left;}
+.power input{ width: 15px; height: 15px;height: 20px;border: solid 0px red; }
+.apiGuild{margin-top: 20px; }
+.apitable {margin-top: 30px; }
+.apitable table{margin-top: 20px; }
+.rq_result{ width:100%; padding-top: 10px; margin-bottom: 80px; }
+.rq_result textarea{ width:100%;  height: 400px; outline: none;}
+.set_email{ padding-left: 10px; color: #262626;}
+ .givepower{width: 90%;  margin: 0 auto;margin-top: 20px; margin-bottom: 20px; border:  solid 0px red; clear: both;}
+ .givepower td,.givepower th{ border: solid 0px red; text-align: left; width: 50%; padding: 5px;  padding-left: 0px; font-size: 14px;}
+ .checkbox-inline { font-weight:lighter; padding-left: 25px!important;  }
+ .editpower{width: 95%;  margin:0 auto;margin-top: 20px; margin-bottom: 20px;}
+ .editpower th{ text-align: left; border: 0px!important;font-size: 14px;}
+ .editpower td{text-align: left; border:0px!important;  font-size: 14px; color: #888888;}
+ .hidtable{ width: 20px;height: 15px; display: block;background: url(../../images/antpool/icon-more.png) no-repeat  right; cursor: pointer; float: right; }
+ .pooltable{padding-top:30px; clear:both; padding-bottom: 20px; }
+ .panel-heading{ width: 96%; margin:0 auto; font-size: 14px; color: #262626; margin-top: 20px;}
+ .cuttitle{ display: block; margin:0 auto;   font-size: 12px;}/*word-wrap: break-word; */
+ .widget_content{ margin:0 auto; width: 100%; color: #262626}
+ .luckytable{ width:60%;margin-bottom: 15px;}
+ .luckytable td{ border: solid 0px black; text-align: center;color: #262626}
+ .luckline{color:#262626;  width:200px; margin-left:10px; clear:both; font-size:14px; }
+.blockhit{ width: 100%; background:#e6e9ee; height: 60px; margin: 0 auto;}
+.block_top{ width: 1180px; margin: 0 auto; height: 60px;}
+.blocksig{ float: left; color: #262626;  font-size: 20px; font-family: 微软雅黑; line-height: 60px;}
+.block_explain{ float: left; color: #888; font-size: 14px; margin-left:20px; border: solid 0px red; margin-top: 23px;}
+.blocklink li a{ padding-right: 15px; padding-left: 15px;}
+.block_info{width:1180px; margin: 0 auto;}
+.block_ad{ width:100%; margin: 0 auto; clear: both; background: #e6e9ee; margin-top: 20px; height: 200px;}
+.block_tb{ margin-top: 20px;}
+.auctionok{ margin-left: 5px;}
+.titlegrey{ font-weight: bold;color: #798595; text-align: center;}
+.sale{margin-top:25px; height: 115px; width:810px; border:solid 0px red; margin-left: auto; margin-right: auto; text-align: center;}
+.sale li{ background: url(../../images/antpool/step-bg.png) no-repeat  center;list-style: none;  width:116px; height: 116px;   float: left; color: #888; }
+.sale .twoli{ background: url(../../images/antpool/icon-guide.png) no-repeat  center; width:103px;border:solid 0px red;}
+.sale li div{ width:100%; height:57px; clear: both; text-align: center; }
+.sale li div:first-child{ font-size: 24px;border:solid 0px red;    font-weight: bold; line-height: 70px;}
+.sale li div:last-child{ font-size: 14px;border:solid 0px red;}
+.sale .active{  background: url(../../images/antpool/step-bg-solid.png) no-repeat  center; color:white;}
+.sale .twoliActive{ background: url(../../images/antpool/icon-guide2.png) no-repeat  center;}
+.sale_info{ margin-top:40px; text-align: left; margin-bottom: 100px;}
+.sale_info table:first-child th:first-child{width: 500px; border:solid 0px #e6e9ee; text-align: left!important; padding-bottom: 10px;}
+.sale_info table:first-child th:last-child{width: 680px; border:solid 0px #e6e9ee;text-align: left!important; padding-bottom: 10px;}
+.sale_info .orderTB_info {width: 480px; height: 260px; border:solid 1px #e6e9ee; vertical-align: baseline!important;}
+.sale_info .order_info {width: 680px; height: 260px;border:solid 1px #e6e9ee; padding: 20px; text-align: left; }
+.sale_info .order_info2 {width: 680px;text-align: left; }
+.sale_info  .order_li{border:solid 1px #e6e9ee; height: 260px;  margin-left:20px; padding: 20px; text-align: left; padding-left:30px;}
+.orderTB{ margin-top:10px;}
+.orderTB tr td{text-align: left; padding-left: 20px; padding-top: 10px;}
+.orderTB tr td:first-child{ border:solid 0px red; width:30%;}
+/*.orderTB tr:nth-child(4)  td, .orderTB  tr:nth-child(5) td,.orderTB tr:nth-child(6) td{  color:#262626; font-weight: bold;}*/
+.blod_black{font-weight: bold; color: #262626;}
+.oi_child1{width:420px; border:solid 0px red; height:200px; float:left;}
+.oi_child2{width:200px;border:solid 0px red;height:200px;float:right;}
+.cd1_st{ margin-left: 20px;border:solid 0px red; display: block; width: 315px; float: right;}
+.oi_child1 div{ margin-top: 7px;}
+.oi_child1 div:first-child{margin-top: 0px;}
+.acTB{ margin-top:10px;}
+.acTB tr td{ padding-top: 11px; border: solid 0px red; text-align: left;padding-right: 20px;}
+.acTB tr td:first-child{ border:solid 0px red; width:22%; padding-right: 20px; text-align: right;}
+.block_data{ background: url(../../images/antpool/icon-arrow-down.png) no-repeat  160px center; width: 186px!important;}
+.order_info_li{height:auto!important; padding-top:20px!important; padding-left: 25px!important; padding-right: 5px!important;}
+.order_info_li li{ line-height: 25px;padding-top:1px; border: solid 0px red; font-size: 12px; color: #888; padding-left: 5px;  text-align: justify; }
+.antpool-paper{padding:0px;}
+.page_menu{padding:0;}
+.pwEdit{ width:90%; border:solid 0px red; margin: 0 auto;}
+.pwEdit tr td:last-child{ width:30%; border: solid 0px red; text-align: right; padding-right: 5px; padding-top: 1px;}
+.pwEdit tr td:first-child{ width:70%; border: solid 0px red; text-align: left; padding-left: 0px; cursor: pointer; padding-top: 1px;}
+.pwEdit tr td a:first-child{ margin-right: 5px;}
+.setTB tr td div{ float:  right; border:solid 1px red; width: 40%; margin: 0 auto; margin-left: 8%; clear:  both;}
+.page_menu li ul{padding: 0px;}

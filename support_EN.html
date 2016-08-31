@@ -1,0 +1,590 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AntPool</title>
+<link rel="stylesheet" href="css/antpool/get-your-coins.css">
+<link rel="stylesheet" href="css/user/bootstrap.min.css">
+<link rel="stylesheet" href="css/user/font-awesome.min.css" />
+<link rel="stylesheet" href="css/user/animate.min.css" />
+<link rel="stylesheet" href="css/user/skin.css"/>
+<link rel="stylesheet" href="css/user/style.css"/>
+<link rel="stylesheet" href="css/user/panel.css" />
+<link rel="stylesheet" href="css/user/pace.css" />
+<link rel="stylesheet" href="css/user/offline.css" />
+<link rel="stylesheet" href="css/user/products.css">
+<link rel="stylesheet" href="css/antpool/style.css">
+<link rel="stylesheet" href="css/antpool/home.css">
+<script src="js/antpool/jquery-1.8.3.min.js"></script><script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="js/antpool/common.js"></script>  
+<script src="js/antpool/highcharts.js"></script>  
+<script src="js/antpool/home.js"></script>   
+<script src="js/antpool/systemtools.js"></script>
+<script src="js/user/jquery.placeholder.js"></script>
+<script src="js/user/jquery.bootstrap-growl.min.js"></script>
+<script src="js/user/bootstrap-alert.js"></script>
+<script src="js/systemtools.js"></script>
+<script src="js/user/products.js"></script>
+<script src="js/math_base.js"></script>
+<script src="js/user/coin.js"></script>
+
+
+<link rel="stylesheet" href="css/article.css">
+<script src="/js/ap_btc.js" type="text/javascript"></script>
+
+</head>
+<body>
+<div class=" app horizontal">
+<script type="text/javascript">
+    var num=0;
+    $(function() {
+        $("#navId > li").mouseenter(function(){
+            $("#navId > li").removeClass("navactive");
+            $(this).addClass("navactive");
+        });
+        
+        $("#navId > li").mouseleave(function(){
+            $("#navId > li").removeClass("navactive");
+        });
+        
+        $("#navId > li").click(function(){
+            $("#navId > li").removeClass("navactive");
+            $(this).addClass("navactive");
+        });
+        
+        f_get_navigation_data("/");
+        f_get_notice("/");
+    });
+    
+    function f_get_navigation_data(baseUrl) {
+        $.ajax({
+            url: baseUrl+'webService.htm',
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                $("#networkDiffSpan").html(data.Data.homeForm.networkDiff);
+                $("#blockNumberSpan").html(data.Data.homeForm.blockNumber);
+                $("#balanceSpan").html(data.Data.user_DashboardForm.accountBalance);
+                $("#span10m").html(data.Data.user_DashboardForm.hsLast5m);
+                $("#span30m").html(data.Data.user_DashboardForm.hsLast15m);
+                $("#span1h").html(data.Data.user_DashboardForm.hsLast1h);
+                $("#span1d").html(data.Data.user_DashboardForm.hsLast1d);
+            },
+            error: function() {
+                
+            }
+        });
+    }
+    
+    function f_get_notice(baseUrl) {
+        var count;
+        $.ajax({
+            url: baseUrl+'webService.htm?m=notice',
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                var newList = data.Data.newsList;
+                var locale = data.Data.locale;
+                //count = data.Data.newsList.length;
+                if(locale == "zh") {
+                    count = 2;
+                } else if(locale == "ru") {
+                    count = 1;
+                } else {
+                    count = 1;
+                }
+                if(count > 0) {
+                    var str = "";
+                    if(locale == "zh") {
+                        str += '<li><a href="http://shang.qq.com/wpa/qunwpa?idkey=1294b3f67be569924fe1fbe10a2c8af1bedb24dafdba635a1eea3fa4e348744b" target="_blank">官方QQ群: 227819626</a></li>';
+                        str += '<li><a href="https://www.hashnest.com/l/VuCSIcAaJeo" target="_blank">PACMIC V3上线，年化收益率25%</a></li>';
+                    } else if(locale == "ru") {
+                        str += '<li><a href="https://www.hashnest.com/l/VuCSIcAaJeo" target="_blank">ПАКМИК 3 доступен, средняя доходность 25%</a></li>';
+                    } else {
+                        str += '<li><a href="https://www.hashnest.com/l/VuCSIcAaJeo" target="_blank">PACMIC V3, the annual yield of 25%</a></li>';
+                    }
+                    /*for(var i=0;i<newList.length;i++){
+                        if(locale == "zh"){
+                            str += '<li><a href="'+baseUrl+'poolNews.htm?id='+newList[i].id+'">'+newList[i].title_zh+'</a></li>';
+                        } else {
+                            str += '<li><a href="'+baseUrl+'poolNews.htm?id='+newList[i].id+'">'+newList[i].title+'</a></li>';
+                        }
+                    }*/
+                    $("#noticeul").html(str);
+                    
+                    function autoplay(){
+                        if(num >= count){
+                            $('#noticeul li').eq(0).css('top',count*30);
+                            $('#noticeul').stop().animate({top:-num*30},function(){
+                                $('#noticeul li').eq(0).css('top',0);
+                                $('#noticeul').css('top',0);
+                                num = 0;
+                            })
+                        }else{
+                            $('#noticeul').stop().animate({top:-num*30});
+                        }
+                        num++;
+                    }
+                    
+                    $('#noticeul li').mouseover(function(e) {
+                        clearInterval(mytime);
+                        var myindex=$(this).index();
+                        $(this).addClass('current').siblings().removeClass();
+                        $('#noticeul').stop().animate({top:-myindex*30})
+                        clearInterval(mytime);
+                        num=$(this).index()+1;
+                    }).mouseout(function(e) {
+                        mytime=setInterval(autoplay,1500);
+                    });
+                    var mytime=setInterval(autoplay,1500);
+                    $(".notice").css("display","block");
+                } else {
+                    $(".notice").css("display","none");
+                }
+            },
+            error: function() {
+                
+            }
+        });
+    }
+    
+    function f_switch_user(_userId) {
+        _userId = encodeURI(_userId);
+        _userId = _userId.replace(/\+/g,'%2B');
+        //var nowlocation = window.location.href;
+        var nowlocation = "/user/dashboard.htm";
+        var paramIndex = nowlocation.indexOf("?");
+        if(paramIndex != "-1") {
+            nowlocation = nowlocation.substring(0, paramIndex);
+        }
+        nowlocation = nowlocation + "?userId="+_userId;
+        
+        window.location.href = nowlocation;
+    }
+    
+    function f_switch_user_antrouter(_userId) {
+        _userId = encodeURI(_userId);
+        _userId = _userId.replace(/\+/g,'%2B');
+        //var nowlocation = window.location.href;
+        var nowlocation = "/user/antRouter.htm";
+        var paramIndex = nowlocation.indexOf("?");
+        if(paramIndex != "-1") {
+            nowlocation = nowlocation.substring(0, paramIndex);
+        }
+        nowlocation = nowlocation + "?userId="+_userId;
+        
+        window.location.href = nowlocation;
+    }
+</script>
+
+<div class="top">
+          <div class="top_main">
+               <div id="logo" ><a href="home.html"><img src="images/antpool/logo@2x.png" width="217" height="53" alt="AntPool"  /></a></div>
+                <div id="nav" >  
+                    <ul class="daohangul">
+                        <li><a href="home.html"  >首页</a> </li>
+                        <li><a href="dashboard.html">用户面板</a> </li>
+                        <li><a href="setting.html">设置</a> </li>
+                        <li><a href="poolStats.html">统计</a> </li>
+                        <div class="btn-group">                    
+                             <a data-toggle="dropdown" >区块服务  <img src="images/antpool/icon-arrow-down.png" ></a> 
+                               <ul  class="dropdown-menu ddlselect blockservice" role="menu">
+                                    <li><a href="coinbase.html" >区块签名</a></li>
+                                    <li><a href="get-your-coins.html" style=" border:0px; height:30px;  line-height:25px;">原币</a></li>
+                             </ul>
+                      </div> <div class="btn-group" style="margin-left:-5px;">
+                            <a data-toggle="dropdown" class="active">帮助  <img src="images/antpool/icon-arrow-down.png" ></a>  <ul class="dropdown-menu ddlselect helpsuppt" role="menu">                                    
+                             <li><a href="support.html">帮助与支持</a></li> <li><a href="apiGuild.html">API指南</a></li>
+                                    <li><a href="https://forum.bitmain.com/" style=" border:0px; height:30px;  line-height:25px;">社区</a></li>
+
+                             </ul>
+                      </div>
+                    </ul>
+                </div>
+                <div class="top_right">
+                    <div class="children btn-group" >
+                       <a  data-toggle="dropdown" >
+                         <div class="cn">当前子账户</div>                            
+                           <div class="useren">
+                           <div class="en_met">antminer</div> &nbsp;
+                           <div class="sanjiao_img"></div>
+                         </div>
+                       </a>
+                        <ul  class="dropdown-menu ddlselect child_ddl" role="menu" >
+                                <li><a href="#">wen</a></li>
+                                <li><a href="#">yongliang</a></li>  <li><a href="#" >tianzhao</a></li>
+                         </ul>
+                    </div>
+                    <div class="ver_line"></div>
+                    <div class="info">
+                         <div class="headinfo"> <img src="images/antpool/icon-user-24.png" ></div>
+                         <div class="email btn-group">
+                              <a  data-toggle="dropdown" >
+                                 <span id="user"  class="en" >648800939@qq.com </span> &nbsp;<span class="sanjiao_img" style="margin-top:15px;"></span></a>
+                                  <ul  class="dropdown-menu ddlselect userst" role="menu">
+                                     <li><a href="#">用户中心</a></li>
+                                     <li><a href="#" style=" border:0px; height:30px;  line-height:25px;">退出</a></li>
+                                  </ul>
+                            </div> 
+                         <div class="btn-group"  >
+                                <div class="language" data-toggle="dropdown">EN</div>
+                                 <ul  class="dropdown-menu ddlselect lngst " role="menu">
+                                     <li><a href="support_EN.html">English</a></li>
+                                     <li><a href="support.html" >简体中文</a></li>
+                                     <li><a href="support_py.html" style=" border:0px; height:30px;  line-height:25px;"> русский</a></li>
+                                  </ul>
+                         </div>
+                    </div>
+                </div>
+          </div>
+   </div>
+  <!--=======================================================================================================================================================================--> 
+ <section class="layout">
+   <div class="horizontal-content">
+     <div class="middle">
+     <div class="md_content" >
+                <div class="row" style="margin-bottom:3px;margin-left:3px;">
+                   <div class="blocksig">Support</div>
+                </div>
+                <div id="page_body" class="page-b">
+                  <div class="container">
+                    <div style="position: relative; top:0px; left: auto;" class="left_bar">
+                      <ul class="page_menu" id="article_menu">
+                        <li class="parent parent_cur"><a class="" href="#help_1">Overview</a>
+                          <ul style="display: none;">
+                            <li><a href="#help_1_1" class="">Mining Mode</a></li>
+                            <li><a href="#help_1_2" class="">Configuration</a></li>
+                            <li><a href="#help_1_3" class="">Payment Method</a></li>
+                          </ul>
+                        </li>
+                        <li class="parent"><a class="" href="#help_2">Mining Tutorials</a>
+                          <ul style="display: none;">
+                            <li><a href="#help_2_1" class="">AntMiner S3</a></li>
+                            <li><a href="#help_2_2" class="">AntMiner U1</a></li>
+                            <li><a href="#help_2_3" class="">AntMiner U3</a></li>
+                          </ul>
+                        </li>
+                        <li class="parent"><a href="#help_3">Miner Purchase</a></li>
+                        <li class="parent"><a href="#help_4">Hashrate Purchase</a></li>
+                        <li class="parent"><a href="#help_5">Miner Monitor</a></li>
+                        <li class="parent"><a href="#help_6">FAQ</a></li>
+                        <li class="parent"><a href="#help_7">Customer Service</a></li>
+                      </ul>
+                    </div>
+                    <div class="main_content" style="width: 1100px">
+                      <div class="wraper">
+                        <div class="article_page">
+                          <h2 class="article_title">AntPool Overview</h2>
+                          <div class="article_body">
+                            <h3 id="help_1">Overview</h3>
+                            <p>AntPool which is open for users all around the world. BITMAIN has invested significant resources into developing more efficient bitcoin pool, especially p2pool mining pool. AntPool supports both stratum and p2p mining protocol. BITMAIN reaffirms its commitment to help decentralize the Bitcoin network, strengthen the Bitcoin eco-system and put the majority of hashing power into the hands of consumers.<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AntPool supports both stratum and p2p mining protocol. As to stratum mining, Antpool collects all hashing power of miners to its servers and mines as a huge stratum miner. P2P mode succeeds and accesses to p2pool mining network.<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pool nodes are deployed around the world to improve performance and provide redundancy. Miners are automatically routed their closest location, including United States, Germany, Hong Kong, Beijing, Shenzhen, Qingdao, Hangzhou and more.</p>
+                            <h4 id="help_1_1" style="color: highlight;">Mining Mode:</h4>
+                            <p>AntPool supports both stratum and p2p mining mode.</p>
+                            <h5 id="help_1_1_1" style="color: highlight;">Stratum Mode:</h5>
+                            <p>Stratum mode mining system is self-developed by BITMAIN team. It collects all hashing power of miners to its servers and mines as a huge stratum miner. Stratum mode of Antpool has been proven to be stable and secure through its long testing period.</p>
+                            <h6 id="help_1_1_1_1" style="color: highlight;">Stratum Server:</h6>
+                            <p>stratum.antpool.com:3333<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stratum.antpool.com:443<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stratum.antpool.com:25</p>
+                            <h5 id="help_1_1_2" style="color: highlight;">P2P Mode:</h5>
+                            <p>The p2pool protocol prevents hashing power being controlled by one central entity (the pool owner), and has been significantly developed during the development of Antpool. All p2pool code have been open sourced and uploaded on BITMAIN's Github link <a href="https://github.com/bitmaintech/p2pool">https://github.com/bitmaintech/p2pool</a>. We hope that we can optimize the p2p protocol and network with other interested engineers around the world. </p>
+                            <p>We believe p2pool protocol has great potential, however, it is not developed very well till now.</p>
+                            <p>Firstly, p2pool protocol's total hash rate is low compared with the whole network's, which is around only 2% of it as of Nov 2014. So p2pool's output is still not quite stable. There is a network effect barrier we need to break, then the p2pool protocol will have stable output and more miners will join the protocol. One of the most import reason for this is that there is not a well developed p2pool agent mining pool. If there is a well developed agent as the p2p.antpool.com, the total hashrate of p2pool will be significantly increased.</p>
+                            <p>Secondly, the protocol of p2pool network is already optimized a lot, but for average miners, it is not as efficient as it could be, especially for some low bandwidth miners, whom will not be affected if they are connected to a normal stratum mining pool. We hope our efforts will help the community feel easier to set up p2pool mining nodes running with high efficiency.</p>
+                            <p>If p2pool protocol can provide a more stable output, and the code is published, we hope that there will be more and more independent p2pool mining nodes around the world. There are lots of enterprise level miners around the world. I think it will be in the best interest for themselves to run their own p2pool mining nodes, if we can develop it into a convenient, reliable and efficient tools.</p>
+                            <h6 id="help_1_1_2_1" style="color: highlight;">P2P Server:</h6>
+                            <p>p2p.antpool.com:3333<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p2p.antpool.com:25<br/>
+                            
+                            <h4 id="help_1_2" style="color: highlight;">Configuration:</h4>
+                            <p>
+                                <table class="table table-bordered">
+                                  <tr>
+                                    <td width="125px">&nbsp;</td>
+                                    <td>Stratum</td>
+                                    <td>P2P</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Stratum URL</td>
+                                    <td>
+                                        stratum+tcp://stratum.antpool.com:3333<br/>
+                                        stratum+tcp://stratum.antpool.com:443<br/>
+                                        stratum+tcp://stratum.antpool.com:25<br/>
+                                    </td>
+                                    <td>
+                                        stratum+tcp://p2p.antpool.com:3333<br/>
+                                        stratum+tcp://p2p.antpool.com:25<br/>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td rowspan="2">Worker Name</td>
+                                    <td>
+                                        UserID.WorkerID<br/>
+                                        UserID_WorkerID
+                                    </td>
+                                    <td>
+                                        UserID.WorkerID<br/>
+                                        UserID_WorkerID
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2">
+                                        UserID and WorkerID must consist of letters or numbers
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>Password</td>
+                                    <td>Anything</td>
+                                    <td>Anything</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Payment Method</td>
+                                    <td>PPLNS (0% Fee)<br/>PPS (2.5% Fee)<br/>SOLO (1% Fee)</td>
+                                    <td>PPLNS (0% Fee)</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Tx Fee</td>
+                                    <td>Not paid out to miners for maintaining cost and the bonus for our engineers</td>
+                                    <td>Paid out to miners</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Payment Rule</td>
+                                    <td>After AntPool found new block 3 confirmations</td>
+                                    <td>After P2pool found new block 3 confirmations</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Pay Out Rule</td>
+                                    <td colspan="2">Auto pay out daily around 8:00-10:00am Beijing Time Zone after setup bitcoin wallet address and minimal amount: 0.001BTC.</td>
+                                  </tr>
+                                </table>
+                            </p>
+                            
+                            <h4 id="help_1_3" style="color: highlight;">Payment Method:</h4>
+                            <p>
+                                <table class="table table-bordered">
+                                  <tr>
+                                    <td width="125px">Payment Method</td>
+                                    <td width="60px">Fee</td>
+                                    <td>Description</td>
+                                  </tr>
+                                  <tr>
+                                    <td>PPLNS</td>
+                                    <td>0%</td>
+                                    <td>Assign to you alter AntPool found a new block and the new block confirmations more than 3 (Transaction fees not paid out to miners for maintaining cost and the bonus for our engineers)<br/>Earnings = 25 BTC * Your share count in 2.5 difficulty cycle / Total share count in 2.5 difficulty cycle</td>
+                                  </tr>
+                                  <tr>
+                                    <td>PPS</td>
+                                    <td>2.5%</td>
+                                    <td>Earnings = 25 BTC * Share Count of 1 Difficulty / Current Network Difficulty</td>
+                                  </tr>
+                                  <tr>
+                                    <td>SOLO</td>
+                                    <td>1%</td>
+                                    <td>Assign 25 BTC to you alter AntPool found a new block which is for you and the new block confirmations more than 3 (Transaction fees not paid out to miners for maintaining cost and the bonus for our engineers)<br/>If there is no new block found for you, then there is no mining revenue for you</td>
+                                  </tr>
+                                </table>
+                            </p>
+                            
+                            <h3 id="help_2">Mining Tutorials</h3>
+                            <h4 id="help_2_1" style="color: highlight;">AntMiner S3:</h4>
+                            <p>The miner's IP address is marked in the case (above the fan), and IP address is 192.168.1.99 in the latest firmware.</p>
+                            <p>Some users cannot enter the webpage with all correct connections, please check if the IP address of both miner and PC are in the same network segmentation.</p>
+                            <h5>Miner Setting:</h5>
+                            <p>1.Enter the default IP address of the ANTMINER 192.168.1.99 – Go to the login page, enter the user ID: root, password: root.</p>
+                            <p>2.Click Network – Interfaces. There are two options under Interfaces: WAN and LAN. LAN is a testing interface for the factory. WAN is for users mining, and please keep the default settings. Noted: LAN and WAN must in different IP segment! The WAN link cannot be deleted!
+                                <img alt="" src="images/antpool/3_en.png">
+                                &nbsp;&nbsp;&nbsp;&nbsp; Click Edit button, go to IP configuration page of WAN interface, and keep the default settings. Please modify to other IP address if you have at least 2 ANTMINERs: change the last 2 No. “99”to any No. that haven't been used. For example, you can change the IP address to 192.168.1.100. Besides, DNS 192.168.1.1 can be set as 8.8.8.8 (Google) 202.106.0.20 (China Unicom) 114.114.114.114 (China Telecom). Please click Save&Apply after modify.
+                                <img alt="" src="images/antpool/4_en.png">
+                            </p>
+                            <p>3.Click Status – Miner Configuration</p>
+                            <p>You can fill in 3 groups of mining pool. If the first group is dead, then, it will automatically pointed to the second group. Below is the configuration of Antpool:</p>
+                            <p>
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td>Pool</td>
+                                        <td>URL</td>
+                                        <td>Worker</td>
+                                        <td>Password</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pool1</td>
+                                        <td>stratum+tcp://stratum.antpool.com:3333</td>
+                                        <td>antminer.1</td>
+                                        <td>123</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pool2</td>
+                                        <td>stratum+tcp://vip.antpool.com:3333</td>
+                                        <td>antminer.1</td>
+                                        <td>123</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pool3</td>
+                                        <td>stratum+tcp://stratum.antpool.com:443</td>
+                                        <td>antminer.1</td>
+                                        <td>123</td>
+                                    </tr>
+                                </table>
+                            </p>
+                            <p>Click Save & Apply to mine.
+                                <img alt="" src="images/antpool/5_en.png">
+                            </p>
+                            <p>4.Go to Miner Status, refresh for several times in case for the slow reaction. You can check the speed in this page, and confirm if the miner works normal.
+                                <img alt="" src="images/antpool/6_en.png">
+                            </p>
+                            <h4 id="help_2_2" style="color: highlight;">AntMiner U1:</h4>
+                            <p><img alt="" src="images/antpool/U1.png"></p>
+                            <h5>1 Download:</h5>
+                            <p><a href="https://github.com/AntMiner/AntGen1" target="_blank">1) Cgminer for antminer-U1</a></p>
+                            <p><a href="http://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx" target="_blank">2) CP2102 Driver</a></p>
+                            <p><a href="http://zadig.akeo.ie/" target="_blank">3) zadig</a></p>
+                            <h5>2 Install Driver</h5>
+                            <p>Step 1：Install CP210xVCP Driver</p>
+                            <p>Step 2：Insert AntMiner U1</p>
+                            <p>Step 3：Open Zadig, and click "Options->List All Devices"
+                            <img alt="" src="images/antpool/zading1.jpg">
+                            </p>
+                            <p>Step 4: Choose CP2102 USB to UART Bridge Controller, and click "Reinstall Driver"
+                            <img alt="" src="images/antpool/zading2.jpg">
+                            </p>
+                            <h5>3 Run Cgminer</h5>
+                            <p>cgminer.exe --bmsc-options 115200:20 -o stratum+tcp://stratum.antpool.com:3333 -u antminer_1 -p 123
+                            <img alt="" src="images/antpool/u1.jpg">
+                            </p>
+                            <h4 id="help_2_3" style="color: highlight;">AntMiner U3:</h4>
+                            <p><img alt="" src="images/antpool/U3_P.jpg"></p>
+                            <h5>1 Download:</h5>
+                            <p><a href="https://www.bitmaintech.com/files/download/cgminer-run-windows-20141027.rar" target="_blank">1) Cgminer for AntMiner-U3</a></p>
+                            <p><a href="http://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx" target="_blank">2) CP2102 Driver</a></p>
+                            <p><a href="http://zadig.akeo.ie/" target="_blank">3) zadig</a></p>
+                            <h5>2 Install Driver</h5>
+                            <p>Step 1：Install CP210xVCP Driver</p>
+                            <p>Step 2：Insert Antminer U3</p>
+                            <p>Step 3：Open Zadig, and click "Options->List All Devices"
+                            <img alt="" src="images/antpool/zading1.jpg">
+                            </p>
+                            <p>Step 4: Choose CP2102 USB to UART Bridge Controller, and click "Reinstall Driver"
+                            <img alt="" src="images/antpool/zading2.jpg">
+                            </p>
+                            <h5>3 Run Cgminer</h5>
+                            <p>cgminer.exe  --bmsc-options 115200:0.6 -o stratum.antpool.com:3333 -u antminer_1 -p 123  --bmsc-voltage 0800 --bmsc-freq 1286
+                            <img alt="" src="images/antpool/u3.jpg">
+                            </p>
+                            <h3 id="help_3">Miner Purchase</h3>
+                            <p>Please visit the official website of BITMAIN</p>
+                            <p><a href="http://www.bitmain.cn" target="_blank">BITMAIN (Chinese)</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.bitmaintech.com" target="_blank">BITMAIN (English)</a></p>
+                            
+                            <h3 id="help_4">Hashrate Purchase</h3>
+                            <p>Please visit the official website of HASHNEST</p>
+                            <p><a href="https://www.hashnest.com" target="_blank">Hashnest</a>
+                            
+                            <h3 id="help_5">Miner Monitor</h3>
+                            <p>Please visit the monitor system MINERLINK</p>
+                            <p><a href="https://www.minerlink.com" target="_blank">Minerlink (Up coming)</a>
+                            
+                            <h3 id="help_6">FAQ</h3>
+                            <dl class="faq-dl">
+                                <dt><i class="fa fa-chevron-right"></i>&nbsp;&nbsp;Is there any transaction fee when pay out?</dt>
+                                <dd class="faq_dd dd_1">0 transaction fee<br/>&nbsp;</dd>
+                                
+                                <dt><i class="fa fa-chevron-right"></i>&nbsp;&nbsp;I cannot access to 3333 port</dt>
+                                <dd class="faq_dd dd_2">It's possibly due to the blockage by your network operator. Please try to access 25.<br/>&nbsp;</dd>
+                                
+                                <dt><i class="fa fa-chevron-right"></i>&nbsp;&nbsp;What's the lucky figure?</dt>
+                                <dd class="faq_dd dd_3">The earnings assigned by PPLNS mode with 0% fee. Under the same hash rate, the higher lucky figure the pool has, the more earnings you will be assigned.<br/>&nbsp;</dd>
+                                
+                                <dt><i class="fa fa-chevron-right"></i>&nbsp;&nbsp;Why I can find my hash rate in the miner status page from my miner, but no hash rate in the mining pool site?</dt>
+                                <dd class="faq_dd dd_4">AntPool is distributed deployment, so there will be a 10 minutes delay for display. We are trying to optimize the solution, and improve the display speed.<br/>&nbsp;</dd>
+                                
+                                <dt><i class="fa fa-chevron-right"></i>&nbsp;&nbsp;Why the miner mining at p2p.antpool.com, but no earning assigned after block founded?</dt>
+                                <dd class="faq_dd dd_4">P2P mining access the p2pool network to mine, only after block founded in p2pool, we will assign the earning. We are trying hard to improve P2P, and more details will be shown later.<br/>&nbsp;</dd>
+                            </dl>
+                            <h3 id="help_7">Customer Service</h3>
+                            <table class="table table-bordered table-striped">
+                            <tbody>
+                            <tr>
+                            <tr><th class="col-md-2 text-right">Customer Center</th><td class="col-md-10"><a href="https://support.bitmain.com/questions/pending" target="_blank">Customer Center</a></td></tr>
+                            <tr><th class="col-md-2 text-right">Forum</th><td class="col-md-10"><a href="https://forum.bitmain.com?ticket=ST&utm_source=forum" target="_blank">Forum</a></td></tr>
+                            <tr><th class="col-md-2 text-right">Email</th><td class="col-md-10"><a href="mailto:support@bitmain.com" target="_blank">support@bitmain.com</a></td></tr>
+                            <tr><th class="col-md-2 text-right">Note</th><td class="col-md-10">We are welcome everyone to ask any questions, BITMAIN will try our best to solve the problem</td></tr>
+                            </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+     </div>
+  </div>
+  </div >
+  <!--==========================================================================================================================================================================-->
+    <div class="foot">
+         <div class="foot_main">
+                 <div id="bitmain" >
+                    <img src="images/antpool/logo-bitmain@2x.png" width="127" height="17" alt="BitMain"  />
+                    <div class="reginfo">Copyright BITMAIN 2015. All Rights Reserved.</div>
+                 </div>
+                 <div class="cominfo">
+                      <ul class="comUL">
+                          <li>PRODUCT</li>
+                          <li>ABOUT</li>
+                          <li>SERVICES</li>
+                          <li>SOCIAL</li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.bitmaintech.com/?utm_source=forum" target="_blank">AntMiner</a></li>
+                          <li><a href="https://www.bitmaintech.com/about.htm" target="_blank">About US</a></li>
+                          <li><a href="https://support.bitmain.com/?ticket=ST&utm_source=forum" target="_blank">Support Center</a></li>
+                          <li><a href="https://forum.bitmain.com/?ticket=ST&utm_source=forum" target="_blank">BITMAINTALK</a></li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.hashnest.com/?ticket=ST&utm_source=forum" target="_blank" >HashNest</a></li>
+                          <li><a href="https://account.bitmain.com/terms_service" target="_blank">Terms of Use</a></li>
+                          <li><a href="https://support.bitmain.com/wikis?ticket=ST&utm_source=forum" target="_blank">FAQ</a></li>
+                          <li><a href="https://twitter.com/BITMAINtech" target="_blank">Twitter</a></li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.antpool.com/?utm_source=forum" target="_blank">AntPool</a></li>
+                          <li><a href="https://www.bitmaintech.com/about.htm" target="_blank">Contact US</a></li>
+                          <li><a href="https://support.bitmain.com/questions/pending" target="_blank">Ticket</a></li>
+                          <li><a href="https://www.facebook.com/Bitmaintech.Antminer?ref=hl" target="_blank">Facebook</a></li>
+                      </ul>
+                 </div>
+         </div>
+    </div>
+
+  </section> 
+</div>
+
+<script>
+
+//左侧菜单展示
+function left_menu() {
+    $("#article_menu li ul").each(function() {
+        $(this).hide();
+        $(this).parent().addClass("parent");
+    });
+
+    $("#article_menu li ul li .cur").each(function() {
+        $(this).parent().parent().css({
+            'display': 'block'
+        });
+        $(this).parent().parent().parent().addClass("open parent_cur");
+    });
+};
+
+//left_menu(0);
+$(window).bind("scroll",
+function() {
+    left_menu();
+});
+
+//固定左侧菜单
+$('.left_bar').KehStick({top:0,container:'.container',anchors:'a'})
+</script>
+</body>
+</html>

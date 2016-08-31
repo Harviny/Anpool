@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AntPool</title>
+<link rel="stylesheet" href="css/antpool/get-your-coins.css">
+<link rel="stylesheet" href="css/user/bootstrap.min.css">
+<link rel="stylesheet" href="css/user/font-awesome.min.css" />
+<link rel="stylesheet" href="css/user/animate.min.css" />
+<link rel="stylesheet" href="css/user/skin.css"/>
+<link rel="stylesheet" href="css/user/style.css"/>
+<link rel="stylesheet" href="css/user/panel.css" />
+<link rel="stylesheet" href="css/user/pace.css" />
+<link rel="stylesheet" href="css/user/offline.css" />
+<link rel="stylesheet" href="css/user/products.css">
+<link rel="stylesheet" href="css/antpool/style.css">
+<link rel="stylesheet" href="css/antpool/home.css">
+<link rel="stylesheet" href="css/antpool/use-notice.css" />
+<script src="js/antpool/jquery-1.8.3.min.js"></script><script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="js/antpool/common.js"></script>  
+<script src="js/antpool/highcharts.js"></script>
+<script src="js/antpool/home.js"></script>   
+<script src="js/antpool/systemtools.js"></script> </head>
+<body>
+<div class=" app horizontal">
+   <div class="top">
+
+    <div class="top_main">
+        <div id="logo" ><a href="home.html"><img src="images/antpool/logo@2x.png" width="217" height="53" alt="AntPool"  /></a></div>
+        <div id="nav" >
+            <ul class="daohangul">
+                <li><a href="home.html">首页</a> </li>
+                <li><a href="dashboard.html">用户面板</a> </li>
+                <li><a href="setting.html">设置</a> </li>
+                <li><a href="poolStats.html">统计</a> </li>
+                <div class="btn-group">
+                     <a data-toggle="dropdown" class="active">区块服务  <img src="images/antpool/icon-arrow-down.png" ></a> 
+                               <ul  class="dropdown-menu ddlselect blockservice" role="menu">
+                        <li><a href="coinbase.html">区块签名</a></li>
+                        <li><a href="get-your-coins.html" style=" border:0px; height:30px;  line-height:25px;">原币</a></li>
+                    </ul>
+                </div> <div class="btn-group" style="margin-left:-5px;">  <a data-toggle="dropdown" >帮助  <img src="images/antpool/icon-arrow-down.png" ></a> 
+                             <ul class="dropdown-menu ddlselect helpsuppt" role="menu">                                    
+                             <li><a href="support.html">帮助与支持</a></li> <li><a href="apiGuild.html">API指南</a></li>
+                        <li><a href="https://forum.bitmain.com/" style=" border:0px; height:30px;  line-height:25px;">社区</a></li>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+        <div class="top_right">
+            <div class="children btn-group" ><a  data-toggle="dropdown" >
+                         <div class="cn">当前子账户</div>                            
+                           <div class="useren">
+                           <div class="en_met">antminer</div> &nbsp;
+                           <div class="sanjiao_img"></div>
+                         </div>
+                       </a>
+                        <ul  class="dropdown-menu ddlselect child_ddl" role="menu" >
+                    <li><a href="#">wen</a></li>
+                    <li><a href="#">yongliang</a></li>  <li><a href="#" >tianzhao</a></li>
+                </ul>
+            </div>
+            <div class="ver_line"></div>
+            <div class="info">
+                <div class="headinfo"> <img src="images/antpool/icon-user-24.png" ></div>
+                <div class="email btn-group">
+                      <a  data-toggle="dropdown" >
+                                 <span id="user"  class="en" >648800939@qq.com </span> &nbsp;<span class="sanjiao_img" style="margin-top:15px;"></span></a>
+                    <ul  class="dropdown-menu ddlselect userst" role="menu">
+                        <li><a href="#">用户中心</a></li>
+                        <li><a href="#" style=" border:0px; height:30px;  line-height:25px;">退出</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group"  >
+                    <div class="language" data-toggle="dropdown">EN</div>
+                    <ul  class="dropdown-menu ddlselect lngst " role="menu">
+                        <li><a href="#">English</a></li>
+                        <li><a href="#" style=" border:0px; height:30px;  line-height:25px;">简体中文</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <!--=======================================================================================================================================================================--> 
+  <section class="layout">
+   <div class="middle">
+    <div class="md_content">
+        <div class="horizontal-content">
+            <div>
+                <div class="row" style="margin-bottom:10px;margin-left:0px;">
+                    <h1 id="fresh-coin"><img src="images/antpool/icon.png">&nbsp; <a href="get-your-coins.html" style="color:#262626">原币</a></h1>
+
+                    <h2 class="notice-information">原币项目服务条款</h2>
+                </div>
+                <div class="antpool-paper-use-info">
+                    <p>原币项目（简称“本项目”或“项目”）是由北京比特大陆科技有限公司（简称“比特大陆”）开发设计并运营维护的比特币挖矿项目，您在参与本项目前应认真阅读本《原币项目服务条款》（简称“本服务条款”）和使用规则等项目所有资料。一旦您扫描并使用项目列示的比特币钱包地址，即表明您已对本条款等项目详情已具有充分的了解和认识，自愿同意并遵守本条款、使用规则。本条款和使用规则构成您与比特大陆之间关于本项目的全部协议，对双方均具有法律约束力。</p>
+                    <h2>一、定义</h2>
+                    <p>1.1 比特币，指一种使用加密技术生成货币单位、验证资金划转，独立于中央银行运行的电子货币。</p>
+                    <p>1.2 原币，指由蚂蚁矿池及相关合作方产出的，由Coinbase交易中新区块奖励直接输出到用户地址的比特币。</p>
+                    <p>1.3 蚂蚁矿池，指由比特大陆开发、运营及维护的比特币矿池。</p>
+                    <p>1.4 比特大陆，指北京比特大陆科技有限公司，系一家依据《中华人民共和国公司法》注册成立并有效存续的有限责任公司。</p>
+                    <h2>二、项目服务内容</h2>
+                    <p>2.1 比特大陆通过蚂蚁矿池开设专用的原币项目服务页面，您可以参考原币页面的提示，对原币业务的收款地址进行付款操作后，即可自动完成。</p>
+
+                    <p>2.2 为了更好的接受本服务，您需要在支付时注意保证金的具体数量，保证金计算方式为：<br>
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;保证金=购买金额x1.05<br><br></p>
+                    <p>2.3 比特大陆收到您的保证金后，将针对您的付款地址自动生成订单，并按订单时间等因素安排优先级，将比特币原币直接输入订单支付的地址。</p>
+                    <h2>三、比特大陆权利与义务</h2>
+
+                    <p>3.1 比特大陆按照本服务条款和使用规则向您提供服务，除系统升级、维护或其他特殊情况外，比特大陆将提供每天24小时的不间断自动运行服务。</p>
+
+                    <p>3.2 比特大陆有权对服务收取服务费，服务费于保证金中扣除，计算公式为：<br>
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;服务费=购买金额x0.05<br><br></p>
+
+                    <p>3.3 比特大陆有权随时对本系统进行升级，本服务条款、使用规则、所有提示和设定都将不时进行变更、修订、调整，相关升级、变更、修订、调整等将于本网站进行公布，比特大陆不保证将向您专门发送通知，不因此类升级、变更、修订、调整承担任何承诺、保证和责任。</p>
+
+                    <p>3.4 本项目服务是按照现有技术和条件所能达到的现状提供的。比特大陆会尽最大努力向您提供服务，确保服务的连贯性和安全性；但比特大陆不能随时预见和防范法律、技术以及其他风险，包括但不限于不可抗力、病毒、木马、黑客攻击、系统不稳定、第三方服务瑕疵、政府行为等原因可能导致的服务中断、数据丢失以及其他的损失和风险。</p>
+
+                    <p>3.5本服务及本网站的所有内容均属于比特大陆所有的知识产权。比特大陆有权对您侵犯知识产权的行为要求赔偿，并保留一切法律权利。</p>
+
+                    <p>3.6 比特大陆可自行决定，无须事先通知您，即停止（永久或暂时）向您或全体用户提供本服务。</p>
+
+                    <h2>四、您的权利与义务</h2>
+
+                    <p>4.1 您应符合个人所属司法辖区的民事行为能力要求。例如，假使您属于中华人民共和国（不含香港、澳门、台湾，以下皆同）公民，应年满18周岁或以上，并具有完全民事行为能力，您可按照本服务条款使用本服务；假使您属于中华人民共和国公民，但不满18周岁或仅具有部分民事行为能力，则您不可使用本服务。您已充分了解到该条要求，如您继续使用本服务，则比特大陆默认您具有个人所属司法辖区的民事行为能力要求，概不承担因您不符合民事行为能力要求所导致的任何后果、责任、损失和赔偿等。</p>
+
+                    <p>4.2您应仔细阅读本服务及本网站的所有服务条款、使用规则、提醒与警示文字等。您继续使用本服务，则表明您已完全了解本服务是自动运行的软件系统，您已完全了解本服务的各项操作规则，不得以不了解操作规则或错误操作为抗辩理由。</p>
+
+                    <p>4.3 您应保证认购本服务的比特币来源合法。您同意，如因任何政府机构需要，比特大陆可将您使用本服务的所有信息提交给相关政府机构；比特大陆可根据本条款生效之后制定或发布的法律、法规、部门规章或其他适用规定的要求，要求您提供相应的个人信息、承诺函及证明文件等材料。</p>
+
+                    <p>4.4 您应遵守个人所属司法辖区的各项法律法规，不得违反所属司法辖区的法律法规。若您的行为违反所在司法辖区的法律法规，您应自行承担所有法律责任。</p>
+
+                    <p>4.5 您应仅为本服务条款及任何适用法律、法规所允许的目的使用服务，并仅用于非商业用途。您如果要将与本服务有关或派生的任何资料、比特币地址、服务或软件用于销售或其它商业用途，则必须得到比特大陆的允许；如果将本服务相关或派生的任何资料、比特币地址、服务或软件进行非法使用，则需要对非法使用导致的任何后果向比特大陆或其他第三方承担全部责任。</p>
+
+                    <p>4.6 您在使用本服务时，不得损害、禁用、影响服务或使服务负担过重，也不得影响任何其他方使用本服务。</p>
+
+                    <p>4.7 本服务产生的数据和展示的数据均来源于比特币区块链的公开数据，您不可借助本服务侵犯他人的隐私，您应个人对您的行为及其产生的法律后果负责。</p>
+
+                    <h2>五、责任限制</h2>
+
+                    <p>5.1 您理解并同意自主选择、使用本服务的风险自负，并且对于因使用本服务而对计算机系统造成的损坏或数据的丢失，您应承担全部责任。</p>
+
+                    <p>5.2 在适用法律允许的最大范围内，比特大陆明确表示不提供任何其他类型的保证，不论是明示的或默示的，包括但不限于适用性、可靠性、准确性、完整性、无病毒以及无错误的任何默示保证和责任。</p>
+
+                    <p>5.3 在适用法律允许的最大范围内，比特大陆不就因您使用服务引起的或与服务有关的任何意外的、非直接的、特殊的、或间接的损害或请求（包括但不限于因人身伤害、因隐私泄漏、因未能履行包括诚信或合理谨慎在内的任何责任、因过失和因任何其他金钱上的损失或其他损失而造成的损害赔偿）承担任何责任。</p>
+
+                    <h2>六、一般条款</h2>
+
+                    <p>6.1本服务条款的成立、生效、履行、解释及纠纷解决，适用中华人民共和国大陆地区法律（不包括冲突法）。</p>
+
+                    <p>6.2 若因本服务和服务条款而发生的任何纠纷或争议，首先应友好协商解决；协商不成的，纠纷或争议应提交比特大陆所在地有管辖权的人民法院管辖。</p>
+
+                    <p>6.3比特大陆不行使、未能及时行使或者未充分行使本条款或者按照法律规定所享有的权利，不应被视为放弃该权利，也不影响比特大陆在将来行使该权利。</p>
+
+                    <p>6.4如本条款中的任何条款无论因何种原因完全或部分无效或不具有执行力，本服务条款的其余条款仍应有效且具有约束力。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ 
+  <!--==========================================================================================================================================================================-->
+   
+    <div class="foot">
+    <div class="foot_main">
+        <div id="bitmain" >
+            <img src="images/antpool/logo-bitmain@2x.png" width="127" height="17" alt="BitMain"  />
+            <div class="reginfo">Copyright BITMAIN 2015. All Rights Reserved.</div>
+        </div>
+        <div class="cominfo">
+            <ul class="comUL">
+                <li>PRODUCT</li>
+                <li>ABOUT</li>
+                <li>SERVICES</li>
+                <li>SOCIAL</li>
+            </ul>
+            <ul >
+                <li><a href="https://www.bitmaintech.com/?utm_source=forum" target="_blank">AntMiner</a></li>
+                <li><a href="https://www.bitmaintech.com/about.htm" target="_blank">About US</a></li>
+                <li><a href="https://support.bitmain.com/?ticket=ST&utm_source=forum" target="_blank">Support Center</a></li>
+                <li><a href="https://forum.bitmain.com/?ticket=ST&utm_source=forum" target="_blank">BITMAINTALK</a></li>
+            </ul>
+            <ul >
+                <li><a href="https://www.hashnest.com/?ticket=ST&utm_source=forum" target="_blank" >HashNest</a></li>
+                <li><a href="https://account.bitmain.com/terms_service" target="_blank">Terms of Use</a></li>
+                <li><a href="https://support.bitmain.com/wikis?ticket=ST&utm_source=forum" target="_blank">FAQ</a></li>
+                <li><a href="https://twitter.com/BITMAINtech" target="_blank">Twitter</a></li>
+            </ul>
+            <ul >
+                <li><a href="https://www.antpool.com/?utm_source=forum" target="_blank">AntPool</a></li>
+                <li><a href="https://www.bitmaintech.com/about.htm" target="_blank">Contact US</a></li>
+                <li><a href="https://support.bitmain.com/questions/pending" target="_blank">Ticket</a></li>
+                <li><a href="https://www.facebook.com/Bitmaintech.Antminer?ref=hl" target="_blank">Facebook</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+  </section>
+</div>
+</body>
+</html>

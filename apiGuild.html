@@ -1,0 +1,472 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AntPool</title>
+<link rel="stylesheet" href="css/antpool/get-your-coins.css">
+<link rel="stylesheet" href="css/user/bootstrap.min.css">
+<link rel="stylesheet" href="css/user/font-awesome.min.css" />
+<link rel="stylesheet" href="css/user/animate.min.css" />
+<link rel="stylesheet" href="css/user/skin.css"/>
+<link rel="stylesheet" href="css/user/style.css"/>
+<link rel="stylesheet" href="css/user/panel.css" />
+<link rel="stylesheet" href="css/user/pace.css" />
+<link rel="stylesheet" href="css/user/offline.css" />
+<link rel="stylesheet" href="css/user/products.css">
+<link rel="stylesheet" href="css/antpool/style.css">
+<link rel="stylesheet" href="css/antpool/home.css">
+<script src="js/antpool/jquery-1.8.3.min.js"></script><script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="js/antpool/common.js"></script>  
+<script src="js/antpool/highcharts.js"></script>  
+<script src="js/antpool/home.js"></script>   
+<script src="js/antpool/systemtools.js"></script>
+<script src="js/user/jquery.placeholder.js"></script>
+<script src="js/user/jquery.bootstrap-growl.min.js"></script>
+<script src="js/user/bootstrap-alert.js"></script>
+<script src="js/systemtools.js"></script>
+<script src="js/user/products.js"></script>
+<script src="js/math_base.js"></script>
+<script src="js/user/coin.js"></script>
+
+
+<link rel="stylesheet" href="css/article.css">
+<script src="/js/ap_btc.js" type="text/javascript"></script>
+
+</head>
+<body>
+<div class=" app horizontal">
+   <div class="top">
+          <div class="top_main">
+               <div id="logo" ><a href="home.html"><img src="images/antpool/logo@2x.png" width="217" height="53" alt="AntPool"  /></a></div>
+                <div id="nav" >  
+                    <ul class="daohangul">
+                        <li><a href="home.html"  >首页</a> </li>
+                        <li><a href="dashboard.html">用户面板</a> </li>
+                        <li><a href="setting.html">设置</a> </li>
+                        <li><a href="poolStats.html">统计</a> </li>
+                        <div class="btn-group">                    
+                             <a data-toggle="dropdown" >区块服务  <img src="images/antpool/icon-arrow-down.png" ></a> 
+                               <ul  class="dropdown-menu ddlselect blockservice" role="menu">
+                                    <li><a href="coinbase.html" >区块签名</a></li>
+                                    <li><a href="get-your-coins.html" style=" border:0px; height:30px;  line-height:25px;">原币</a></li>
+                             </ul>
+                      </div> <div class="btn-group" style="margin-left:-5px;">
+                            <a data-toggle="dropdown" class="active">帮助  <img src="images/antpool/icon-arrow-down.png" ></a>  <ul class="dropdown-menu ddlselect helpsuppt" role="menu">                                    
+                             <li><a href="support.html">帮助与支持</a></li> <li><a href="apiGuild.html">API指南</a></li>
+                                    <li><a href="https://forum.bitmain.com/" style=" border:0px; height:30px;  line-height:25px;">社区</a></li>
+                             </ul>
+                      </div>
+                    </ul>
+                </div>
+                <div class="top_right">
+                    <div class="children btn-group" >
+                       <a  data-toggle="dropdown" >
+                         <div class="cn">当前子账户</div>                            
+                           <div class="useren">
+                           <div class="en_met">antminer</div> &nbsp;
+                           <div class="sanjiao_img"></div>
+                         </div>
+                       </a>
+                        <ul  class="dropdown-menu ddlselect child_ddl" role="menu" >
+                                <li><a href="#">wen</a></li>
+                                <li><a href="#">yongliang</a></li>  <li><a href="#" >tianzhao</a></li>
+                         </ul>
+                    </div>
+                    <div class="ver_line"></div>
+                    <div class="info">
+                         <div class="headinfo"> <img src="images/antpool/icon-user-24.png" ></div>
+                         <div class="email btn-group">
+                              <a  data-toggle="dropdown" >
+                                 <span id="user"  class="en" >648800939@qq.com </span> &nbsp;<span class="sanjiao_img" style="margin-top:15px;"></span></a>
+                                  <ul  class="dropdown-menu ddlselect userst" role="menu">
+                                     <li><a href="#">用户中心</a></li>
+                                     <li><a href="#" style=" border:0px; height:30px;  line-height:25px;">退出</a></li>
+                                  </ul>
+                            </div> 
+                         <div class="btn-group"  >
+                                <div class="language" data-toggle="dropdown">EN</div>
+                                 <ul  class="dropdown-menu ddlselect lngst " role="menu">
+                                     <li><a href="apiGuild_EN.html">English</a></li>
+                                     <li><a href="apiGuild.html" >简体中文</a></li>
+                                     <li><a href="apiGuild_py.html" style=" border:0px; height:30px;  line-height:25px;">русский</a></li>
+                                  </ul>
+                         </div>
+                    </div>
+                </div>
+          </div>
+   </div>
+
+  <!--=======================================================================================================================================================================--> 
+ <section class="layout">
+   <div class="horizontal-content">
+     <div class="middle">
+     <div class="md_content" >
+        <div class="row" style="margin-left:0px;">
+             <div class="blocksig">API 指南</div>
+        </div>
+         <div class="antpool-paper">
+            <p>AntPool应用程序编程接口(API)，提供算力、余额等接口，使得用户可以通过自定义编写的软件来访问和控制帐户</p>
+            <p style="font-size:15px;font-weight:bold;">请求限制</p>
+            <p>每10分钟不要超过600次请求，否则我们将禁用您的IP地址</p>
+            <hr/>
+            <p style="font-size:18px;font-weight:bold;">API认证</p>
+            <p>所有私有API调用都需要进行身份验证。身份验证参数:</p>
+            <ul style="margin-top:10px;">
+              <li>key - API秘钥</li>
+              <li>nonce - 随机数</li>
+              <li>signature - 签名</li>
+            </ul>
+            <p style="font-size:15px;font-weight:bold;">API 秘钥</p>
+            <p>进入“API”配置页面，配置好API访问权限后，单击“生成”按钮，便可生成API访问密钥。</p>
+            <p style="font-size:15px;font-weight:bold;">随机数</p>
+            <p>
+              随机数是一个规则的整数，在您调用接口的过程中，该数字必需不断的增大。
+              比如：在一次调用中您的nonce配置为1，则在下一次调用中，nonce就最小要配置为2。
+              通常的做法是将UTC时间戳作为该变量的值。
+            </p>
+            <p style="font-size:15px;font-weight:bold;">签名</p>
+            <p>
+              签名是使用HMAC-SHA256算法对随机数、用户ID、API密钥进行编码后的数据。
+              签名数据需要使用加密密钥（在生成API密钥时生成）进行生成，并需要转换为十六进制的大写字母或数字。
+            </p>
+            <p>示例 (Python):</p>
+            <p style="border:1px #bbb solid;padding:5px;background:#eee">
+              message = userid + api_key + nonce<br/>
+              signature = hmac.new(API_SECRET, msg=message, digestmod=hashlib.sha256).hexdigest().upper()
+            </p>
+            <p>示例 (Java):</p>
+            <p style="border:1px #bbb solid;padding:5px;background:#eee">
+              public static String apiSignature(String userId, String key, String nonce, String secret) throws Exception {<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;String data = userId+key+nonce;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;Mac hmacSha256 = Mac.getInstance("HmacSHA256");<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;SecretKeySpec secretKey = new SecretKeySpec(secret.getBytes(), "HmacSHA256");<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;hmacSha256.init(secretKey);<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;return Hex.encodeHexString(hmacSha256.doFinal(data.getBytes())).toUpperCase();<br/>
+              }<br/>
+              <br/>
+              public static boolean checkApiSignature(String userId, String key, String nonce, String secret, String signature) throws Exception {<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;String data = userId+key+nonce;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;Mac hmacSha256 = Mac.getInstance("HmacSHA256");<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;SecretKeySpec secretKey = new SecretKeySpec(secret.getBytes(), "HmacSHA256");<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;hmacSha256.init(secretKey);<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;String signatrueTmp = Hex.encodeHexString(hmacSha256.doFinal(data.getBytes())).toUpperCase();<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;if(signature.equals(signatrueTmp)) {<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return true;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;return false;<br/>
+              }
+            </p>
+            <hr/>
+            <p style="font-size:18px;font-weight:bold;">私有方法</p>
+            <p style="font-size:15px;font-weight:bold;margin-top:15px;">矿池统计信息</p>
+            <p style="border:1px #bbb solid;padding:5px;background:#eee">
+              POST https://antpool.com/api/poolStats.htm
+            </p>
+            <p>参数:</p>
+            <ul style="margin-top:10px;">
+              <li>key - API 秘钥</li>
+              <li>nonce - 随机数</li>
+              <li>signature - 签名</li>
+            </ul>
+            <p>返回矿池统计信息，如下所示:</p>
+            <p style="border:1px #bbb solid;padding:5px;background:#eee">
+              {<br/>
+              "version":"1.0",<br/>
+              "code":0,<br/>
+              "message":"ok",<br/>
+              "data":<br/>
+              &nbsp;&nbsp;{<br/>
+              &nbsp;&nbsp;"poolHashrate":"0", //矿池算力（单位为：MH/s）<br/>
+              &nbsp;&nbsp;"activeWorkerNumber":"0", //有效矿工数<br/>
+              &nbsp;&nbsp;"poolStatus":"Alive", //矿池状态<br/>
+              &nbsp;&nbsp;"networkDiff":"0", //当前网络难度<br/>
+              &nbsp;&nbsp;"estimateTime":"0", //Block期望时间（单位：秒）<br/>
+              &nbsp;&nbsp;"currentRound":"0", //当前运行时间（单位：秒）<br/>
+              &nbsp;&nbsp;"totalShareNumber":"0", //总工作量<br/>
+              &nbsp;&nbsp;"totalBlockNumber":"0" //总Block数<br/>
+              &nbsp;&nbsp;}<br/>
+              }
+            </p>
+            <p style="font-size:15px;font-weight:bold;margin-top:15px;">账户余额</p>
+            <p style="border:1px #bbb solid;padding:5px;background:#eee">
+              POST https://antpool.com/api/account.htm
+            </p>
+            <p>参数:</p>
+            <ul style="margin-top:10px;">
+              <li>key - API 秘钥</li>
+              <li>nonce - 随机数</li>
+              <li>signature - 签名</li>
+            </ul>
+            <p>返回用户的账户余额(BTC)，如下所示:</p>
+            <p style="border:1px #bbb solid;padding:5px;background:#eee">
+              {<br/>
+              "version":"1.0",<br/>
+              "code":0,<br/>
+              "message":"ok",<br/>
+              "data":<br/>
+              &nbsp;&nbsp;{<br/>
+              &nbsp;&nbsp;"earn24Hours":"0.00000000",<br/>
+              &nbsp;&nbsp;"earnTotal":"0.00000000",<br/>
+              &nbsp;&nbsp;"paidOut":"0.00000000",<br/>
+              &nbsp;&nbsp;"balance":"0.00000000"<br/>
+              &nbsp;&nbsp;}<br/>
+              }
+            </p>
+            <p style="font-size:15px;font-weight:bold;margin-top:15px;">用户算力</p>
+            <p style="border:1px #bbb solid;padding:5px;background:#eee">
+              POST https://antpool.com/api/hashrate.htm
+            </p>
+            <p>参数:</p>
+            <ul style="margin-top:10px;">
+              <li>key - API 秘钥</li>
+              <li>nonce - 随机数</li>
+              <li>signature - 签名</li>
+            </ul>
+            <p>返回用户的算力（单位为：MH/s）、接受数、拒绝数、过期数、重复提交数等，如下所示：</p>
+            <p style="border:1px #bbb solid;padding:5px;background:#eee">
+              {<br/>
+              "version":"1.0",<br/>
+              "code":0,<br/>
+              "message":"ok",<br/>
+              "data":<br/>
+              &nbsp;&nbsp;{<br/>
+              &nbsp;&nbsp;"last10m":"0",<br/>
+              &nbsp;&nbsp;"last30m":"0",<br/>
+              &nbsp;&nbsp;"last1h":"0",<br/>
+              &nbsp;&nbsp;"last1d":"0",<br/>
+              &nbsp;&nbsp;"prev10m":"0",<br/>
+              &nbsp;&nbsp;"prev30m":"0",<br/>
+              &nbsp;&nbsp;"prev1h":"0",<br/>
+              &nbsp;&nbsp;"prev1d":"0",<br/>
+              &nbsp;&nbsp;"accepted":"0",<br/>
+              &nbsp;&nbsp;"stale":"0",<br/>
+              &nbsp;&nbsp;"dupelicate":"0",<br/>
+              &nbsp;&nbsp;"other":"0"<br/>
+              &nbsp;&nbsp;}<br/>
+              }
+            </p>
+            <p style="font-size:15px;font-weight:bold;margin-top:15px;">矿工算力</p>
+            <p style="border:1px #bbb solid;padding:5px;background:#eee">
+              POST https://antpool.com/api/workers.htm
+            </p>
+            <p>参数:</p>
+            <ul style="margin-top:10px;">
+              <li>key - API 秘钥</li>
+              <li>nonce - 随机数</li>
+              <li>signature - 签名</li>
+              <li>pageEnable - 是否分页返回记录，默认为分页，0:不分页; 1:分页</li>
+              <li>page - 页码，默认为第一页</li>
+              <li>pageSize - 页面大小，默认为每页10条记录</li>
+            </ul>
+            <p>返回用户矿工的算力（单位为：MH/s）、接受数、拒绝数、过期数、重复提交数等，如下所示：</p>
+            <p style="border:1px #bbb solid;padding:5px;background:#eee">
+              {<br/>
+              "version":"1.0",<br/>
+              "code":0,<br/>
+              "message":"ok",<br/>
+              "data":<br/>
+              &nbsp;&nbsp;{<br/>
+              &nbsp;&nbsp;"rows":<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;[{<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"worker":"antminer_1",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"last10m":"0",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"last30m":"0",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"last1h":"0",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"last1d":"0",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"prev10m":"0",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"prev30m":"0",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"prev1h":"0",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"prev1d":"0",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"accepted":"0",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"stale":"0",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"dupelicate":"0",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"other":"0"<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;}],<br/>
+              &nbsp;&nbsp;"page":1,<br/>
+              &nbsp;&nbsp;"totalPage":1,<br/>
+              &nbsp;&nbsp;"pageSize":10,<br/>
+              &nbsp;&nbsp;"totalRecord":1<br/>
+              &nbsp;&nbsp;}<br/>
+              }
+            </p>
+            <p style="font-size:15px;font-weight:bold;margin-top:15px;">付款记录</p>
+            <p style="border:1px #bbb solid;padding:5px;background:#eee">
+              POST https://antpool.com/api/paymentHistory.htm
+            </p>
+            <p>参数:</p>
+            <ul style="margin-top:10px;">
+              <li>key - API 秘钥</li>
+              <li>nonce - 随机数</li>
+              <li>signature - 签名</li>
+              <li>type - 付款记录获取类型，默认为支付记录， payout: 支付记录; pps: PPS收入记录; pplns: PPLNS收入记录; p2p: P2P收入记录</li>
+              <li>pageEnable - 是否分页返回记录，默认为分页，0:不分页; 1:分页</li>
+              <li>page - 页码，默认为第一页</li>
+              <li>pageSize - 页面大小，默认为每页10条记录</li>
+            </ul>
+            <p>如果类型为payout，则返回用户支付记录，如下所示：</p>
+            <p style="border:1px #bbb solid;padding:5px;background:#eee">
+              {<br/>
+              "version":"1.0",<br/>
+              "code":0,<br/>
+              "message":"ok",<br/>
+              "data":<br/>
+              &nbsp;&nbsp;{<br/>
+              &nbsp;&nbsp;"rows":<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;[{<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"timestamp":"2015-01-01 00:00:00",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"walletAddress":"1Mp3atombUR6iLLYoLEdN9uPfPscsKBXfi",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"txId":"191138d1aa04f8c898139d69fc821a5e0b92b4ecb3225629012fcc1a7558736d",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"amount":"0.01"<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;}],<br/>
+              &nbsp;&nbsp;"page":1,<br/>
+              &nbsp;&nbsp;"totalPage":1,<br/>
+              &nbsp;&nbsp;"pageSize":10,<br/>
+              &nbsp;&nbsp;"totalRecord":1<br/>
+              &nbsp;&nbsp;}<br/>
+              }
+            </p>
+            <p>如果类型为pps，则返回用户PPS收入记录，如下所示：</p>
+            <p style="border:1px #bbb solid;padding:5px;background:#eee">
+              {<br/>
+              "version":"1.0",<br/>
+              "code":0,<br/>
+              "message":"ok",<br/>
+              "data":<br/>
+              &nbsp;&nbsp;{<br/>
+              &nbsp;&nbsp;"rows":<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;[{<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"timestamp":"2015-01-01 00:00:00",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"networkDiff":"35985640265",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"diff1ShareCount":"1000",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"fee":"0.01",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"amount":"0.01"<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;}],<br/>
+              &nbsp;&nbsp;"page":1,<br/>
+              &nbsp;&nbsp;"totalPage":1,<br/>
+              &nbsp;&nbsp;"pageSize":10,<br/>
+              &nbsp;&nbsp;"totalRecord":1<br/>
+              &nbsp;&nbsp;}<br/>
+              }
+            </p>
+            <p>如果类型为pplns，则返回用户PPLNS收入记录，如下所示：</p>
+            <p style="border:1px #bbb solid;padding:5px;background:#eee">
+              {<br/>
+              "version":"1.0",<br/>
+              "code":0,<br/>
+              "message":"ok",<br/>
+              "data":<br/>
+              &nbsp;&nbsp;{<br/>
+              &nbsp;&nbsp;"rows":<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;[{<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"timestamp":"2015-04-16 13:01:13",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"blockHeight":"352369",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"diff1ShareCount":"1000",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"type":"Block",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"amount":"0.01"<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;}],<br/>
+              &nbsp;&nbsp;"page":1,<br/>
+              &nbsp;&nbsp;"totalPage":1,<br/>
+              &nbsp;&nbsp;"pageSize":10,<br/>
+              &nbsp;&nbsp;"totalRecord":1<br/>
+              &nbsp;&nbsp;}<br/>
+              }
+            </p>
+            <p>如果类型为solo，则返回用户Solo收入记录，如下所示：</p>
+            <p style="border:1px #bbb solid;padding:5px;background:#eee">
+              {<br/>
+              "version":"1.0",<br/>
+              "code":0,<br/>
+              "message":"ok",<br/>
+              "data":<br/>
+              &nbsp;&nbsp;{<br/>
+              &nbsp;&nbsp;"rows":<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;[{<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"timestamp":"2015-04-16 13:01:13",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"blockHeight":"352369",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"networkDiff":"49446390688",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"blockValue":"25.15273737",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"fee":"0.01",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"amount":"24.75"<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;}],<br/>
+              &nbsp;&nbsp;"page":1,<br/>
+              &nbsp;&nbsp;"totalPage":1,<br/>
+              &nbsp;&nbsp;"pageSize":10,<br/>
+              &nbsp;&nbsp;"totalRecord":1<br/>
+              &nbsp;&nbsp;}<br/>
+              }
+            </p>
+            <p>如果类型为p2p，则返回用户P2P收入记录，如下所示：</p>
+            <p style="border:1px #bbb solid;padding:5px;background:#eee">
+              {<br/>
+              "version":"1.0",<br/>
+              "code":0,<br/>
+              "message":"ok",<br/>
+              "data":<br/>
+              &nbsp;&nbsp;{<br/>
+              &nbsp;&nbsp;"rows":<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;[{<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"timestamp":"2015-01-01 00:00:00",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"blockHeight":"336917",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"blockValue":"25.05980072",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"blockPoolValue":"0.37762711",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"diff1ShareCount":"1000",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"totalShareCount":"10000",<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;"amount":"0.01"<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;}],<br/>
+              &nbsp;&nbsp;"page":1,<br/>
+              &nbsp;&nbsp;"totalPage":1,<br/>
+              &nbsp;&nbsp;"pageSize":10,<br/>
+              &nbsp;&nbsp;"totalRecord":1<br/>
+              &nbsp;&nbsp;}<br/>
+              }
+            </p>
+            <br/>
+            <br/>
+          </div>
+
+
+        </div>
+     </div>
+  </div>
+      
+  <!--==========================================================================================================================================================================-->
+    <div class="foot">
+         <div class="foot_main">
+                 <div id="bitmain" >
+                    <img src="images/antpool/logo-bitmain@2x.png" width="127" height="17" alt="BitMain"  />
+                    <div class="reginfo">Copyright BITMAIN 2015. All Rights Reserved.</div>
+                 </div>
+                 <div class="cominfo">
+                      <ul class="comUL">
+                          <li>PRODUCT</li>
+                          <li>ABOUT</li>
+                          <li>SERVICES</li>
+                          <li>SOCIAL</li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.bitmaintech.com/?utm_source=forum" target="_blank">AntMiner</a></li>
+                          <li><a href="https://www.bitmaintech.com/about.htm" target="_blank">About US</a></li>
+                          <li><a href="https://support.bitmain.com/?ticket=ST&utm_source=forum" target="_blank">Support Center</a></li>
+                          <li><a href="https://forum.bitmain.com/?ticket=ST&utm_source=forum" target="_blank">BITMAINTALK</a></li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.hashnest.com/?ticket=ST&utm_source=forum" target="_blank" >HashNest</a></li>
+                          <li><a href="https://account.bitmain.com/terms_service" target="_blank">Terms of Use</a></li>
+                          <li><a href="https://support.bitmain.com/wikis?ticket=ST&utm_source=forum" target="_blank">FAQ</a></li>
+                          <li><a href="https://twitter.com/BITMAINtech" target="_blank">Twitter</a></li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.antpool.com/?utm_source=forum" target="_blank">AntPool</a></li>
+                          <li><a href="https://www.bitmaintech.com/about.htm" target="_blank">Contact US</a></li>
+                          <li><a href="https://support.bitmain.com/questions/pending" target="_blank">Ticket</a></li>
+                          <li><a href="https://www.facebook.com/Bitmaintech.Antminer?ref=hl" target="_blank">Facebook</a></li>
+                      </ul>
+                 </div>
+         </div>
+    </div>
+
+  </section> 
+</div>
+
+</body>
+</html>

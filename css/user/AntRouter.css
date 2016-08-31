@@ -1,0 +1,401 @@
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.main-content-top{
+    background-color: #f5f7f9;
+    margin-top: 30px;
+}
+.common-padding{
+    padding: 10px 30px;
+}
+.common-height{
+    height: 35px;
+    line-height: 35px;
+}
+.big-common-font {
+    font-style: normal;
+    color: #ff8866;
+    font-size: 25px;
+    font-weight: bold;
+}
+.common-font{
+    font-size: 20px;
+    color: #333333;
+    font-weight: bold;
+}
+.common-width{
+    width: 1200px;
+    margin: 0 auto;
+}
+.nav-title ul li{
+    display: inline-block;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+.nav-title ul li a{
+    display: block;
+    padding: 12px 20px;
+    font-size: 14px;
+    background: #dadfe6;
+}
+.collection-num{
+    margin-top: 10px;
+    background: url("../images/AntRouter/bg-pic/bg-bitcoin.png")right bottom no-repeat;
+    background-color: white;
+    width: 540px;
+}
+.more-info{
+    margin-top: 15px;
+}
+.more-info a{
+    font-size: 14px;
+    color: #428bca;
+    text-align: right;
+    background: url("../images/AntRouter/icon/icon-12-arrow-r.png") right center no-repeat;
+    padding-right: 20px;
+}
+.collection-data-content p{
+    height: 36px;
+    border-bottom: 1px dashed #ededed;
+    line-height: 36px;
+    color: #444444;
+    font-size: 14px;
+}
+.special-style{
+    font-size: 20px;
+    color: #ff8866;
+}
+.collection-rank{
+    margin-bottom: 15px;
+}
+.collection-rank a{
+    background: url("../images/AntRouter/icon/icon-12-arrow-r.png") right center no-repeat;
+    padding-right: 20px;
+}
+.ant-router-show{
+    margin-top: 10px;
+    overflow: hidden;
+    width: 650px;
+    height: 292px;
+    display: inline-block;
+}
+/*#ant-router-show-icon{*/
+    /*position: fixed;*/
+    /*top: 408px;*/
+    /*left: 970px;*/
+
+    /*margin-right: 300px;*/
+    /*margin-top: -30px;*/
+/*}*/
+.show-icon{
+    width: 12px;
+    height: 12px;
+    margin-left: 20px;
+    border-radius: 50%;
+    background: #000;
+    opacity: .9;
+    display: inline-block;
+    color: #fff;
+    line-height: 22px;
+}
+.collection-history{
+    margin-top: 10px;
+}
+.collection-challenge{
+    width: 540px;
+    height: 475px;
+    background-color: white;
+}
+.collection-challenge-history-header{
+    margin-top: 10px;
+}
+.collection-challenge-history{
+    padding-left: 50px;
+    background: url("../images/AntRouter/icon/icon-48-flag.png") left center no-repeat;
+}
+.foot-print{
+    padding-left: 50px;
+    vertical-align: middle;
+    background: url("../images/AntRouter/icon/icon-48-position.png") left center no-repeat;
+}
+.collection-introduction{
+    /*vertical-align: middle;*/
+    padding-bottom: -5px;
+    color: #999999;
+    font-size: 14px;
+}
+.user-assessment{
+    margin-top: 25px;
+    padding: 20px 40px 20px 20px;
+    border: 1px dashed #ededed;
+}
+.user-assessment p{
+    color: #444444;
+    font-size: 14px;
+}
+.user-challenge-present span{
+    color: #ff8866;
+    font-size: 20px;
+}
+.collection-points{
+    width: 170px;
+    height: 475px;
+    padding: 20px 10px 0;
+    margin-left: 10px;
+    background: url("../images/AntRouter/bg-pic/bg-dig.png") right bottom no-repeat;
+    background-color: #f8f6f6;
+}
+.collection-point-word{
+    padding-left: 50px;
+    background: url("../images/AntRouter/icon/icon-48-badge.png") left center no-repeat;
+}
+.collection-points-content{
+    text-align: center;
+}
+.collection-points-num{
+    padding: 20px 0;
+}
+.collection-points-describe p{
+    font-size: 14px;
+    color: #999999;
+}
+.collection-foot-print-tittle{
+    margin-top: 10px;
+}
+.collection-foot-print{
+    width: 470px;
+    height: 475px;
+    margin-left: 10px;
+    background-color: white;
+}
+.collection-notice{
+    background-color: white;
+    margin-top: 10px;
+}
+.notice-advice{
+    vertical-align: middle;
+    background: url("../images/AntRouter/icon/icon-48-note.png") left center no-repeat;
+    padding-left: 50px;
+    line-height: 48px;
+}
+#notice-add{
+    font-size: 14px;
+    font-weight: normal;
+}
+#use-terms{
+    color: blue;
+}
+.collection-notice-sort{
+    color: #444444;
+    font-size: 16px;
+    text-align: center;
+    padding-bottom: 20px;
+    display: inline-block;
+    border-bottom: 4px solid #d8d8d8;
+}
+.equipment-use{
+    width: 25%;
+    border-bottom: 4px solid #ff8866;
+}
+.income-cash{
+    width: 25%;
+}
+.account-safety{
+    width: 25%;
+}
+.bit-knowledge{
+    width: 25%;
+}
+.collection-notice-content{
+    font-size: 0px;
+}
+.collection-notice-content-main{
+    margin-top: 30px;
+    margin-left: 25px;
+    margin-bottom: 30px;
+}
+.collection-notice-content-main li{
+    line-height: 30px;
+    font-size: 14px;
+    color: #444444;
+}
+#show-notice-content{
+    height: 260px;
+    overflow: hidden;
+}
+/*弹窗*/
+.jump-window-bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #939393;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    display: none;
+}
+.show-collection-details{
+    height: 440px;
+    position: absolute;
+    top: 100px;
+    left: -400px;
+    width: 800px;
+    background-color: white;
+    display: block;
+    margin-left: 50%;
+
+}
+.show-collection-details-tittle{
+    height: 55px;
+}
+.show-collection-details-tittle p{
+    line-height: 55px;
+    margin-left: 20px;
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+}
+#close-icon{
+    margin-top: 10px;
+    color: #e6e9ee;
+    margin-right: 20px;
+}
+.show-collection-details-content{
+    height: 350px;
+    padding-top: 25px;
+    padding-left: 20px;
+    background-color: #f3f5f7;
+    overflow-y: scroll;
+}
+.show-collection-details-content table{
+    border-collapse: collapse;
+}
+.show-collection-details-content table tr{
+    height: 40px;
+}
+.show-collection-details-content table tr:first-child{
+    height: 40px;
+    background-color: #e6e9ee;
+}
+.show-collection-details-content table tr th{
+    line-height: 40px;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+.show-collection-details-content table tr td{
+    text-align: center;
+}
+.change-bg-color:hover{
+    background-color: white;
+}
+.production-time{
+    width: 100px;
+}
+.user-name{
+    width: 80px;
+}
+.block-number{
+    width: 102px;
+}
+.sum-operate-time{
+    width: 145px;
+}
+.sum-equipment-utilization{
+    width: 100px;
+}
+.reward-bit{
+    width: 110px;
+}
+.convertible-cash{
+    width: 110px;
+    padding-right: -10px;
+}
+.users-name{
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+}
+.users-money{
+    text-align: right;
+}
+/*使用条款弹窗*/
+.service-clause{
+    background-color: white;
+    position: absolute;
+    top: 100px;
+    left: -400px;
+    width: 800px;
+    padding: 10px 40px;
+    margin-left: 50%;
+    font-size: 14px;
+}
+.service-clause h3{
+    text-align: center;
+    padding: 10px 0;
+
+}
+#close-icon-other{
+    position: relative;
+    top: -75px;
+    right: -20px;
+}
+/*渐隐*/
+.luara-{
+    position:relative;
+    padding:0;
+    overflow: hidden;
+    width: 650px;
+    height: 292px;
+    display: inline-block;
+}
+.luara- ul{
+    padding: inherit;
+    margin: 0;
+}
+.luara- ul li{
+    display: none;
+    padding: inherit;
+    margin: inherit;
+    list-style: none;
+}
+.luara- ul li:first-child{
+    display:block;
+}
+.luara- ul li img{
+    width: inherit;
+    height: inherit;
+}
+/*圆点*/
+.ant-router-show-picture{}
+.ant-router-show-picture ol{
+    position:relative;
+    width: 200px;
+    height: 20px;
+    top:-30px;
+    left:255px;
+    list-style-type:none;
+}
+.ant-router-show-picture ol li{
+    border-radius: 50%;
+    float:left;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    margin-left: 20px;
+    background: #d8d8d8;
+}
+.ant-router-show-picture ol li.seleted{
+    background: #4a4a4a;
+}

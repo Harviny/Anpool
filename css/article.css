@@ -1,0 +1,139 @@
+@charset "utf-8"; 
+
+.left_bar {
+	float: left;
+	margin-right: -200px
+}
+
+.main_content {
+	width: 100%;
+	float: left
+}
+
+.main_content .container,.main_content .wraper {
+	margin: 0 0 0 200px;
+	padding: 15px;
+	background: #FFF;
+	border: 1px solid #CCC;
+} /*页面菜单*/
+.page_menu {
+	width: 200px;
+}
+
+.page_menu li,.page_menu ul {
+	margin: 0;
+	list-style: none
+}
+
+.page_menu {
+	margin: 0;
+	background: #ececec;
+	border-top: none
+}
+
+.page_menu li {
+	border: 1px solid #ccc;
+	font-size: 14px;
+	border-right: 0;
+	margin-bottom: -1px;
+	font-family: 'helvetica neue', 'hiragino sans gb', 'stheiti',
+		'microsoft yahei', Tahoma, Arial, STHeiti, sans-serif;
+}
+
+.page_menu li a {
+	display: block;
+	padding: 20px 10px;
+	color: #3a3a3a;
+	box-shadow: inset -6px 0px 5px -2px #CCC;
+}
+
+.page_menu li a b {
+	clear: both;
+	font-size: 20px
+}
+
+.page_menu li a:hover {
+	text-decoration: none;
+	background-color: #F5F5F5;
+}
+
+.page_menu li a.cur {
+	background: #FFF;
+	color: #1383e8;
+	margin-right: -1px;
+	box-shadow: none
+}
+
+.page_menu li ul {
+	background: #f9f9f9;
+}
+
+.page_menu li li {
+	font-weight: 400;
+	border-left: none
+}
+
+.page_menu li li a {
+	border: none;
+	padding: 12px 10px 12px 30px;
+	font-size: 12px;
+	color: #666
+}
+
+.page_menu li li a:hover,.page_menu li li a.cur {
+	text-decoration: none;
+	color: #1383e8;
+}
+
+.page_menu li li a.cur {
+	box-shadow: none;
+	border-left: 2px solid #1383e8;
+} /*文章页面*/
+.article_page .article_title {
+	padding: 10px;
+	margin: 0 10px;
+	border-bottom: 1px solid #EEE;
+	font-size: 22px;
+	font-weight: 400;
+	font-family: 'helvetica neue', 'hiragino sans gb', 'stheiti',
+		'microsoft yahei', Tahoma, Arial, STHeiti, sans-serif;
+	text-align: center
+}
+
+.article_page .article_info {
+	padding: 5px 15px;
+	color: #999;
+	text-align: center
+}
+
+.article_page .article_body {
+	padding: 0 20px;
+}
+
+.article_page .article_body p {
+	margin: 0;
+	text-indent: 2em;
+	padding-bottom: 10px;
+	line-height: 1.8
+}
+
+.article_page .article_body .help_img {
+	padding: 5px;
+	border: 1px solid #EEE
+}
+
+.article_page .article_body .sub_title {
+	background: #EEE;
+	padding: 8px;
+	border-left: 8px solid #CCC;
+	margin-bottom: 20px
+}
+
+.article_page .article_body h3 {
+	font-size: 20px
+}
+
+.article_page .article_body .img {
+	text-align: center;
+	padding: 10px 0
+}

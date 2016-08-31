@@ -1,0 +1,328 @@
+I/* reset */
+body.custom-background {
+	background-image: url('../theme/images/bg/noise.png');
+	background-repeat: repeat;
+	background-position: top left;
+	background-attachment: scroll;
+}
+
+#logo {
+	
+}
+
+#tagline {
+	
+}
+
+#header {
+	min-height: 100px;
+}
+
+.selected,.selected:hover,#backtotop a:hover,.feature-circle.blue,.prev:hover,.next:hover,.mr-rotato-prev:hover,.mr-rotato-next:hover,.flex-direction-nav a:hover,.post .flex-direction-nav a:hover,.project .flex-direction-nav a:hover
+	{
+	background-color: ;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	color: 
+}
+
+a:hover,a:focus {
+	color: ;
+}
+
+a,a:visited {
+	color: ;
+}
+
+body {
+	font-size: 
+}
+
+#navigation ul li a:hover,#navigation ul li:hover>a,#bolded-line,.button.gray:hover,.button.light:hover,.price_slider_wrapper .ui-slider-horizontal .ui-slider-range,.button.color,.onsale,input[type="button"]
+	{
+	background: #72b626;
+}
+
+.blog-sidebar .widget #twitter-blog li a,a,a:hover,.testimonials-author,.shop-item span.price,a.post-entry
+	{
+	color: #72b626
+}
+
+#navigation>div>ul>li.current-menu-item>a,.pricing-table .color-3 h3,.color-3 .sign-up,.flex-direction-nav .flex-prev:hover,.flex-direction-nav .flex-next:hover,.tp-leftarrow:hover,.tp-rightarrow:hover,#scroll-top-top a,.quantity .plus:hover,#content .quantity .plus:hover,.quantity .minus:hover,#content .quantity .minus:hover,.post-icon
+	{
+	background-color: #72b626;
+}
+
+.mr-rotato-prev:hover,.mr-rotato-next:hover,li.current,.tagcloud a:hover
+	{
+	background-color: #72b626;
+	border-color: #72b626;
+}
+
+#filters a:hover,.selected,.wp-pagenavi .current,.pagination .current,#portfolio-navi a:hover
+	{
+	background-color: #72b626 !important;
+	border: 1px solid #72b626 !important;
+}
+
+.pricing-table .color-3 h4 {
+	background-color: #72b626;
+	opacity: 0.8
+}
+
+.image-overlay-link,.image-overlay-zoom {
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+#navigation     &gt     ; div     &gt     ; ul     &gt     ; li.current-menu-item  
+	  &gt     ; a {
+	background-image: none
+}
+
+.wp-pagenavi a:hover {
+	color: #888;
+}
+
+.post-meta a {
+	background-color: transparent !important;
+}
+
+.sign-up:hover {
+	color: #fff;
+}
+
+.added_to_cart {
+	display: none;
+}
+
+.woocommerce-ordering {
+	margin: 5px 0 10px 0;
+}
+
+span.onsale,.price_slider_wrapper .button {
+	box-shadow: none !important;
+}
+
+.shop-item img:hover {
+	border-color: #ccc;
+}
+
+.page-title {
+	margin: 0 0 10px;
+	overflow: hidden;
+	padding: 5px 0;
+	width: 100%;
+}
+
+.fieldset {
+	margin: 0 10px 25px;
+}
+
+button,input,select,textarea {
+	margin: 0;
+}
+
+select,input,textarea {
+	font: 99% sans-serif;
+}
+
+input,select {
+	vertical-align: middle;
+}
+
+input,select,textarea,button {
+	color: #2F2F2F;
+	font: 12px/15px Arial, Helvetica, sans-serif;
+	vertical-align: middle;
+}
+
+.fieldset .legend {
+	background: none repeat scroll 0 0 #F1F1F1;
+	font-size: 13px;
+	line-height: 1.25;
+	margin: 0 -10px 12px;
+	padding: 2px 10px;
+}
+
+ul {
+	list-style: none outside none;
+}
+
+.form-list li:after,.form-list .field:after {
+	clear: both;
+	content: ".";
+	display: block;
+	font-size: 0;
+	height: 0;
+	line-height: 0;
+	overflow: hidden;
+}
+
+.form-list li {
+	margin: 0 0 6px;
+}
+
+.form-list .customer-name-suffix .name-lastname,.form-list .customer-name-middlename .name-firstname
+	{
+	width: 310px;
+}
+
+.form-list .field {
+	float: left;
+	width: 275px;
+}
+
+.form-list label.required em {
+	color: #EB340A;
+	float: right;
+	font-style: normal;
+	position: absolute;
+	right: -7px;
+	top: 0;
+}
+
+.form-list .input-box {
+	clear: both;
+	display: block;
+	width: 260px;
+}
+
+.account-info {
+	font-size: 14px;
+	width: 680px;
+}
+
+.account-info li {
+	padding:2px;
+	margin-bottom: 15px;
+}
+
+.account-info .board {
+}
+
+.account-info .name {
+}
+
+.account-info .info {
+	color: #666666;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+.account-edit {
+	font-size: 13px;
+}
+
+.account-edit tr {
+	height:50px;
+}
+
+.account-edit td {
+	vertical-align:middle;
+	padding: 2px;
+}
+
+.account-edit-name {
+	
+}
+
+.content-box {
+	margin-left:20px;
+}
+
+.top-panel{
+	margin: 0;
+	float: right;
+	background-color: #fff;
+	position: relative;
+	z-index: 2;
+	width: 300px;
+	height:28px;
+}
+
+.top-panel a:link {
+	color:#000000;
+	text-decoration:none;
+}
+
+.top-panel a:visited {
+	color:#000000;
+	text-decoration:none;
+}
+
+.top-panel a:hover {
+	color:#000000;
+	text-decoration:none;
+}
+
+.top-panel a:active {
+	color:#000000;
+	text-decoration:none;
+}
+
+.top-panel-cart{
+	line-height: 37px;
+	padding: 0 10px 0 42px;
+	cursor: pointer;
+	float: right;
+	background: url("images/icon-cart.png") no-repeat scroll 14px 6px;
+}
+
+.form-table {
+	
+}
+
+.form-table tr {
+	
+}
+
+.form-table td {
+	padding:3px;
+	vertical-align:middle;
+}
+
+.form-table .more-info {
+	padding-top:15px;
+	padding-bottom:10px;
+}
+
+.more-info a:link {
+	color:#539707;
+	text-decoration:none;
+}
+
+.more-info a:visited {
+	color:#539707;
+	text-decoration:none;
+}
+
+.more-info a:hover {
+	color:#539707;
+	text-decoration:underline;
+}
+
+.more-info a:active {
+	color:#539707;
+	text-decoration:none;
+}
+
+.board a:link {
+	color:#539707;
+	text-decoration:none;
+}
+
+.board a:visited {
+	color:#539707;
+	text-decoration:none;
+}
+
+.board a:hover {
+	color:#539707;
+	text-decoration:underline;
+}
+
+.board a:active {
+	color:#539707;
+	text-decoration:none;
+}

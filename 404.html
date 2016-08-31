@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>AntPool</title>
+    <link rel="stylesheet" href="css/antpool/get-your-coins.css">
+    <link rel="stylesheet" href="css/user/bootstrap.min.css">
+    <link rel="stylesheet" href="css/user/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/user/animate.min.css" />
+    <link rel="stylesheet" href="css/user/skin.css"/>
+    <link rel="stylesheet" href="css/user/style.css"/>
+    <link rel="stylesheet" href="css/user/panel.css" />
+    <link rel="stylesheet" href="css/user/pace.css" />
+    <link rel="stylesheet" href="css/user/offline.css" />
+    <link rel="stylesheet" href="css/user/products.css">
+    <link rel="stylesheet" href="css/antpool/style.css">
+    <link rel="stylesheet" href="css/antpool/home.css">
+    <script src="js/antpool/jquery-1.8.3.min.js"></script><script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="js/antpool/common.js"></script>
+    <script src="js/antpool/highcharts.js"></script>
+    <script src="js/antpool/home.js"></script>
+    <script src="js/antpool/systemtools.js"></script>
+</head>
+<body>
+<div class=" app horizontal">
+    <div class="top">
+
+        <div class="top_main">
+            <div id="logo" ><a href="home.html"><img src="images/antpool/logo@2x.png" width="217" height="53" alt="AntPool"  /></a></div>
+            <div id="nav">
+                <ul class="daohangul" >
+                    <li><a href="home.html"  class="active">首页</a> </li>
+                    <li><a href="dashboard.html">用户面板</a> </li>
+                    <li><a href="setting.html">设置</a> </li>
+                    <li><a href="poolStats.html">统计</a> </li>
+                    <div class="btn-group">
+                        <a data-toggle="dropdown" >区块服务  <img src="images/antpool/icon-arrow-down.png" ></a>
+                        <ul  class="dropdown-menu ddlselect blockservice" role="menu">
+                            <li><a href="coinbase.html">区块签名</a></li>
+                            <li><a href="get-your-coins.html" style=" border:0px; height:30px;  line-height:25px;">原币</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group" style="margin-left:-5px;">
+                        <a data-toggle="dropdown" >帮助  <img src="images/antpool/icon-arrow-down.png" ></a>  <ul class="dropdown-menu ddlselect helpsuppt" role="menu">
+                        <li><a href="support.html">帮助与支持</a></li> <li><a href="apiGuild.html">API指南</a></li>
+                        <li><a href="https://forum.bitmain.com/" style=" border:0px; height:30px;  line-height:25px;">社区</a></li>
+                    </ul>
+                    </div>
+                </ul>
+            </div>
+            <div class="top_right">
+                <div class="children btn-group" >
+                    <a  data-toggle="dropdown" >
+                        <div class="cn">当前子账户</div>
+                        <div class="useren">
+                            <div class="en_met">antminer</div> &nbsp;
+                            <div class="sanjiao_img"></div>
+                        </div>
+                    </a>
+                    <ul  class="dropdown-menu ddlselect child_ddl" role="menu" >
+                        <li><a href="#">wen</a></li>
+                        <li><a href="#">yongliang</a></li>
+                        <li><a href="#" >tianzhao</a></li>
+                    </ul>
+                </div>
+                <div class="ver_line"></div>
+                <div class="info">
+                    <div class="headinfo"> <img src="images/antpool/icon-user-24.png" ></div>
+                    <div class="email btn-group">
+                        <a  data-toggle="dropdown" >
+                            <span id="user"  class="en" >648800939@qq.com </span> &nbsp;
+                            <span class="sanjiao_img" style="margin-top:15px;"></span></a>
+                        <ul  class="dropdown-menu ddlselect userst" role="menu">
+                            <li><a href="#">用户中心</a></li>
+                            <li><a href="#" style=" border:0px; height:30px;  line-height:25px;">退出</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group"  >
+                        <div class="language" data-toggle="dropdown">EN</div>
+                        <ul  class="dropdown-menu ddlselect lngst " role="menu">
+                            <li><a href="#">English</a></li>
+                            <li><a href="#" style=" border:0px; height:30px;  line-height:25px;">简体中文</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--=======================================================================================================================================================================-->
+    <section class="layout">
+        <div class="products"></div>
+        <div class="horizontal-content">
+            <div class="middle">
+                <div class="md_content">
+                    <div class="md1">
+                        <div class="md1_left">
+                            <div class="phs">
+                                <div>76.72PH/S</div>
+                                <div class="explain">蚂蚁矿池总算力</div>
+                            </div>
+                            <div class="minernum">
+                                <span>310,310</span>
+                                <div class="explain">有效矿工数</div>
+                            </div>
+                        </div>
+                        <div id="myCarousel" class="md1_right carousel slide" data-ride="carousel">
+                            <div class="carousel-indicators slidexy">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="item active"><a href="#"><img src="images/antpool/home-banner1.png" ></a></div>
+                                <div class="item"><a href="#"><img src="images/antpool/home-banner2.png" ></a></div>
+                                <div class="item"><a href="#"> <img src="images/antpool/home-banner3.png" ></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div  class="md2">
+                        <div class="md2_left">
+                            <div class="charttitle"  >
+                                <span>蚂蚁矿池算力曲线</span>
+                            </div>
+                            <div id="chart_container" ></div>
+                            <div><span class="chartmark">总产出:5,588 Blocks 145,376 Btc &nbsp;&nbsp;&nbsp;&nbsp;总幸运:101%</span></div>
+                        </div>
+                        <div class="md2_right">
+                            <div class="md2_con">
+                                <div class="md2_title">配置地址</div>
+                                <div class="md2_text">
+                                    <div>
+                                        <li> <a id="copysolo3333" href="stratum+tcp://stratum.antpool.com:3333">stratum+tcp://stratum.antpool.com:3333</a></li>
+                                        <li> <a id="copysolo443"  href="stratum+tcp://stratum.antpool.com:443">stratum+tcp://stratum.antpool.com:443</a></li>
+                                        <li> <a id="copysolo25"  href="stratum+tcp://stratum.antpool.com:25">stratum+tcp://stratum.antpool.com:25</a></li>
+                                    </div>
+                                    <div style=" float:right; border:solid 0px red; margin-top:-75px; margin-right:15px;cursor:pointer; " onmouseover="$('#bigimg').show()" onmouseout="$('#bigimg').hide()">
+                                        <img src="images/antpool/setting-help-s.png" alt="" >
+                                        <a style="text-decoration: none;"><div style="color:#3c78c2; height:20px; font-family:微软雅黑; margin-top:3px;  ">矿机配置帮助</div></a>
+                                    </div>
+                                    <div id="bigimg" style=" float:right;  position:absolute; margin-top:-200px;; margin-left:-100px;display:none; z-index:999;" >
+                                        <img src="images/antpool/setting-help-big.png" alt="">
+                                    </div>
+                                    <img src="images/antpool/curl.png" alt="" style=" float:right; margin-right:-1px;">
+                                </div>
+                            </div>
+                            <div class="md2_con">
+                                <div class="md2_title">联系蚂蚁矿池</div>
+                                <div class="md2_text">
+                                    <div class="md2_text_font">
+                                        <table>
+                                            <tr>
+                                                <td style="text-align:right">QQ群：</td><td  style="text-align:left; padding-left:8px;">227819626</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:right">客服邮箱：</td><td  style="text-align:left;padding-left:8px;"> support@bitmain.com</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:right">论坛：</td><td  style="text-align:left;padding-left:8px;"> <a href="http://forum.bitmain.com/bbs/topics/node3">Antpool BBS</a></td>
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                    <a href="vipRequest.html"><div style="color:#3c78c2; height:20px; font-family:微软雅黑; margin-top:-23px; margin-right:15px; float:right;cursor:pointer; ">大算力用户申请VIP</div></a>
+                                    <img src="images/antpool/curl.png" alt="" style=" float:right; margin-right:-1px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" friendlink">
+                <div class="fl_content">
+                    <div class="fl_title">友情链接</div>
+                    <div class="fl_link">
+                        <li> <a href="">OKCoin比特币</a></li>
+                        <li> <a href="">火币网</a></li>
+                        <li> <a href="">比特币交易网</a></li>
+                        <li> <a href="">比特儿</a></li>
+                        <li> <a href="">中国比特币</a></li>
+                        <li> <a href="">比特帮</a></li>
+                        <li> <a href="">巴比特</a></li>
+                        <li> <a href="">币科技</a></li>
+                        <li> <a href="">币看比特币</a></li>
+                        <li> <a href="">BTC114</a></li>
+                        <li> <a href="">BTC123</a></li>
+                        <li> <a href="">haobtc</a></li>
+                        <li> <a href="">蚂蚁矿机网</a></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--==========================================================================================================================================================================-->
+        <div class="foot">
+            <div class="foot_main">
+                <div id="bitmain" >
+                    <img src="images/antpool/logo-bitmain@2x.png" width="127" height="17" alt="BitMain"  />
+                    <div class="reginfo">Copyright BITMAIN 2015. All Rights Reserved.</div>
+                </div>
+                <div class="cominfo">
+                    <ul class="comUL">
+                        <li>PRODUCT</li>
+                        <li>ABOUT</li>
+                        <li>SERVICES</li>
+                        <li>SOCIAL</li>
+                    </ul>
+                    <ul >
+                        <li><a href="https://www.bitmaintech.com/?utm_source=forum" target="_blank">AntMiner</a></li>
+                        <li><a href="https://www.bitmaintech.com/about.htm" target="_blank">About US</a></li>
+                        <li><a href="https://support.bitmain.com/?ticket=ST&utm_source=forum" target="_blank">Support Center</a></li>
+                        <li><a href="https://forum.bitmain.com/?ticket=ST&utm_source=forum" target="_blank">BITMAINTALK</a></li>
+                    </ul>
+                    <ul >
+                        <li><a href="https://www.hashnest.com/?ticket=ST&utm_source=forum" target="_blank" >HashNest</a></li>
+                        <li><a href="https://account.bitmain.com/terms_service" target="_blank">Terms of Use</a></li>
+                        <li><a href="https://support.bitmain.com/wikis?ticket=ST&utm_source=forum" target="_blank">FAQ</a></li>
+                        <li><a href="https://twitter.com/BITMAINtech" target="_blank">Twitter</a></li>
+                    </ul>
+                    <ul >
+                        <li><a href="https://www.antpool.com/?utm_source=forum" target="_blank">AntPool</a></li>
+                        <li><a href="https://www.bitmaintech.com/about.htm" target="_blank">Contact US</a></li>
+                        <li><a href="https://support.bitmain.com/questions/pending" target="_blank">Ticket</a></li>
+                        <li><a href="https://www.facebook.com/Bitmaintech.Antminer?ref=hl" target="_blank">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>

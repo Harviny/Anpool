@@ -1,0 +1,594 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AntPool</title>
+<link rel="stylesheet" href="css/antpool/get-your-coins.css">
+<link rel="stylesheet" href="css/user/bootstrap.min.css">
+<link rel="stylesheet" href="css/user/font-awesome.min.css" />
+<link rel="stylesheet" href="css/user/animate.min.css" />
+<link rel="stylesheet" href="css/user/skin.css"/>
+<link rel="stylesheet" href="css/user/style.css"/>
+<link rel="stylesheet" href="css/user/panel.css" />
+<link rel="stylesheet" href="css/user/pace.css" />
+<link rel="stylesheet" href="css/user/offline.css" />
+<link rel="stylesheet" href="css/user/products.css">
+<link rel="stylesheet" href="css/antpool/style.css">
+<link rel="stylesheet" href="css/antpool/home.css">
+<script src="js/antpool/jquery-1.8.3.min.js"></script><script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="js/antpool/common.js"></script>  
+<script src="js/antpool/highcharts.js"></script>  
+<script src="js/antpool/home.js"></script>   
+<script src="js/antpool/systemtools.js"></script>
+<script src="js/user/jquery.placeholder.js"></script>
+<script src="js/user/jquery.bootstrap-growl.min.js"></script>
+<script src="js/user/bootstrap-alert.js"></script>
+<script src="js/systemtools.js"></script>
+<script src="js/user/products.js"></script>
+<script src="js/math_base.js"></script>
+<script src="js/user/coin.js"></script>
+
+
+<link rel="stylesheet" href="css/article.css">
+<script src="/js/ap_btc.js" type="text/javascript"></script>
+
+</head>
+<body>
+<div class=" app horizontal">
+<script type="text/javascript">
+  var num=0;
+    $(function() {
+      $("#navId > li").mouseenter(function(){
+        $("#navId > li").removeClass("navactive");
+        $(this).addClass("navactive");
+      });
+      
+      $("#navId > li").mouseleave(function(){
+        $("#navId > li").removeClass("navactive");
+      });
+      
+      $("#navId > li").click(function(){
+        $("#navId > li").removeClass("navactive");
+        $(this).addClass("navactive");
+      });
+    
+      f_get_navigation_data("/");
+      f_get_notice("/");
+    });
+    
+    function f_get_navigation_data(baseUrl) {
+    $.ajax({
+      url: baseUrl+'webService.htm',
+      type: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        $("#networkDiffSpan").html(data.Data.homeForm.networkDiff);
+        $("#blockNumberSpan").html(data.Data.homeForm.blockNumber);
+        $("#balanceSpan").html(data.Data.user_DashboardForm.accountBalance);
+        $("#span10m").html(data.Data.user_DashboardForm.hsLast5m);
+        $("#span30m").html(data.Data.user_DashboardForm.hsLast15m);
+        $("#span1h").html(data.Data.user_DashboardForm.hsLast1h);
+        $("#span1d").html(data.Data.user_DashboardForm.hsLast1d);
+      },
+      error: function() {
+        
+      }
+    });
+  }
+  
+  function f_get_notice(baseUrl) {
+      var count;
+      $.ajax({
+        url: baseUrl+'webService.htm?m=notice',
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+          var newList = data.Data.newsList;
+          var locale = data.Data.locale;
+          //count = data.Data.newsList.length;
+          if(locale == "zh") {
+            count = 2;
+          } else if(locale == "ru") {
+            count = 1;
+          } else {
+            count = 1;
+          }
+          if(count > 0) {
+            var str = "";
+            if(locale == "zh") {
+              str += '<li><a href="http://shang.qq.com/wpa/qunwpa?idkey=1294b3f67be569924fe1fbe10a2c8af1bedb24dafdba635a1eea3fa4e348744b" target="_blank">官方QQ群: 227819626</a></li>';
+              str += '<li><a href="https://www.hashnest.com/l/VuCSIcAaJeo" target="_blank">PACMIC V3上线，年化收益率25%</a></li>';
+            } else if(locale == "ru") {
+              str += '<li><a href="https://www.hashnest.com/l/VuCSIcAaJeo" target="_blank">ПАКМИК 3 доступен, средняя доходность 25%</a></li>';
+            } else {
+              str += '<li><a href="https://www.hashnest.com/l/VuCSIcAaJeo" target="_blank">PACMIC V3, the annual yield of 25%</a></li>';
+            }
+            /*for(var i=0;i<newList.length;i++){
+                if(locale == "zh"){
+                  str += '<li><a href="'+baseUrl+'poolNews.htm?id='+newList[i].id+'">'+newList[i].title_zh+'</a></li>';
+                } else {
+                  str += '<li><a href="'+baseUrl+'poolNews.htm?id='+newList[i].id+'">'+newList[i].title+'</a></li>';
+                }
+              }*/
+              $("#noticeul").html(str);
+              
+              function autoplay(){
+                if(num >= count){
+                  $('#noticeul li').eq(0).css('top',count*30);
+                  $('#noticeul').stop().animate({top:-num*30},function(){
+                    $('#noticeul li').eq(0).css('top',0);
+                    $('#noticeul').css('top',0);
+                    num = 0;
+                  })
+                }else{
+                  $('#noticeul').stop().animate({top:-num*30});
+                }
+                num++;
+              }
+              
+              $('#noticeul li').mouseover(function(e) {
+                  clearInterval(mytime);
+                  var myindex=$(this).index();
+                      $(this).addClass('current').siblings().removeClass();
+                  $('#noticeul').stop().animate({top:-myindex*30})
+                  clearInterval(mytime);
+                  num=$(this).index()+1;
+                  }).mouseout(function(e) {
+                      mytime=setInterval(autoplay,1500);
+                  });
+                var mytime=setInterval(autoplay,1500);
+                $(".notice").css("display","block");
+          } else {
+            $(".notice").css("display","none");
+          }
+        },
+        error: function() {
+          
+        }
+      });
+    }
+    
+    function f_switch_user(_userId) {
+      _userId = encodeURI(_userId);
+      _userId = _userId.replace(/\+/g,'%2B');
+      //var nowlocation = window.location.href;
+      var nowlocation = "/user/dashboard.htm";
+      var paramIndex = nowlocation.indexOf("?");
+      if(paramIndex != "-1") {
+        nowlocation = nowlocation.substring(0, paramIndex);
+      }
+      nowlocation = nowlocation + "?userId="+_userId;
+      
+      window.location.href = nowlocation;
+    }
+    
+    function f_switch_user_antrouter(_userId) {
+      _userId = encodeURI(_userId);
+      _userId = _userId.replace(/\+/g,'%2B');
+      //var nowlocation = window.location.href;
+      var nowlocation = "/user/antRouter.htm";
+      var paramIndex = nowlocation.indexOf("?");
+      if(paramIndex != "-1") {
+        nowlocation = nowlocation.substring(0, paramIndex);
+      }
+      nowlocation = nowlocation + "?userId="+_userId;
+      
+      window.location.href = nowlocation;
+    }
+</script>
+   <div class="top">
+          <div class="top_main">
+               <div id="logo" ><a href="home.html"><img src="images/antpool/logo@2x.png" width="217" height="53" alt="AntPool"  /></a></div>
+                <div id="nav" >  
+                    <ul class="daohangul">
+                        <li><a href="home.html"  >首页</a> </li>
+                        <li><a href="dashboard.html">用户面板</a> </li>
+                        <li><a href="setting.html">设置</a> </li>
+                        <li><a href="poolStats.html">统计</a> </li>
+                        <div class="btn-group">                    
+                             <a data-toggle="dropdown" >区块服务  <img src="images/antpool/icon-arrow-down.png" ></a> 
+                               <ul  class="dropdown-menu ddlselect blockservice" role="menu">
+                                    <li><a href="coinbase.html" >区块签名</a></li>
+                                    <li><a href="get-your-coins.html" style=" border:0px; height:30px;  line-height:25px;">原币</a></li>
+                             </ul>
+                      </div> 
+                      <div class="btn-group" style="margin-left:-5px;">
+                            <a data-toggle="dropdown" class="active">帮助  <img src="images/antpool/icon-arrow-down.png" ></a>  <ul class="dropdown-menu ddlselect helpsuppt" role="menu">                                    
+                             <li><a href="support.html">帮助与支持</a></li> <li><a href="apiGuild.html">API指南</a></li>
+                                    <li><a href="https://forum.bitmain.com/" style=" border:0px; height:30px;  line-height:25px;">社区</a></li>
+                             </ul>
+                      </div>
+                    </ul>
+                </div>
+                <div class="top_right">
+                    <div class="children btn-group" >
+                       <a  data-toggle="dropdown" >
+                         <div class="cn">当前子账户</div>                            
+                           <div class="useren">
+                           <div class="en_met">antminer</div> &nbsp;
+                           <div class="sanjiao_img"></div>
+                         </div>
+                       </a>
+                        <ul  class="dropdown-menu ddlselect child_ddl" role="menu" >
+                                <li><a href="#">wen</a></li>
+                                <li><a href="#">yongliang</a></li>  <li><a href="#" >tianzhao</a></li>
+                         </ul>
+                    </div>
+                    <div class="ver_line"></div>
+                    <div class="info">
+                         <div class="headinfo"> <img src="images/antpool/icon-user-24.png" ></div>
+                         <div class="email btn-group">
+                              <a  data-toggle="dropdown" >
+                                 <span id="user"  class="en" >648800939@qq.com </span> &nbsp;<span class="sanjiao_img" style="margin-top:15px;"></span></a>
+                                  <ul  class="dropdown-menu ddlselect userst" role="menu">
+                                     <li><a href="#">用户中心</a></li>
+                                     <li><a href="#" style=" border:0px; height:30px;  line-height:25px;">退出</a></li>
+                                  </ul>
+                            </div> 
+                         <div class="btn-group"  >
+                                <div class="language" data-toggle="dropdown">EN</div>
+                                 <ul  class="dropdown-menu ddlselect lngst " role="menu">
+                                     <li><a href="support_EN.html">English</a></li>
+                                     <li><a href="support_EN.html">简体中文</a></li>
+                                     <li><a href="support_py.html" style=" border:0px; height:30px;  line-height:25px;"> русский</a></li>
+                                  </ul>
+                         </div>
+                    </div>
+                </div>
+          </div>
+   </div>
+
+  <!--=======================================================================================================================================================================--> 
+ <section class="layout">
+   <div class="horizontal-content">
+     <div class="middle">
+     <div class="md_content" >
+        <div class="row" style="margin-bottom:3px;margin-left:3px;">
+             <div class="blocksig">帮助与支持</div>
+        </div>
+        <div id="page_body" class="page-b" style=" margin-left:-3px;">
+          <div class="container">
+            <div style="position: relative; top: 0px; left: auto;" class="left_bar">
+              <ul class="page_menu" id="article_menu">
+                <li class="parent parent_cur open"><a class="" href="#help_1">矿池介绍</a>
+                  <ul style="display: none;">
+                    <li><a href="#help_1_1" class="">挖矿模式</a></li>
+                    <li><a href="#help_1_2" class="">矿池配置</a></li>
+                    <li><a href="#help_1_3" class="">付款方式</a></li>
+                  </ul>
+                </li>
+                <li class="parent open parent_cur"><a class="" href="#help_2">挖矿教程</a>
+                  <ul style="display: none;">
+                    <li><a href="#help_2_1" class="">蚂蚁矿机S3</a></li>
+                    <li><a href="#help_2_2" class="">蚂蚁矿机U1</a></li>
+                    <li><a href="#help_2_3" class="">蚂蚁矿机U3</a></li>
+                  </ul>
+                </li>
+                <li class="parent"><a href="#help_3">矿机购买</a></li>
+                <li class="parent"><a href="#help_4">算力购买</a></li>
+                <li class="parent"><a href="#help_5">矿机监控</a></li>
+                <li class="parent"><a href="#help_6">FAQ</a></li>
+                <li class="parent"><a href="#help_7">客服</a></li>
+              </ul>
+            </div>
+            <div class="main_content" style="width: 1180px;margin-bottom:20px;">
+              <div class="wraper">
+                <div class="article_page">
+                  <h2 class="article_title">蚂蚁矿池介绍与使用</h2>
+                  <div class="article_body">
+                    <h3 id="help_1">矿池简介</h3>
+                    <p>蚂蚁矿池是比特大陆投入很多资源开发的高效的比特币矿池，致力于为矿工提供更友好的界面、更完善的功能、更方面的使用和更丰厚透明的收益，并为比特币的发展做出更多的贡献。<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;蚂蚁矿池提供Stratum和P2P两种挖矿模式，其中Stratum挖矿模式是蚂蚁矿池团队自主开发的矿池系统，其收集所有连接矿机的算力进行Stratum挖矿；P2P挖矿模式为继承并接入p2pool挖矿网络中进行挖矿。<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为了提供更稳定的挖矿，我们将在全球各地部署矿池节点，当前我们已经在美国、欧洲、香港、北京、深圳、杭州、青岛等地部署了矿池节点，并会不断的扩充节点，用户在接入矿池时，会自动通过负载均衡的方式分配到离自己最近的节点进行挖矿。</p>
+                    <h4 id="help_1_1" style="color: highlight;">挖矿模式:</h4>
+                    <p>蚂蚁矿池提供Stratum和P2P两种挖矿模式：</p>
+                    <h5 id="help_1_1_1" style="color: highlight;">Stratum挖矿模式:</h5>
+                    <p>Stratum挖矿模式，是蚂蚁矿池团队自主开发的矿池系统，其收集所有连接矿机的算力进行Stratum挖矿，并按照PPLNS等分配方式根据矿工贡献分配收益，Stratum模式经过我们不断的开发和完善，能够提供稳定、安全的挖矿服务，以及更高的挖矿收益。用户可在矿机中配置Stratum挖矿服务URL，进行Stratum模式挖矿。</p>
+                    <h6 id="help_1_1_1_1" style="color: highlight;">Stratum挖矿服务:</h6>
+                    <p>stratum.antpool.com:3333<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stratum.antpool.com:443<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stratum.antpool.com:25</p>
+                    <h5 id="help_1_1_2" style="color: highlight;">P2P挖矿模式:</h5>
+                    <p>P2P挖矿模式是继承p2pool开源项目而推出的挖矿模式，其为矿工提供了一种点对点的挖矿方式，防止算力集中在某个中心化的矿池而对比特币网络进行51%攻击。蚂蚁矿池致力于比特币有更好的发展，并希望在矿池领域做出一些贡献，我们现在还在不断的完善P2P的挖矿模式，提供更稳定、高效的服务。用户可在矿机中配置P2P挖矿服务URL，进行P2P模式挖矿。</p>
+                    <p>P2P挖矿代码发布在BITMAIN Github上，链接为：<a href="https://github.com/bitmaintech/p2pool">https://github.com/bitmaintech/p2pool</a></p>
+                    <p>希望众多的比特币爱好者和我们共同开发和完善，建立一个更加安全、稳定、高效的P2P矿池。</p>
+                    <h6 id="help_1_1_2_1" style="color: highlight;">P2P挖矿服务:</h6>
+                    <p>p2p.antpool.com:3333<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p2p.antpool.com:25<br>
+                    
+                    </p><h4 id="help_1_2" style="color: highlight;">矿池配置:</h4>
+                    <p>
+                      </p><table class="table table-bordered">
+                  <tbody><tr>
+                    <td width="100px">&nbsp;</td>
+                    <td>Stratum</td>
+                    <td>P2P</td>
+                  </tr>
+                  <tr>
+                    <td>Stratum URL</td>
+                    <td>
+                      stratum+tcp://stratum.antpool.com:3333<br>
+                      stratum+tcp://stratum.antpool.com:443<br>
+                      stratum+tcp://stratum.antpool.com:25<br>
+                    </td>
+                    <td>
+                      stratum+tcp://p2p.antpool.com:3333<br>
+                      stratum+tcp://p2p.antpool.com:25<br>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2">用户名</td>
+                    <td>
+                      挖矿用户名.矿工名<br>
+                      挖矿用户名_矿工名
+                    </td>
+                    <td>
+                      挖矿用户名.矿工名<br>
+                      挖矿用户名_矿工名
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      挖矿用户名和矿工名须由英文字母或者数字组成
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>密码</td>
+                    <td>任意</td>
+                    <td>任意</td>
+                  </tr>
+                  <tr>
+                    <td>分配方式</td>
+                    <td>PPLNS (0手续费)<br>PPS (2.5%手续费)<br>SOLO (1%手续费)</td>
+                    <td>PPLNS (0手续费)</td>
+                  </tr>
+                  <tr>
+                    <td>Block交易费</td>
+                    <td>不进行分配，用于矿池开发和维护费用</td>
+                    <td>分配</td>
+                  </tr>
+                  <tr>
+                    <td>分配规则</td>
+                    <td>AntPool出块得到3个确认后进行分配</td>
+                    <td>P2pool出块得到3个确认后进行分配</td>
+                  </tr>
+                  <tr>
+                    <td>支付规则</td>
+                    <td colspan="2">北京时间每天早上8:00-10:00自动打款，最低额度为0.001BTC</td>
+                  </tr>
+                </tbody></table>
+                    <p></p>
+                    
+                    <h4 id="help_1_3" style="color: highlight;">付款方式:</h4>
+                    <p>
+                      </p><table class="table table-bordered">
+                  <tbody><tr>
+                    <td width="80px">付款方式</td>
+                    <td width="60px">手续费</td>
+                    <td>说明</td>
+                  </tr>
+                  <tr>
+                    <td>PPLNS</td>
+                    <td>0%</td>
+                    <td>矿池挖到新块且块得到3个确认后，根据过去2.5个难度周期提交的工作量占总工作量的比例，对块收益25 BTC进行分配 (块收益中交易费部分不进行分配，用于系统开发维护费用)</td>
+                  </tr>
+                  <tr>
+                    <td>PPS</td>
+                    <td>2.5%</td>
+                    <td>收益=25 BTC*工作量/当前网络难度</td>
+                  </tr>
+                  <tr>
+                    <td>SOLO</td>
+                    <td>1%</td>
+                    <td>矿池挖到的新块为用户挖出且块得到3个确认后，将块收益25 BTC全部分配给用户 (块收益中交易费部分不进行分配，用于系统开发维护费用)，如果用户未挖到新块，则没有收益</td>
+                  </tr>
+                </tbody></table>
+                    <p></p>
+                    
+                    <h3 id="help_2">挖矿教程</h3>
+                    <h4 id="help_2_1" style="color: highlight;">蚂蚁S3矿机:</h4>
+                    <p>蚂蚁出厂矿机IP写在风扇上方的纸条上，最新固件默认IP地址为192.168.1.99</p>
+                    <p>硬件连接正常输入无法打开的可能是矿机和电脑IP不在同一个网段，需要设置成同一网段。</p>
+                    <p>如下图设置： <br> <br>
+                      <img alt="" src="images/antpool/1.png">
+                    </p>
+                    <h5>矿机设置:</h5>
+                    <p>1.浏览器输入蚂蚁矿机的默认IP地址 192.168.1.99 进入登录页面，矿机默认用户帐号 root，密码 root。</p>
+                    <p>2.默认是中文的界面，如果不是，看下图设置，注意我用红框框住的位置，选择chinese后，点击右下角的save&amp;apply， 等待大概30秒时间，如果还是英文请刷新一下浏览器就可以了。：
+                      <img alt="" src="images/antpool/2.png">
+                    </p>
+                    <p>3.登录矿机后，点击 网络 ----- 接口 ，可以看到 LAN 和 WAN ，其中 LAN为工厂调试使用，用户挖矿应修改WAN口，默认都是可以不用修改的。特别注意： LAN和WAN 不能在同一IP段！ WAN 这个链接，不能删除！ 由于第一版蚂蚁矿机没有RESET（恢复出厂设置）功能，一旦配置错误，只能更换控制板解决
+                      <img alt="" src="images/antpool/3.png">
+                      &nbsp;&nbsp;&nbsp;&nbsp; 点击修改按钮，进入WAN口的IP配置页面，默认都不需要修改的，如果有两台以上蚂蚁的，请修改IP为其他的地址，把后面的99改掉，只要IP没被占用的 就可以，比如ip改为192.168.1.100。另外DNS 192.168.1.1可设置 8.8.8.8（谷歌） 202.106.0.20（联通） 114.114.114.114 （电信），修改后一定要点击保存并应用
+                      <img alt="" src="images/antpool/4.png">
+                    </p>
+                    <p>4.点状态再点击 Miner Confinguration ，进入矿池配置页面。</p>
+                    <p>矿池一共分为三组，可以填写三组，如果第一组矿池挂了会自动切换到第二组,下面配置的矿池是蚂蚁矿池，参数如下：</p>
+                    <p>
+                      </p><table class="table table-bordered">
+                        <tbody><tr>
+                          <td>矿池</td>
+                          <td>URL</td>
+                          <td>矿工</td>
+                          <td>密码</td>
+                        </tr>
+                        <tr>
+                          <td>Pool1</td>
+                          <td>stratum+tcp://stratum.antpool.com:3333</td>
+                          <td>antminer.1</td>
+                          <td>123</td>
+                        </tr>
+                        <tr>
+                          <td>Pool2</td>
+                          <td>stratum+tcp://vip.antpool.com:3333</td>
+                          <td>antminer.1</td>
+                          <td>123</td>
+                        </tr>
+                        <tr>
+                          <td>Pool3</td>
+                          <td>stratum+tcp://stratum.antpool.com:443</td>
+                          <td>antminer.1</td>
+                          <td>123</td>
+                        </tr>
+                      </tbody></table>
+                    <p></p>
+                    <p>配置好了就可以进行挖矿了，依旧点击右下角的 保存&amp;应用。
+                      <img alt="" src="images/antpool/5.png">
+                    </p>
+                    <p>5.进入 Miner Status，刷新几次，即可挖矿，有的矿池速度反应不是很及时，你可以在这个页面中查看速度，确认矿机是否正常工作。
+                      <img alt="" src="images/antpool/6.png">
+                    </p>
+                    <h4 id="help_2_2" style="color: highlight;">蚂蚁U1矿机:</h4>
+                    <p><img alt="" src="images/antpool/U1.png"></p>
+                    <h5>1 下载：</h5>
+                    <p><a href="https://github.com/AntMiner/AntGen1" target="_blank">1) Cgminer for antminer-U1</a></p>
+                    <p><a href="http://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx" target="_blank">2) CP2102 Driver</a></p>
+                    <p><a href="http://zadig.akeo.ie/" target="_blank">3) zadig</a></p>
+                    <h5>2 安装驱动</h5>
+                    <p>步骤1：安装CP210xVCP 驱动程序</p>
+                    <p>步骤2：插入antminer-U1</p>
+                    <p>步骤3：打开Zadig并单击  "Options-&gt;List All Devices"
+                    <img alt="" src="images/antpool/zading1.jpg">
+                    </p>
+                    <p>步骤4：选择 CP2102 USB to UART Bridge Controller,然后单击  "Reinstall Driver"
+                    <img alt="" src="images/antpool/zading2.jpg">
+                    </p>
+                    <h5>3 运行cgminer</h5>
+                    <p>cgminer.exe --bmsc-options 115200:20 -o stratum+tcp://stratum.antpool.com:3333 -u antminer_1 -p 123
+                    <img alt="" src="images/antpool/u1.jpg">
+                    </p>
+                    <h4 id="help_2_3" style="color: highlight;">蚂蚁U3矿机:</h4>
+                    <p><img alt="" src="images/antpool/U3_P.jpg"></p>
+                    <h5>1 下载：</h5>
+                    <p><a href="https://www.bitmaintech.com/files/download/cgminer-run-windows-20141027.rar" target="_blank">1) Cgminer for antminer-U3</a></p>
+                    <p><a href="http://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx" target="_blank">2) CP2102 Driver</a></p>
+                    <p><a href="http://zadig.akeo.ie/" target="_blank">3) zadig</a></p>
+                    <h5>2 安装驱动</h5>
+                    <p>步骤1：安装CP210xVCP 驱动程序</p>
+                    <p>步骤2：插入antminer-U3</p>
+                    <p>步骤3：打开Zadig并单击  "Options-&gt;List All Devices"
+                    <img alt="" src="images/antpool/zading1.jpg">
+                    </p>
+                    <p>步骤4：选择 CP2102 USB to UART Bridge Controller,然后单击  "Reinstall Driver"
+                    <img alt="" src="images/antpool/zading2.jpg">
+                    </p>
+                    <h5>3 运行cgminer</h5>
+                    <p>cgminer.exe  --bmsc-options 115200:0.6 -o stratum.antpool.com:3333 -u antminer_1 -p 123  --bmsc-voltage 0800 --bmsc-freq 1286
+                    <img alt="" src="images/antpool/u3.jpg">
+                    </p>
+                    <h3 id="help_3">矿机购买</h3>
+                    <p>购买矿机可以访问比特大陆官方网站：</p>
+                    <p><a href="http://www.bitmain.cn/" target="_blank">比特大陆官网（中文站）</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.bitmaintech.com/" target="_blank">比特大陆官网（国际站）</a></p>
+                    
+                    <h3 id="help_4">算力购买</h3>
+                    <p>购买算力可以访问比特大陆Hashnest算计交易平台：</p>
+                    <p><a href="https://www.hashnest.com/" target="_blank">Hashnest算力交易平台</a>
+                    
+                    </p><h3 id="help_5">矿机监控</h3>
+                    <p>矿机监控可以访问比特大陆智能挖矿系统：</p>
+                    <p><a href="https://www.minerlink.com/" target="_blank">Minerlink智能挖矿系统（即将上线）</a>
+                    
+              </p><h3 id="help_6">FAQ</h3>
+                    <dl class="faq-dl">
+                <dt><i class="fa fa-chevron-right"></i>&nbsp;&nbsp;支付收不收取网络手续费？</dt>
+                <dd class="faq_dd dd_1">支付不收网络手续费<br>&nbsp;</dd>
+                
+                <dt><i class="fa fa-chevron-right"></i>&nbsp;&nbsp;我的网络访问不了3333端口怎么办？</dt>
+                <dd class="faq_dd dd_2">这可能是您的网络运营商封锁了3333端口, 我们准备了备用端口：25。<br>&nbsp;</dd>
+                
+                <dt><i class="fa fa-chevron-right"></i>&nbsp;&nbsp;什么是运气值?</dt>
+                <dd class="faq_dd dd_3">矿池采用PPLNS 0手续费收益分配模式，矿池的运气值越高, 那么在同等算力前提下, 矿工的收益要比其它矿池(运气值低的)的矿工收益高。<br>&nbsp;</dd>
+                
+                <dt><i class="fa fa-chevron-right"></i>&nbsp;&nbsp;为什么我的矿机开机后矿机状态页面有算力，但是矿池页面上没有算力？</dt>
+                <dd class="faq_dd dd_4">蚂蚁矿池采用分布式方式，算力数据显示现在有一定的延时（大概10分钟左右），我们还在优化方案，并尽快提供更快速的显示。<br>&nbsp;</dd>
+                
+                <dt><i class="fa fa-chevron-right"></i>&nbsp;&nbsp;为什么我在p2p.antpool.com上挖，看到AntPool出块后没有进行分款？</dt>
+                <dd class="faq_dd dd_4">P2P模式是接入p2pool网络进行挖矿，只有在p2pool出块后，我们才会对P2P模式的收益进行分配，当前我们正在抓紧完善P2P部分，将会显示更详细的信息。<br>&nbsp;</dd>
+              </dl>
+                    <h3 id="help_7">客服</h3>
+                    <table class="table table-bordered table-striped">
+              <tbody>
+              <tr>
+              </tr><tr><th class="col-md-2 text-right">客服中心</th><td class="col-md-10"><a href="https://support.bitmain.com/questions/pending" target="_blank">客户中心</a></td></tr>
+              <tr><th class="col-md-2 text-right">论坛</th><td class="col-md-10"><a href="https://forum.bitmain.com/?ticket=ST&utm_source=forum" target="_blank">论坛</a></td></tr>
+              <tr><th class="col-md-2 text-right">客服邮箱</th><td class="col-md-10"><a href="mailto:support@bitmain.com" target="_blank">support@bitmain.com</a></td></tr>
+              <tr><th class="col-md-2 text-right">备注</th><td class="col-md-10">欢迎矿工朋友前来咨询问题, 比特大陆客服团队会作耐心细致的解答。如遇排队情况, 请稍等片刻, 敬请谅解!</td></tr>
+              </tbody>
+              </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+     </div>
+  </div>
+      
+  <!--==========================================================================================================================================================================-->
+    <div class="foot">
+         <div class="foot_main">
+                 <div id="bitmain" >
+                    <img src="images/antpool/logo-bitmain@2x.png" width="127" height="17" alt="BitMain"  />
+                    <div class="reginfo">Copyright BITMAIN 2015. All Rights Reserved.</div>
+                 </div>
+                 <div class="cominfo">
+                      <ul class="comUL">
+                          <li>PRODUCT</li>
+                          <li>ABOUT</li>
+                          <li>SERVICES</li>
+                          <li>SOCIAL</li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.bitmaintech.com/?utm_source=forum" target="_blank">AntMiner</a></li>
+                          <li><a href="https://www.bitmaintech.com/about.htm" target="_blank">About US</a></li>
+                          <li><a href="https://support.bitmain.com/?ticket=ST&utm_source=forum" target="_blank">Support Center</a></li>
+                          <li><a href="https://forum.bitmain.com/?ticket=ST&utm_source=forum" target="_blank">BITMAINTALK</a></li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.hashnest.com/?ticket=ST&utm_source=forum" target="_blank" >HashNest</a></li>
+                          <li><a href="https://account.bitmain.com/terms_service" target="_blank">Terms of Use</a></li>
+                          <li><a href="https://support.bitmain.com/wikis?ticket=ST&utm_source=forum" target="_blank">FAQ</a></li>
+                          <li><a href="https://twitter.com/BITMAINtech" target="_blank">Twitter</a></li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.antpool.com/?utm_source=forum" target="_blank">AntPool</a></li>
+                          <li><a href="https://www.bitmaintech.com/about.htm" target="_blank">Contact US</a></li>
+                          <li><a href="https://support.bitmain.com/questions/pending" target="_blank">Ticket</a></li>
+                          <li><a href="https://www.facebook.com/Bitmaintech.Antminer?ref=hl" target="_blank">Facebook</a></li>
+                      </ul>
+                 </div>
+         </div>
+    </div>
+
+  </section> 
+</div>
+
+<script>
+
+//左侧菜单展示
+function left_menu() {
+    $("#article_menu li ul").each(function() {
+        $(this).hide();
+        $(this).parent().addClass("parent");
+    });
+
+    $("#article_menu li ul li .cur").each(function() {
+        $(this).parent().parent().css({
+            'display': 'block'
+        });
+        $(this).parent().parent().parent().addClass("open parent_cur");
+    });
+};
+
+//left_menu(0);
+$(window).bind("scroll",
+function() {
+    left_menu();
+});
+
+//固定左侧菜单
+$('.left_bar').KehStick({top:0,container:'.container',anchors:'a'})
+</script>
+</body>
+</html>

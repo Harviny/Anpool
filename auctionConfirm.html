@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AntPool</title>
+<link rel="stylesheet" href="css/antpool/get-your-coins.css">
+<link rel="stylesheet" href="css/user/bootstrap.min.css">
+<link rel="stylesheet" href="css/user/font-awesome.min.css" />
+<link rel="stylesheet" href="css/user/animate.min.css" />
+<link rel="stylesheet" href="css/user/skin.css"/>
+<link rel="stylesheet" href="css/user/style.css"/>
+<link rel="stylesheet" href="css/user/panel.css" />
+<link rel="stylesheet" href="css/user/pace.css" />
+<link rel="stylesheet" href="css/user/offline.css" />
+<link rel="stylesheet" href="css/user/products.css">
+<link rel="stylesheet" href="css/antpool/style.css">
+<link rel="stylesheet" href="css/antpool/home.css">
+<script src="js/antpool/jquery-1.8.3.min.js"></script><script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="js/antpool/common.js"></script>  
+<script src="js/antpool/highcharts.js"></script>  
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/antpool/home.js"></script>   
+<script src="js/antpool/systemtools.js"></script>
+<!--[if lt IE 8]>
+  <script src="js/antpool/curvycorners.src.js"></script>
+  <script type="text/JavaScript">
+  curvyCorners.addEvent(window, 'load', initCorners);
+  function initCorners() {
+    var settings = {
+      tl: { radius: 58},
+      tr: { radius: 58 },
+      bl: { radius: 58 },
+      br: { radius: 58 }, 
+      antiAlias: true
+    }
+    curvyCorners(settings, ".myBox");
+  }
+  </script>
+<![endif]-->
+</head>
+<body>
+<div class=" app horizontal">
+   <div class="top">
+
+          <div class="top_main">
+               <div id="logo" ><a href="home.html"><img src="images/antpool/logo@2x.png" width="217" height="53" alt="AntPool"  /></a></div>
+                <div id="nav" >  
+                    <ul class="daohangul">
+                        <li><a href="home.html"  >首页</a> </li>
+                        <li><a href="dashboard.html">用户面板</a> </li>
+                        <li><a href="setting.html">设置</a> </li>
+                        <li><a href="poolStats.html">统计</a> </li>
+                        <div class="btn-group">                    
+                             <a data-toggle="dropdown" class="active">区块服务  <img src="images/antpool/icon-arrow-down.png" ></a> 
+                               <ul  class="dropdown-menu ddlselect blockservice" role="menu">
+                                    <li><a href="coinbase.html">区块签名</a></li>
+                                    <li><a href="get-your-coins.html" style=" border:0px; height:30px;  line-height:25px;">原币</a></li>
+                             </ul>
+                      </div> <div class="btn-group" style="margin-left:-5px;">  <a data-toggle="dropdown" >帮助  <img src="images/antpool/icon-arrow-down.png" ></a>  <ul class="dropdown-menu ddlselect helpsuppt" role="menu">                                    
+                             <li><a href="support.html">帮助与支持</a></li> <li><a href="apiGuild.html">API指南</a></li>
+                                    <li><a href="https://forum.bitmain.com/" style=" border:0px; height:30px;  line-height:25px;">社区</a></li>
+                             </ul>
+                      </div>
+                    </ul>
+                </div>
+                <div class="top_right">
+                    <div class="children btn-group" >
+                       <a  data-toggle="dropdown" >
+                         <div class="cn">当前子账户</div>                            
+                           <div class="useren">
+                           <div class="en_met">antminer</div> &nbsp;
+                           <div class="sanjiao_img"></div>
+                         </div>
+                       </a>
+                        <ul  class="dropdown-menu ddlselect child_ddl" role="menu" >
+                                <li><a href="#">wen</a></li>
+                                <li><a href="#">yongliang</a></li>  <li><a href="#" >tianzhao</a></li>
+                         </ul>
+                    </div>
+                    <div class="ver_line"></div>
+                    <div class="info">
+                         <div class="headinfo"> <img src="images/antpool/icon-user-24.png" ></div>
+                         <div class="email btn-group">
+                              <a  data-toggle="dropdown" >
+                                 <span id="user"  class="en" >648800939@qq.com </span> &nbsp;<span class="sanjiao_img" style="margin-top:15px;"></span></a>
+                                  <ul  class="dropdown-menu ddlselect userst" role="menu">
+                                     <li><a href="#">用户中心</a></li>
+                                     <li><a href="#" style=" border:0px; height:30px;  line-height:25px;">退出</a></li>
+                                  </ul>
+                            </div> 
+                         <div class="btn-group"  >
+                                <div class="language" data-toggle="dropdown">EN</div>
+                                 <ul  class="dropdown-menu ddlselect lngst " role="menu">
+                                     <li><a href="#">English</a></li>
+                                     <li><a href="#" style=" border:0px; height:30px;  line-height:25px;">简体中文</a></li>
+                                  </ul>
+                         </div>
+                    </div>
+                </div>
+          </div>
+   </div>
+
+  <!--=======================================================================================================================================================================--> 
+ <section class="layout">
+   <div class="horizontal-content">
+     <div class="middle">
+         <div class="blockhit">
+             <div class="block_top">
+                   <div class="blocksig">区块签名</div>
+                   <div class="block_explain">你的信息将永远记录在比特币的区块链中</div>
+             </div>
+         </div>
+          <div class="md_top" style=" background:#F3F4F7;"> 
+             <div class="chr_link blocklink" >
+                 <li><a href="coinbase.html" >已成交</a></li>
+                 <li><a href="auction.html" >正在拍卖</a></li>
+                 <li><a href="userauction.html" class="active">我的拍卖</a></li>
+                 <div class="btnExport">
+                   <input type="button"  onclick="javascript:location.href='auctionConfirm.html'"  value="拍一下" />
+                 </div>
+             </div>
+         </div>
+        <div class="block_info">
+            <div class="sale">
+                   <li class="myBox  active">
+                        <div>1</div>
+                        <div>出价下单</div>
+                   </li>
+                   <li class="twoli  twoliActive"></li>
+                   <li  class="myBox" >
+                        <div>2</div>
+                        <div>支付</div>
+                   </li>
+                   <li  class="twoli"></li>
+                    <li class="myBox" >
+                        <div>3</div>
+                        
+                        <div>等待至你预定的<br/>区块时间</div>
+                   </li>
+                   <li class="twoli"></li>
+                   <li class="myBox" >
+                        <div>4</div>
+                        <div>查看你的<br/>签名信息</div>
+                   </li>
+            </div>
+            <div class="sale_info">
+                 <table>
+                     <tr>
+                         <th>订单详情</th>
+                         <th style="text-align:left;padding-bottom:10px; padding-left:20px;">拍卖规则</th>
+                     </tr>
+                      <tr>
+                         <td class="orderTB_info" >
+                         <div >                           
+                                 <table class="acTB">
+                                     <tr>
+                                        <td >区块日期</td>
+                                        <td><input type="text" placeholder="点击选择"  class="block_data" onclick="WdatePicker({minDate:'%y-%M-%d'})"></td>
+                                     </tr>
+                                      <tr>
+                                        <td>出价</td>
+                                        <td><input type="text" placeholder="BTC" style="width:186px;"></td>
+                                     </tr>
+                                      <tr>
+                                        <td>签名信息</td>
+                                        <td><input type="text"  style="width:270px">&nbsp;&nbsp;0/30</td>
+                                     </tr>
+                                      <tr>
+                                        <td></td>
+                                        <td style="font-size:12px;"> 区块签名信息最大长度为30个字节，支持数字、字母、特殊符号以及中文(UTF-8,每个字3个字节)，信息中不能包含不当信息(赌博、毒品、色情、诈骗、辱骂等)。</td>
+                                     </tr>
+                                      <tr>
+                                        <td></td>
+                                        <td> <input type="button" class="bigbutton" value="确认"></td>
+                                     </tr>
+                                 </table>   
+                                 </div>                  
+                         </td>
+
+                         <td class="order_info2" >
+                            <div  class="order_li">
+                                 <li>拍卖最小金额为： BTC，拍卖金额不设上限</li>
+                                 <li>区块签名信息在提交确认后不可修改</li>
+                                 <li>区块签名信息最大长度为30字节</li>
+                                 <li>区块签名信息支持字母、数字、特殊字符和中文(UTF-8,每个字符占3个字节)等</li>
+                                 <li>区块签名信息中可以包含网站链接地址，但信息以及网站中不能包含不适当的言论，如赌博、色情、诈骗或辱骂他人等;</li>
+                                 <li>区块签名信息将按照出价、拍卖时间等优先级，并按照您提供的生效时间将信息放入矿池挖出的块中，您可以在块的</li>
+                                 <li>签名信息中看到您的信息</li>
+                                 <li>AntPool矿池保留拒绝不符合规则拍卖的权利。</li>
+                         </div>
+                        </td>
+                     </tr>
+                 </table>
+            </div>
+        </div>
+
+    </div>
+  </div>
+      
+  <!--==========================================================================================================================================================================-->
+    <div class="foot">
+         <div class="foot_main">
+                 <div id="bitmain" >
+                    <img src="images/antpool/logo-bitmain@2x.png" width="127" height="17" alt="BitMain"  />
+                    <div class="reginfo">Copyright BITMAIN 2015. All Rights Reserved.</div>
+                 </div>
+                 <div class="cominfo">
+                      <ul class="comUL">
+                          <li>PRODUCT</li>
+                          <li>ABOUT</li>
+                          <li>SERVICES</li>
+                          <li>SOCIAL</li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.bitmaintech.com/?utm_source=forum" target="_blank">AntMiner</a></li>
+                          <li><a href="https://www.bitmaintech.com/about.htm" target="_blank">About US</a></li>
+                          <li><a href="https://support.bitmain.com/?ticket=ST&utm_source=forum" target="_blank">Support Center</a></li>
+                          <li><a href="https://forum.bitmain.com/?ticket=ST&utm_source=forum" target="_blank">BITMAINTALK</a></li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.hashnest.com/?ticket=ST&utm_source=forum" target="_blank" >HashNest</a></li>
+                          <li><a href="https://account.bitmain.com/terms_service" target="_blank">Terms of Use</a></li>
+                          <li><a href="https://support.bitmain.com/wikis?ticket=ST&utm_source=forum" target="_blank">FAQ</a></li>
+                          <li><a href="https://twitter.com/BITMAINtech" target="_blank">Twitter</a></li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.antpool.com/?utm_source=forum" target="_blank">AntPool</a></li>
+                          <li><a href="https://www.bitmaintech.com/about.htm" target="_blank">Contact US</a></li>
+                          <li><a href="https://support.bitmain.com/questions/pending" target="_blank">Ticket</a></li>
+                          <li><a href="https://www.facebook.com/Bitmaintech.Antminer?ref=hl" target="_blank">Facebook</a></li>
+                      </ul>
+                 </div>
+         </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

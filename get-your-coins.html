@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AntPool</title>
+<link rel="stylesheet" href="css/antpool/get-your-coins.css">
+<link rel="stylesheet" href="css/user/bootstrap.min.css">
+<link rel="stylesheet" href="css/user/font-awesome.min.css" />
+<link rel="stylesheet" href="css/user/animate.min.css" />
+<link rel="stylesheet" href="css/user/skin.css"/>
+<link rel="stylesheet" href="css/user/style.css"/>
+<link rel="stylesheet" href="css/user/panel.css" />
+<link rel="stylesheet" href="css/user/pace.css" />
+<link rel="stylesheet" href="css/user/offline.css" />
+<link rel="stylesheet" href="css/user/products.css">
+<link rel="stylesheet" href="css/antpool/style.css">
+<link rel="stylesheet" href="css/antpool/home.css">  
+<script src="js/antpool/jquery-1.8.3.min.js"></script>
+<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="js/antpool/common.js"></script>  
+<script src="js/antpool/highcharts.js"></script>  
+<script src="js/antpool/home.js"></script>   
+<script src="js/antpool/systemtools.js"></script> </head>
+<body>
+<div class=" app horizontal">
+   <div class="top">
+
+          <div class="top_main">
+               <div id="logo" ><a href="home.html"><img src="images/antpool/logo@2x.png" width="217" height="53" alt="AntPool"  /></a></div>
+                <div id="nav" >  
+                    <ul class="daohangul">
+                        <li><a href="home.html">首页</a> </li>
+                        <li><a href="dashboard.html">用户面板</a> </li>
+                        <li><a href="setting.html">设置</a> </li>
+                        <li><a href="poolStats.html">统计</a> </li>
+                        <div class="btn-group">                    
+                              <a data-toggle="dropdown" class="active">区块服务  <img src="images/antpool/icon-arrow-down.png" ></a> 
+                               <ul  class="dropdown-menu ddlselect blockservice" role="menu">
+                                    <li><a href="coinbase.html">区块签名</a></li>
+                                    <li><a href="get-your-coins.html" style=" border:0px; height:30px;  line-height:25px;">原币</a></li>
+                             </ul>
+                      </div> <div class="btn-group" style="margin-left:-5px;">  <a data-toggle="dropdown" >帮助  <img src="images/antpool/icon-arrow-down.png" ></a>  <ul class="dropdown-menu ddlselect helpsuppt" role="menu">                                    
+                             <li><a href="support.html">帮助与支持</a></li> <li><a href="apiGuild.html">API指南</a></li>
+                            <li><a href="https://forum.bitmain.com/" style=" border:0px; height:30px;  line-height:25px;">社区</a></li>
+                             </ul>
+                      </div>
+                    </ul>
+                </div>
+                <div class="top_right">
+                    <div class="children btn-group" ><a  data-toggle="dropdown" >
+                         <div class="cn">当前子账户</div>                            
+                           <div class="useren">
+                           <div class="en_met">antminer</div> &nbsp;
+                           <div class="sanjiao_img"></div>
+                         </div>
+                       </a>
+                        <ul  class="dropdown-menu ddlselect child_ddl" role="menu" >
+                                <li><a href="#">wen</a></li>
+                                <li><a href="#">yongliang</a></li>  <li><a href="#" >tianzhao</a></li>
+                         </ul>
+                    </div>
+                    <div class="ver_line"></div>
+                    <div class="info">
+                         <div class="headinfo"> <img src="images/antpool/icon-user-24.png" ></div>
+                         <div class="email btn-group">
+                              <a  data-toggle="dropdown" >
+                                 <span id="user"  class="en" >648800939@qq.com </span> &nbsp;<span class="sanjiao_img" style="margin-top:15px;"></span></a>
+                                  <ul  class="dropdown-menu ddlselect userst" role="menu">
+                                     <li><a href="#">用户中心</a></li>
+                                     <li><a href="#" style=" border:0px; height:30px;  line-height:25px;">退出</a></li>
+                                  </ul>
+                            </div> 
+                         <div class="btn-group"  >
+                                <div class="language" data-toggle="dropdown">EN</div>
+                                 <ul  class="dropdown-menu ddlselect lngst " role="menu">
+                                     <li><a href="#">English</a></li>
+                                     <li><a href="#" style=" border:0px; height:30px;  line-height:25px;">简体中文</a></li>
+                                  </ul>
+                         </div>
+                    </div>
+                </div>
+          </div>
+   </div>
+
+  <!--=======================================================================================================================================================================--> 
+  <section class="layout">
+        <div class="horizontal-content">
+           <div class="middle">
+            <div class="md_content">
+            <div>
+                <div class="row get-coin-head" style="margin-bottom:10px;margin-left:0px;">
+                    <h1><img src="images/antpool/icon.png" id="fresh-coin-icon" />
+                    <span id="fresh-coin">&nbsp;原币<span>
+                    <a href="fresh-introduction.html"><span id="what-coin" class="get-coin-little-head">什么是原币?</span></a>
+                    <span class="get-coin-little-head">从新区块中直接到你的地址，最有纪念价值的“新币”、“原始币”，比特币世界的“纪念币”。</span></span></span></h1>
+                </div>
+                <div class="row">
+                    <div class="antpool-paper-get-coin">
+                        <h2 id="get-coin-title">从新区块直接到你的地址 <br> 只需 <span>2 步!</span></h2>
+                        <div class="antpool-paper-get-coin-head">
+                            <div class="coin-Introduction">
+                                <div class="get-coin-turns">
+                                    <div class="get-coin-step" id="step-one">
+                                        <p class="step">第 1 步</p>
+
+                                        <p class="big-notice">支付保证金</p>
+
+                                        <p class="little-notice">到右边的地址(二维码)</p>
+                                    </div>
+                                    <div id="step-indicator"><img src="images/antpool/get-your-coins/icon-row.png"></div>
+                                    <div class="get-coin-step" id="step-two">
+                                        <p class="step">第 2 步</p>
+                                        <p class="big-notice">等待</p>
+                                        <p class="little-notice">直到你的比特币到账!</p>
+                                    </div>
+                                </div>
+                                <div class="take-care">
+                                    <h3>注意：</h3>
+                                    <div class="take-care-main">
+                                        <p class="notice-one-text">请使用下面的计算器计算后再支付，当前的保证金比例为1.05x(我们收取0.05x)。</p>
+                                        <p id="second-text">如果保证金金额错误，可能会导致你获得的比特币不是整数，你也可能会在24小时后获得退款（退款将收取交易费用）。</p>
+                                        <div class="need-pay notice-two-text">
+                                            <p>我要 <input value="1" type="number" id="coins-number" min="1" oninput="pay_the_money('mjNNSqKkpzpxXcHMmv3VFuMiu63wab9gwD')">
+                                                <input type="hidden" value="1.05" id="ratio">
+                                                Btc 原币, 我应该支付
+                                                <span id="pay-money">1.05000000</span> Btc 作为保证金。
+                                            </p></div>
+                                        <p class="notice-two-text"><span id="no-use">请不要 </span>使用交易所提现地址和Off Chain钱包付款，这将导致你的财产损失并无法追回。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pay-style">
+                                <p id="pay-address" class="font_eqwidth">mjNNSqKkpzpxXcHMmv3VFuMiu63wab9gwD</p>
+                                <p id="QR-code"><img id="qrCodeImg" src="https://blockchain.info/qr?data=bitcoin://mjNNSqKkpzpxXcHMmv3VFuMiu63wab9gwD?amount=1.05000000&amp;#038;size=194" height="192px;" width="194px;"></p>
+                                <p id="warning">支付金额到此地址即代表你认同原币</p>
+                                <p><a href="use-notice.html"><span id="term-use">使用条款</span></a></p>
+                                <div class="trading-details" id="trading-information">
+                                    <table border="1">
+                                        <thead>
+                                        <tr>
+                                            <th id="latest-oder">最近的订单<span>&nbsp; 每5秒刷新</span></th>
+                                            <th id="deposit-amount">保证金金额</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="freshCoinData"><tr><td class="trading-oder">mwvTBzRjfbQWe3RY9FbztieZbhjNUM531r<img id="new-icon" src="images/antpool/get-your-coins/new-icon.png"></td><td class="coin-ratio">2.10000000 Btc</td></tr><tr><td class="trading-oder">n2UK35JQZA15jNrqZdswP6YDyHiQcj4K7m</td><td class="coin-ratio">1.05000000 Btc</td></tr><tr><td class="trading-oder">mjsmjp5VhRRW4syL4gUa6rUqfbjTyeokhZ</td><td class="coin-ratio">1.00000000 Btc</td></tr></tbody>
+                                    </table>
+                                </div>
+                                <a type="button" href="user-trade-history.html" class="btn btn-primary" id="order-history-btn">历史订单查询</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+</div>
+
+   
+  <!--==========================================================================================================================================================================-->
+   
+    <div class="foot">
+         <div class="foot_main">
+                 <div id="bitmain" >
+                    <img src="images/antpool/logo-bitmain@2x.png" width="127" height="17" alt="BitMain"  />
+                    <div class="reginfo">Copyright BITMAIN 2015. All Rights Reserved.</div>
+                 </div>
+                 <div class="cominfo">
+                      <ul class="comUL">
+                          <li>PRODUCT</li>
+                          <li>ABOUT</li>
+                          <li>SERVICES</li>
+                          <li>SOCIAL</li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.bitmaintech.com/?utm_source=forum" target="_blank">AntMiner</a></li>
+                          <li><a href="https://www.bitmaintech.com/about.htm" target="_blank">About US</a></li>
+                          <li><a href="https://support.bitmain.com/?ticket=ST&utm_source=forum" target="_blank">Support Center</a></li>
+                          <li><a href="https://forum.bitmain.com/?ticket=ST&utm_source=forum" target="_blank">BITMAINTALK</a></li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.hashnest.com/?ticket=ST&utm_source=forum" target="_blank" >HashNest</a></li>
+                          <li><a href="https://account.bitmain.com/terms_service" target="_blank">Terms of Use</a></li>
+                          <li><a href="https://support.bitmain.com/wikis?ticket=ST&utm_source=forum" target="_blank">FAQ</a></li>
+                          <li><a href="https://twitter.com/BITMAINtech" target="_blank">Twitter</a></li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.antpool.com/?utm_source=forum" target="_blank">AntPool</a></li>
+                          <li><a href="https://www.bitmaintech.com/about.htm" target="_blank">Contact US</a></li>
+                          <li><a href="https://support.bitmain.com/questions/pending" target="_blank">Ticket</a></li>
+                          <li><a href="https://www.facebook.com/Bitmaintech.Antminer?ref=hl" target="_blank">Facebook</a></li>
+                      </ul>
+                 </div>
+         </div>
+   </div>
+
+  </section>
+</div>
+</body>
+</html>

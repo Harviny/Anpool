@@ -1,0 +1,72 @@
+/* line 1, /home/txz/code/unirole/app/assets/stylesheets/products.scss */
+.products {
+  display: none;
+  height: 185px;
+  padding: 15px;
+  text-align: center;
+  background: #404040;
+  margin-top: 30px;
+}
+/* line 7, /home/txz/code/unirole/app/assets/stylesheets/products.scss */
+.products .control a div{
+  padding-top: 60px;
+  padding-bottom: 60px;
+  line-height: 35px;
+  font-size: 35px;
+  color: #FFFFFF !important;
+}
+/* line 10, /home/txz/code/unirole/app/assets/stylesheets/products.scss */
+.products .all {
+  overflow: hidden;
+  height: 155px;
+}
+/* line 13, /home/txz/code/unirole/app/assets/stylesheets/products.scss */
+.products .all  {
+  height: 155px;
+}
+/* line 15, /home/txz/code/unirole/app/assets/stylesheets/products.scss */
+.products .all  div {
+  height: 155px;
+  text-align: center;
+}
+/* line 19, /home/txz/code/unirole/app/assets/stylesheets/products.scss */
+.products .all div a img {
+  width: 100%;
+  max-width:250px;
+  height: 130px;
+  border-radius: 4px 4px 0px 0px;
+}
+
+/* line 30, /home/txz/code/unirole/app/assets/stylesheets/products.scss */
+.tooltip.bottom .tooltip-inner {
+  height: auto !important;
+  background:  #404041;
+  margin-top: 15px;
+}
+
+/* line 35, /home/txz/code/unirole/app/assets/stylesheets/products.scss */
+.tooltip.bottom .tooltip-arrow {
+  margin-top: -135px;
+  border-bottom: #404041 6px solid !important;
+}
+
+/* line 39, /home/txz/code/unirole/app/assets/stylesheets/products.scss */
+.image-title {
+  background: #fff;
+  color: #666;
+  display: block;
+  font-size: 13px;
+  font-weight: normal;
+  overflow: hidden;
+  padding: 3px 5px;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin: 0px auto;
+  width: 100%;
+  max-width:250px;
+  position: relative;
+  border-radius: 0px 0px 4px 4px !important;
+}

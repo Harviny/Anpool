@@ -1,0 +1,257 @@
+#new-icon-top{
+    position: absolute;
+}
+.get-coin-little-head{
+    font-size: 14px;
+    margin-left: 20px;
+}
+#fresh-coin-icon{
+    margin-top: -8px;
+}
+#fresh-coin{
+    margin-left: 4px;
+    font-size: 28px;
+    font-weight: bold;
+}
+#what-coin{
+    color: #309aef;
+}
+.coin-Introduction{
+    margin-left: 50px;
+    float: left;
+    width: 490px;
+}
+.antpool-paper-get-coin{
+    margin: 0 auto;
+    background: #FFFFFF;
+    min-height: 130px;
+    padding: 15px 15px 65px 10px;
+    width: 1200px;
+}
+#get-coin-title{
+    line-height: 60px;
+    color: #475976;
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+}
+.antpool-paper-get-coin h2 span{
+    color: #f3973f;
+}
+.antpool-paper-get-coin-head{
+    zoom: 1;
+    margin-top: 50px;
+}
+.antpool-paper-get-coin-head:after{
+    content:"\20";
+    display: block;
+    height: 0;
+    clear: both;
+}
+.get-coin-turns:after{
+    content:"\20";
+    display: block;
+    height: 0;
+    clear: both;
+}
+.get-coin-turns{
+    zoom: 1;
+}
+.get-coin-turns div{
+    float: left;
+}
+.get-coin-step{
+    padding-bottom: 150px;
+    width: 200px;
+    height: 140px;
+    text-align: center;
+    color: white;
+}
+.step{
+    font-size: 20px;
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+.big-notice{
+    font-size: 26px;
+}
+.big-notice-little{
+    font-size: 24px;
+}
+.little-notice{
+    font-size: 16px;
+}
+#and{
+    margin-bottom: -5px;
+    margin-top:  -8px;
+}
+#step-one{
+    background-color: #6182ba;
+}
+#step-two{
+    background-color: #f5963d;
+    margin-left: 10px;
+}
+#step-indicator{
+    height: 140px;
+    width: 70px; 
+    margin-left: 5px;
+}
+#step-indicator img{
+    margin: 50px 0 10px 10px;
+}
+.take-care{
+    height: 320px;
+    width: 485px;
+    background-color: #ebf0f1;
+}
+.take-care p{
+    font-family: Arial;
+    width: 440px;
+    font-family: "Arial","Microsoft YaHei";
+}
+.take-care h3{
+    font-size: 20px;
+    color: #e15366;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-family: "Arial","Microsoft YaHei";
+}
+.take-care-main{
+    padding-right: 40px;
+    padding-left: 17px;
+}
+.notice-one-text{
+    color: #333334;
+    font-size: 16px;
+}
+.notice-two-text{
+    color: #333334;
+    font-size: 14px;
+}
+#second-text{
+    font-size: 14px;
+    color: #b5b8b7;
+}
+.need-pay{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.need-pay span{
+    font-size: 18px;
+}
+#no-use{
+    color: #e15366;
+    font-size: 20px;
+}
+#coins-number{
+    text-align: center;
+    width: 40px;
+    height: 24px; 
+    line-height: 20px;
+}
+.pay-style{
+    margin-right: 30px;
+    width: 570px;
+    float: right;
+}
+.pay-style p{
+    text-align: center;
+}
+#term-use{
+    color: #71abee;
+}
+#pay-address{
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;/**等宽字体*/
+}
+#QR-code{
+    padding-top: 10px;
+    padding-bottom: 7px;
+}
+#warning {
+    margin-bottom: 0px;
+}
+.trading-details{
+    margin-top: 14px;
+}
+.trading-details table{
+    border-color: #dedede;
+
+}
+.trading-details table tr th{
+    font-size: 16px;
+    background-color: #f3f3f3;
+    height: 46px;
+    text-align: center;
+    border: 1px solid #dedede;
+}
+.trading-details table tr td{
+    height: 46px;
+    border: 1px solid #dedede;
+}
+#new-icon{
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 3px;
+}
+#latest-oder{
+    font-weight: bold;
+    color: #778696;
+    padding-left: 10px;
+    text-align: left;
+}
+#deposit-amount{
+    color: #778696;
+    font-weight: bold;
+}
+#latest-oder span{
+    font-size: 14px;
+    color: #c5c5c5;
+}
+.trading-oder{
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;/**等宽字体*/
+    font-size: 16px;
+    width: 400px;
+    padding-left: 10px;
+    text-align: left;
+}
+.coin-ratio{
+    color: #798595;
+    font-size: 16px;
+    width: 180px;
+    text-align: right;
+    padding-right: 10px;
+}
+#order-history-btn{
+    font-size: 16px;
+    float: right;
+    width: 130px;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

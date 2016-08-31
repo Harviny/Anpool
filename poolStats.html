@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AntPool</title>
+<link rel="stylesheet" href="css/antpool/get-your-coins.css">
+<link rel="stylesheet" href="css/user/bootstrap.min.css">
+<link rel="stylesheet" href="css/user/font-awesome.min.css" />
+<link rel="stylesheet" href="css/user/animate.min.css" />
+<link rel="stylesheet" href="css/user/skin.css"/>
+<link rel="stylesheet" href="css/user/style.css"/>
+<link rel="stylesheet" href="css/user/panel.css" />
+<link rel="stylesheet" href="css/user/pace.css" />
+<link rel="stylesheet" href="css/user/offline.css" />
+<link rel="stylesheet" href="css/user/products.css">
+<link rel="stylesheet" href="css/antpool/style.css">
+<link rel="stylesheet" href="css/antpool/home.css">
+
+
+<style>
+table {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+.table-antpool thead th{font-size: 13px;}
+.table-antpool tbody td{font-size: 12px;}
+
+.pagination{font-size: 11px;}
+.pages-left{font-size: 11px;}
+</style>
+
+</head>
+<body>
+<div class=" app horizontal">
+   <div class="top">
+
+          <div class="top_main">
+               <div id="logo" ><a href="home.html"><img src="images/antpool/logo@2x.png" width="217" height="53" alt="AntPool"  /></a></div>
+                <div id="nav" >  
+                    <ul class="daohangul">
+                        <li><a href="home.html"  >首页</a> </li>
+                        <li><a href="dashboard.html" >用户面板</a> </li>
+                        <li><a href="setting.html">设置</a> </li>
+                        <li><a href="poolStats.html" class="active">统计</a> </li>
+                        <div class="btn-group"><a data-toggle="dropdown" >区块服务  <img src="images/antpool/icon-arrow-down.png" ></a> 
+                               <ul  class="dropdown-menu ddlselect blockservice" role="menu">
+                                    <li><a href="coinbase.html">区块签名</a></li><li><a href="get-your-coins.html" style=" border:0px; height:30px;  line-height:25px;">原币</a></li>
+                             </ul>
+                      </div> <div class="btn-group" style="margin-left:-5px;">  <a data-toggle="dropdown" >帮助  <img src="images/antpool/icon-arrow-down.png" ></a>  <ul class="dropdown-menu ddlselect helpsuppt" role="menu">                                    
+                             <li><a href="support.html">帮助与支持</a></li> <li><a href="apiGuild.html">API指南</a></li>
+                                    <li><a href="https://forum.bitmain.com/" style=" border:0px; height:30px;  line-height:25px;">社区</a></li>
+                             </ul>
+                      </div>
+                    </ul>
+                </div>
+                <div class="top_right">
+                    <div class="children btn-group" ><a  data-toggle="dropdown" >
+                         <div class="cn">当前子账户</div>                            
+                           <div class="useren">
+                           <div class="en_met">antminer</div> &nbsp;
+                           <div class="sanjiao_img"></div>
+                         </div>
+                       </a>
+                        <ul  class="dropdown-menu ddlselect child_ddl" role="menu" >
+                                <li><a href="#">wen</a></li>
+                                <li><a href="#">yongliang</a></li>  <li><a href="#" >tianzhao</a></li>
+                         </ul>
+                    </div>
+                    <div class="ver_line"></div>
+                    <div class="info">
+                         <div class="headinfo"> <img src="images/antpool/icon-user-24.png" ></div>
+                         <div class="email btn-group">
+                              <a  data-toggle="dropdown" >
+                                 <span id="user"  class="en" >648800939@qq.com </span> &nbsp;<span class="sanjiao_img" style="margin-top:15px;"></span></a>
+                                  <ul  class="dropdown-menu ddlselect userst" role="menu">
+                                     <li><a href="#">用户中心</a></li>
+                                     <li><a href="#" style=" border:0px; height:30px;  line-height:25px;">退出</a></li>
+                                  </ul>
+                            </div> 
+                         <div class="btn-group"  >
+                                <div class="language" data-toggle="dropdown">EN</div>
+                                 <ul  class="dropdown-menu ddlselect lngst " role="menu">
+                                     <li><a href="#">English</a></li>
+                                     <li><a href="#" style=" border:0px; height:30px;  line-height:25px;">简体中文</a></li>
+                                  </ul>
+                         </div>
+                    </div>
+                </div>
+          </div>
+   </div>
+
+  <!--=======================================================================================================================================================================--> 
+  <section class="layout">
+   <div class="middle">
+       <div class="md_top"> 
+             <div class="chr_link">
+                 <li><a href="poolStats.html" class="active" >Block历史记录</a></li>
+                 <li><a href="poolStatsRankings.html" >Solo排行榜</a></li>
+                 <div >
+                      <a href="https://www.hashnest.com/l/F8xyQaFBbHw" target="_blank" style="float:right;width:80%;"><img width="100%"  style="max-width:700px;float:right; padding-top:4px;" src="images/antpool/ad-pacmicv3.gif"/></a>
+                 </div>
+             </div>
+       </div>
+       <div class="minercontent">
+            <div class="pooltable">
+                   <table class="table table-bordered table-striped responsive table-antpool">
+                            <thead>
+                                <tr>
+                                      <th width="9%">Block高度</th>
+                                      <th width="12%">块时间</th>
+                                      <th width="19%">Block Hash</th>
+                                      <th width="10%"><span class="tb_text_right_90">收益</span></th>
+                                      <th width="10%">状态</th>
+                                      <th width="10%"><span class="tb_text_right_68">运行时间</span></th>
+                                      <th width="10%"><span class="tb_text_right_90">幸运值</span></th>
+                                      <th width="10%"><span class="tb_text_right_90">算力</span></th>
+                                      <th width="10%"><span class="tb_text_right_90">工作量</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                        <tr>
+                                            <td><a href="https://blockchain.info/" target="_blank">371698</a></td>
+                                            <td>2015-08-27 02:57:02</td>
+                                            <td class="font_eqwidth"><a href="https://blockchain.info/" class="cuttitle" target="_blank">    000000000000000000e3de2614e3fdfa54cf1ba4ecfa5275671b3e985fcf9254</a> </td>         
+                                            <td><span class="tb_text_right_90">25.00000000</span></td>
+                                            <td>0/120 </td>
+                                            <td> <span class="tb_text_right_90">0s &nbsp;</span></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><span class="tb_text_right_90">0</span></td>                                              
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td><a href="https://blockchain.info/" target="_blank">371696</a></td>
+                                            <td>2015-08-27 02:36:36</td>
+                                            <td  class="font_eqwidth"><a href="https://blockchain.info/block-index/" class="cuttitle"  target="_blank">   000000000000000000e3de2614e3fdfa54cf1ba4ecfa5275671b3e985fcf9254</a></td>
+                                            <td><span class="tb_text_right_90">25.09702149</span></td>
+                                            <td> 3/120</td>
+                                            <td><span class="tb_text_right_90">2h 16m 29s &nbsp;</span></td>
+                                            <td><span class="tb_text_right_90"><font color="red">42.43%</font>  </span></td>
+                                            <td><span class="tb_text_right_90">657.06 PH/s</span></td>
+                                            <td><span class="tb_text_right_90">127,856,969,706</span></td>                                                
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td><a href="https://blockchain.info/" target="_blank">371683</a></td>
+                                            <td>2015-08-27 00:20:07</td>
+                                            <td class="font_eqwidth"><a href="https://blockchain.info/" class="cuttitle"  target="_blank">  000000000000000000e3de2614e3fdfa54cf1ba4ecfa5275671b3e985fcf9254</a></td>
+                                            <td><span class="tb_text_right_90">25.13172727</span></td>
+                                            <td>16/120 </td>
+                                            <td><span class="tb_text_right_90">  41m 23s &nbsp;</span></td>
+                                            <td><span class="tb_text_right_90">  <font color="green">138.90%</font></span></td>
+                                            <td><span class="tb_text_right_90">67.57 PH/s</span></td>
+                                            <td><span class="tb_text_right_90">39,061,569,039</span></td>                                             
+                                        </tr>
+                                          <tr>
+                                            <td><a href="https://blockchain.info/" target="_blank">371698</a></td>
+                                            <td>2015-08-27 02:57:02</td>
+                                            <td class="font_eqwidth"><a href="https://blockchain.info/" class="cuttitle" target="_blank">  000000000000000000e3de2614e3fdfa54cf1ba4ecfa5275671b3e985fcf9254</a></td>                                                                 
+                                            <td><span class="tb_text_right_90">25.00000000</span></td>
+                                            <td>0/120 </td>
+                                            <td> <span class="tb_text_right_90">0s &nbsp;</span></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><span class="tb_text_right_90">0</span></td>                                              
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td><a href="https://blockchain.info/" target="_blank">371696</a></td>
+                                            <td>2015-08-27 02:36:36</td>
+                                            <td class="font_eqwidth"><a href="https://blockchain.info/block-index/" class="cuttitle"  target="_blank">  000000000000000000e3de2614e3fdfa54cf1ba4ecfa5275671b3e985fcf9254</a></td>
+                                            <td><span class="tb_text_right_90">25.09702149</span></td>
+                                            <td> 3/120</td>
+                                            <td><span class="tb_text_right_90">2h 16m 29s &nbsp;</span></td>
+                                            <td><span class="tb_text_right_90"><font color="red">42.43%</font>  </span></td>
+                                            <td><span class="tb_text_right_90">67.06 PH/s</span></td>
+                                            <td><span class="tb_text_right_90">127,856,969,706</span></td>                                                
+                                        </tr>
+                                    
+                                        <tr>
+                                            <td><a href="https://blockchain.info/" target="_blank">371683</a></td>
+                                            <td>2015-08-27 00:20:07</td>
+                                            <td class="font_eqwidth"><a href="https://blockchain.info/" class="cuttitle"  target="_blank">  000000000000000000e3de2614e3fdfa54cf1ba4ecfa5275671b3e985fcf9254</a></td>
+                                            <td><span class="tb_text_right_90">25.13172727</span></td>
+                                            <td>16/120 </td>
+                                            <td><span class="tb_text_right_90">  41m 23s &nbsp;</span></td>
+                                            <td><span class="tb_text_right_90">  <font color="green">138.90%</font></span></td>
+                                            <td><span class="tb_text_right_90">67.57 PH/s</span></td>
+                                            <td><span class="tb_text_right_90">39,061,569,039</span></td>                                             
+                                        </tr>
+                            </tbody>
+                   </table>
+                   <div class="btn-group pull-right pages-right">
+                           <ul class="pagination">
+                                <li><a href="#">1</a></li>
+                                <li><a href="#"><</a></li>
+                                <li ><a href="javascript:;">3</a></li>  
+                                <li><a href="#">4</a></li>
+                                <li class="current"><a href="#">5</a></li>
+                                <li><a href="#">6</a></li>
+                                <li><a href="#">7</a></li>
+                                 <li><a href="#">></a></li>
+                                <li><a href="#">117</a></li>
+                              </ul>
+                   </div> 
+                  <div class="row" style="margin-top:8px;">
+                    <div class="antpool-paper">
+                        <div>
+                            <div class="luckline">矿池幸运曲线</div>
+                            <hr/>
+                            <div id="chart_container" style="width: 100%;height: 430px; padding: 0px;  margin:0 auto; "></div>
+                                <div class="widget_content">
+                                <center>
+                                             <table class="luckytable">
+                                               <tr>
+                                                   <td>24小时 </td>
+                                                   <td>3天 </td>
+                                                   <td>1周 </td>
+                                                   <td>2周 </td>
+                                                   <td>1月 </td>
+                                                   <td>3月 </td>
+                                                   <td>全部</td>
+                                               </tr>
+                                                <tr>
+                                                   <td>62.00%  </td>
+                                                   <td>73.00% </td>
+                                                   <td>96.00% </td>
+                                                   <td>94.00% </td>
+                                                   <td>96.00% </td>
+                                                   <td>99.00% </td>
+                                                   <td>101.00%</td>
+                                               </tr>
+                                             </table>
+                                    <span style="font-size: 11px;">*矿池幸运值是实际提交的工作量与0%费率的PPS理论工作量的比值</span>
+                                </center>
+                            </div>
+                            <br/>
+                            <br/>
+                        </div>
+                    </div>
+                  </div>
+             </div>  
+      </div>
+      
+</div>
+
+  <!--==========================================================================================================================================================================-->
+   
+    <div class="foot">
+         <div class="foot_main">
+                 <div id="bitmain" >
+                    <img src="images/antpool/logo-bitmain@2x.png" width="127" height="17" alt="BitMain"  />
+                    <div class="reginfo">Copyright BITMAIN 2015. All Rights Reserved.</div>
+                 </div>
+                 <div class="cominfo">
+                      <ul class="comUL">
+                          <li>PRODUCT</li>
+                          <li>ABOUT</li>
+                          <li>SERVICES</li>
+                          <li>SOCIAL</li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.bitmaintech.com/?utm_source=forum" target="_blank">AntMiner</a></li>
+                          <li><a href="https://www.bitmaintech.com/about.htm" target="_blank">About US</a></li>
+                          <li><a href="https://support.bitmain.com/?ticket=ST&utm_source=forum" target="_blank">Support Center</a></li>
+                          <li><a href="https://forum.bitmain.com/?ticket=ST&utm_source=forum" target="_blank">BITMAINTALK</a></li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.hashnest.com/?ticket=ST&utm_source=forum" target="_blank" >HashNest</a></li>
+                          <li><a href="https://account.bitmain.com/terms_service" target="_blank">Terms of Use</a></li>
+                          <li><a href="https://support.bitmain.com/wikis?ticket=ST&utm_source=forum" target="_blank">FAQ</a></li>
+                          <li><a href="https://twitter.com/BITMAINtech" target="_blank">Twitter</a></li>
+                      </ul>
+                      <ul >
+                          <li><a href="https://www.antpool.com/?utm_source=forum" target="_blank">AntPool</a></li>
+                          <li><a href="https://www.bitmaintech.com/about.htm" target="_blank">Contact US</a></li>
+                          <li><a href="https://support.bitmain.com/questions/pending" target="_blank">Ticket</a></li>
+                          <li><a href="https://www.facebook.com/Bitmaintech.Antminer?ref=hl" target="_blank">Facebook</a></li>
+                      </ul>
+                 </div>
+         </div>
+   </div>
+
+  </section>
+</div>
+</body>
+</html>
+
+<script src="js/antpool/jquery-1.8.3.min.js"></script>
+<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="js/antpool/common.js"></script>  
+<script src="js/antpool/highcharts.js"></script>  
+<script src="js/antpool/home.js"></script>   
+<script src="js/antpool/systemtools.js"></script>
+<script>
+
+/**
+ * 矿池算力曲线
+ * 
+ */
+ var g_chart;
+ var g_unit = 'PH/s';
+ var pool_speed = [[1439780407301, 68.50], [1439784007301, 68.60], [1439787607301, 68.42], [1439791207301, 67.89], [1439794807301, 67.76], [1439798407301, 67.71], [1439802007301, 67.68], [1439805607301, 67.47], [1439809207301, 68.58], [1439812807301, 69.42], [1439816407301, 68.78], [1439820007301, 68.50], [1439823607301, 68.74], [1439827207301, 69.08], [1439830807301, 68.38], [1439834407301, 68.31], [1439838007301, 68.60], [1439841607301, 68.33], [1439845207301, 68.20], [1439848807301, 67.81], [1439852407301, 68.04], [1439856007301, 68.02], [1439859607301, 68.34], [1439863207301, 68.69], [1439866807301, 68.43], [1439870407301, 69.04], [1439874007301, 68.92], [1439877607301, 68.64], [1439881207301, 67.60], [1439884807301, 68.67], [1439888407301, 68.39], [1439892007301, 68.97], [1439895607301, 68.81], [1439899207301, 69.21], [1439902807301, 68.68], [1439906407301, 69.73], [1439910007301, 69.39], [1439913607301, 69.79], [1439917207301, 70.02], [1439920807301, 69.79], [1439924407301, 70.11], [1439928007301, 70.18], [1439931607301, 69.74], [1439935207301, 70.82], [1439938807301, 70.15], [1439942407301, 70.22], [1439946007301, 70.21], [1439949607301, 69.53], [1439953207301, 69.36], [1439956807301, 69.98], [1439960407301, 69.59], [1439964007301, 69.42], [1439967607301, 69.91], [1439971207301, 69.61], [1439974807301, 69.03], [1439978407301, 68.85], [1439982007301, 69.33], [1439985607301, 69.84], [1439989207301, 69.99], [1439992807301, 69.75], [1439996407301, 70.07], [1440000007301, 70.71], [1440003607301, 71.04], [1440007207301, 69.59], [1440010807301, 69.68], [1440014407301, 69.13], [1440018007301, 68.58], [1440021607301, 68.34], [1440025207301, 68.92], [1440028807301, 69.23], [1440032407301, 68.98], [1440036007301, 68.36]];
+$(document).ready(function() {
+    var _timezone = f_get_cookie_timezone();
+    Highcharts.setOptions({
+        global: {
+            timezoneOffset: -_timezone,
+        }
+    });
+    g_chart = new Highcharts.Chart({
+        chart: {
+            renderTo: 'chart_container',
+            type: 'areaspline',
+            zoomType: 'x'
+        },
+        credits: {
+            enabled: false
+        },
+        title: null,      
+        xAxis: { type: 'datetime' },
+        yAxis: { title: { text: '' } },
+        legend: { enabled: false },
+        tooltip: { formatter: function() { return '<b>'+ this.series.name +'</b><br/>'+ this.y +' '+g_unit+'<br/>' +Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x); } },
+        plotOptions: { 
+            areaspline: {
+                marker: {
+                    enabled: true,
+                    symbol: 'circle',
+                    radius: 1
+                },
+                states: {
+                    hover: {
+                        lineWidth: 1
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'Pool Speed',
+            color: '#dde1e8'
+            }]
+    });
+    g_chart.yAxis[0].setTitle({
+        text: ''
+    }, true);
+    g_chart.series[0].setData(pool_speed);
+});
+</script>
